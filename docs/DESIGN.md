@@ -1,11 +1,11 @@
 # DESIGN.md — design-genius marketing landing page
 
-Unique look built by design-genius (self-applied). **Fusion:** Warp (warm-dark terminal canvas, editorial restraint) × The Verge (acid highlight, mono metadata). This is the design-genius thesis applied to its own page: prompt-driven, one amber accent, projects/list as terminal output lines, real links.
+Unique look built by design-genius (self-applied). **Fusion:** Warp (warm-dark terminal canvas, editorial restraint) × The Verge (acid highlight, mono metadata). This is the design-genius thesis applied to its own page: prompt-driven, one terminal-cyan accent (~175°, off the default amber band), projects/list as terminal output lines, real links.
 
-**Signature:** the page IS a terminal session. `$` prompts, a live-type headline, list rows as `ls`/`cat` output, one amber highlight, real links everywhere, block cursor blink as the only ambient motion.
+**Signature:** the page IS a terminal session. `$` prompts, a live-type headline, list rows as `ls`/`cat` output, one cyan highlight, real links everywhere, block cursor blink as the only ambient motion.
 
 ## One-line pitch
-"A developer's terminal rendered as a product page — warm dark, one amber highlight, the skill's own pipeline as terminal output, every claim a real link."
+"A developer's terminal rendered as a product page — warm dark, one terminal-cyan highlight (~175°, off the default amber band), the skill's own pipeline as terminal output, every claim a real link."
 
 ## Tokens
 ```
@@ -16,8 +16,8 @@ Unique look built by design-genius (self-applied). **Fusion:** Warp (warm-dark t
 --ink:        #e8e3d8   (primary text, warm parchment)
 --body:       #a89f8e   (secondary text)
 --mute:       #6e675a   (metadata)
---accent:     #ffb454   (warm amber — command prompts, highlights, CTA)
---accent-2:   #4a3a1e   (dark amber for tags/chips)
+--accent:     #29d2c4   (terminal cyan ~175° — off the 15-45° amber band; command prompts, highlights, CTA)
+--accent-2:   #163c3a   (deep cyan for tags/chips)
 --ansi-green: #7bd88f   (real links — the shell's hyperlink color)
 --ansi-red:   #ff6b6b   (errors/danger, sparing)
 ```
@@ -36,7 +36,7 @@ Typography:
 - **Author/footer:** `$ whoami` → "Built by Akash Priyadarshi" + links (site, GitHub, resume) as real hrefs. `$ exit` + cursor.
 
 ## Motion (L2)
-- Scroll-reveal + stagger (IntersectionObserver), rows lighten + amber left bar on hover, focus-within states, sticky titlebar blur.
+- Scroll-reveal + stagger (IntersectionObserver), rows lighten + cyan left bar on hover, focus-within states, sticky titlebar blur.
 - `prefers-reduced-motion` fallback kills all animation.
 - Block cursor blink = the one ambient motion.
 
@@ -45,7 +45,7 @@ Typography:
 
 ## Slop-rejection (checked)
 - ✗ centered hero + 3 cards → prompt-driven terminal, rows not cards
-- ✗ purple/blue gradient → flat warm charcoal, one amber accent
+- ✗ purple/blue gradient → flat warm charcoal, one cyan accent
 - ✗ generic shadows → 1px hairlines, flat depth
 - ✗ Inter everywhere → Instrument Serif + JetBrains Mono (2 faces)
 - ✗ dead links/placeholder copy → real hrefs (repo, site, GitHub, resume), real skill output
