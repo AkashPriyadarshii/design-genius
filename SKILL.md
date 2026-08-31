@@ -156,6 +156,30 @@ If a lever's natural output is a default, rush past it to a better one.
    every other AI portfolio?" If you can't name the answer in one sharp
    sentence, deepen the signature detail until you can.
 
+### Stage 4.5 · Seed Lab (domain → swatch, guaranteed off-orange)
+The palette derives from the product's DOMAIN, never the model's body heat.
+Like a paint company: domain = the room, fan deck = hue family, engine =
+mixing, and this stage prints the swatch before commit. Do it in order:
+
+1. **Route the domain to a hue family** (the seed router):
+   finance/wealth/gov → mint, teal, or deep green · health/nature/wellness →
+   green, sage, aqua · enterprise/tech/B2B → blue, indigo, steel · news/danger/
+   urgency/alerts → red, vermilion, crimson · heritage/history/editorial →
+   gold, saffron, bronze, oxblood · creative/premium/art → violet, magenta,
+   cyan · science/energy → teal-cyan, electric blue · food/warmth/hospitality →
+   terracotta is PROHIBITED here (it is the default) — use amber-yellow,
+   leaf-green, or deep plum instead. If the domain does not map, default to a
+   COOL family (blue/teal/violet), never warm.
+2. **Generate the swatch block**: ONE accent + 2 supporting hues from that
+   family — an analogous step (same hue, ±20° on the wheel) and one
+   complement/triad partner. Give real hex values for each of the 3, with the
+   Hue(S,L) written beside them so the off-orange proof is visible.
+3. **Prove it cleared the band**: state the accent Hue number. If it is in
+   `15°–45°`, you are still in the default band — go back to step 1 and pick a
+   different family. Print the swatch as a named token block in the emit line.
+   A design whose accent carries a Hue number outside 15°–45° on a non-warm
+   bg is the whole point of this skill; write it down.
+
 ### Stage 5 · Emit DESIGN.md + audit
 Use the structure in `"$LIB"/web-design/references/design-md-template.md`
 (tokens, type scale, spacing, radius, component patterns, motion, signature
