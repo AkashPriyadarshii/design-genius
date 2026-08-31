@@ -8,7 +8,7 @@ description: >-
   from this skill's own directory (or $DESIGN_LIB), never hardcoded.
   Trigger on: "design X", "rebuild Y", "make a unique look for Z", "not generic",
   "no AI slop", "design system", "style for X". Works from text description,
-  PRD, reference URL, or screenshot. Two modes: NEW (emit a fresh spec) or
+  PRD, reference URL, or screenshot. Three modes: NEW (emit a fresh spec),
   REVISE — audit/critique/review/redesign an existing site or DESIGN.md against
   the slop bar and emit a diff-map. Trigger revise on: "audit my site",
   "critique this design", "is this slop", "redesign this", "fix the look".
@@ -42,6 +42,18 @@ a `styles/` dir, or any other styling surface.
   skill's dir. Same nine levers, same slop bar — the only difference is input
   (existing code instead of a fresh brief) and output (a diff to apply, not a
   blank spec).
+- **An existing artifact + intent is "redesign / rebuild / make it new, not
+  just fixed"** → REDESIGN mode: not a surgical diff, a full unique re-look —
+  but MATCHED to this product, never a costume and never generic. Read the
+  artifact to pull its product DNA (voice, domain, features, what the content
+  really is), route that domain, then rebuild the entire look from scratch as a
+  NEW design (fresh archetype, palette, type, motion) that only makes sense for
+  THIS product. It must clear 15°–45° AND read on-product: a stranger opening
+  it should say "that's clearly X," not "that's a generic template" and not
+  "that's some other brand's look." Unique = the signature is new; matched =
+  the DNA is still this site's. Same CRITIQUE.md, REDESIGN variant section.
+
+Same doctrine, three entry points, branched on artifact presence + intent.
 
 Same doctrine, two entry points, branched on artifact presence.
 
@@ -56,11 +68,27 @@ parent dir. If you were installed differently, `$DESIGN_LIB` overrides.
 
 ## Pipeline — 4 stages, always
 
-### Stage 1 · Harvest intent (≤1 question)
+### Stage 1 · Harvest intent (adaptive dialog, not a form)
 Extract from the prompt/reference/screenshot: audience, mood, brand voice,
-platform, and ONE constraint that matters. If a direction is ambiguous, ask ONE
-sharp either/or (never a form). If it's a revamp, state what's wrong with the
-current look first — fix that.
+platform, and the ONE constraint that matters. Ask questions ONLY to close a
+real gap — never to fill a form. Rules that keep it sharp, not bloat:
+- **Cap at 3 questions, in leverage order.** Each is a sharp either/or with a
+  ONE-line "why this matters," never open-ended ("what vibe do you want?" is
+  a lazy question; "editorial-longform or terminal-tool" names the fork).
+- **Stop early.** Once you have audience + mood + the one constraint, you have
+  enough; asking the 4th question because one is left is the bloat. Default
+  to a recommended answer when the user has no opinion — pick the domain-led
+  read and say so, don't stall.
+- **End with ONE decision point, not a menu dump.** When intent is genuinely
+  open (no clear product/domain), offer exactly: your recommended direction
+  FIRST, then up to THREE structurally different design-system fusions you
+  read from the library (each a one-liner: archetype + hue family + why).
+  User picks; silence = your recommendation. One line is the default; three
+  options are the ceiling, never a 10-choice gallery.
+- If it's a revamp/redesign, state what's wrong with the current look first —
+  fix that. In REVISE/REDESIGN mode the artifact's own files answer most of
+  these; ask only what the code can't tell you (product intent, brand
+  constraints, audience beyond the page).
 **Design-read (taste-skill 0.B): before any code or library glance, state
 direction in ONE line** — "this is a warm editorial archive with one acid
 accent, read as a long-form magazine." If you can't write that line yet, you
@@ -386,8 +414,11 @@ is, in one line") so the beneficiary can say yes/no fast.
 - NEVER output a default that any agent would produce. If unsure, make the
   choice louder, not safer.
 - The library is ground truth: cite which systems you fused and why.
-- One design, not a menu. (If the user wants options, that's stage-5 follow-up,
-  never the default.)
+- One design, not a menu. The default emit is ONE bespoke DESIGN.md. Options
+  are a Stage-1 decision point ONLY when intent is genuinely open: lead with
+  your recommendation, then at most three fusion choices, one line each; pick
+  one and proceed. Never a 10-choice gallery, and never options for a product
+  whose domain already answers the direction.
 - Terse. No "great question," no preamble. DESIGN.md + the two closing lines.
 
 ## Output contract

@@ -81,6 +81,37 @@ re-run is the verification; a redesign that still trips a mechanical tell is
 not done. Report: per-fail pass/fail toggled, the hue proof number, one line
 what the site became.
 
+## 6. REDESIGN variant — full unique re-look, matched to product DNA
+
+Use when intent is "redesign / rebuild / make it new," not "just fix the
+slop." REVISE (above) surgically diffs the fails; REDESIGN rebuilds the whole
+look from scratch — yet must stay THIS product's, never a costume and never
+generic.
+
+1. **Pull the product DNA from the real artifacts, not the brief.** Read the
+   actual files (voice in the copy, the domain, the feature set, the real
+   content). Name in one list: what the product IS, who it's for, the one
+   emotion, what makes it different from a template. This is the debt you
+   cannot break in the redesign.
+2. **Redesign, don't retint.** Pick a structurally NEW archetype (Stage 4
+   layout list), fresh accent from the domain router (Stage 4.5 — must clear
+   15°–45°), new type pairing, new motion. It is not the old site with a new
+   brush.
+3. **The matched test (both directions, enforced):**
+   - Not generic: a stranger sees no warm-cream/orange-amber default, no
+     centered-3-cards, no Inter — the nine levers all pass.
+   - Not a costume: a stranger says "that's clearly X's product," not "that
+     looks like some other brand" and not "generic template." The DNA from
+     step 1 must be visible: the content, voice, and domain read through the
+     new look.
+4. **Hue proof still required.** State the accent hex + Hue number; outside
+   15°–45° on a non-warm bg. If it lands back in band, re-pick a different
+   family.
+5. **Verify:** re-run classify (step 2) on the redesign. Must read DISTINCT
+   AND on-product. A redesign that is unique but off-brand is a fail; one
+   that is on-brand but slop is also a fail. Both gates pass or it isn't
+   done.
+
 ## Rules
 
 - Audit is cold: read as a stranger, no loyalty to the existing design.
