@@ -188,6 +188,12 @@ If a lever's natural output is a default, rush past it to a better one.
      Xerox PARC clarity, high-density HUD / cockpit telemetry, terminal ANSI matrix.
      *Rules:* 80x24 character cell matrix, fixed 1px hairline grid dividers, 1-bit segment display tokens,
      $0.5\text{m}\text{--}2.0\text{m}$ comfort depth planes.
+   - **Aeronautic / Telemetry / Black Box**: Left-rail descending timestamps ($T+00:00$), mono transcript frames,
+     zero-card hairline negative space, incident state banners.
+   - **OEM Exploded Assembly & Technical Manual**: Architectural diagrams with isometric leader lines, part tags
+     ($P\text{-}01, P\text{-}02$), torque specification tables, and pure-CSS `:has()` bidirectional component-to-table cross-highlighting.
+   - **Cartographic / Radar Signal**: Concentric sweep organizers, flight-strip queues, beam-sweep sequential attention choreography.
+   - **Seismograph Continuous Trace**: Single unbroken SVG vector threading vertically through the entire page layout to anchor all events/logs.
    - **Digital Web / Apps**: Asymmetric 38.2% / 61.8% golden mass tension, bento grid, magazine column,
      brutalist monochrome with hot pigment interrupt, kinetic canvas shader ($DPR \le 2$, linear palette texture).
      NOT centered-hero-3-cards.
@@ -214,6 +220,10 @@ If a lever's natural output is a default, rush past it to a better one.
      - *Raw Celadon Ash* (`oklch(0.78 0.06 142.0)`)
      - *Sulfur Fluor* (`oklch(0.92 0.22 108.0)`)
      - *Cinnabar Red* (`oklch(0.62 0.22 28.0)`)
+     - *Radar Phosphor Green* (`oklch(0.88 0.26 142.2)`)
+     - *Iron-Gall Blue-Black* (`oklch(0.24 0.04 240.5)`)
+     - *Cathode Ultraviolet* (`oklch(0.42 0.31 292.0)`)
+     - *Nautical Signal Beam* (`oklch(0.93 0.08 88.5)`)
    - **Formulation rules:**
      1. **Name the bespoke pigment** (e.g. "Specimen Verdigris", "Cinnabar Ink").
      2. **Break standard industry clichés:** Do not give tech blue, medical green,
