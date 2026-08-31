@@ -1,13 +1,14 @@
 # design-genius
 
-A Claude Code skill that writes a genuinely unique, non-slop `DESIGN.md` for
-any design task. Landing page, portfolio, SaaS product page, app UI, dashboard,
-site revamp. It reads a local design library, fuses two or three structurally
-different real design systems, and emits one bespoke spec with real token
-values, ready to hand to codegen. It never designs from the model's memory of
-what "good design" looks like.
+A universal design language engine and bespoke design-system generator for ANY
+medium in existence: physical architecture, industrial hardware, operating system
+GUI/TUI, wearables, editorial print, luxury packaging, spatial/AR, posters, canvas
+shaders, instruments, apps, dashboards, and digital products. It reads a local design
+library, fuses two or three structurally distinct real systems, and emits one
+bespoke spec with real tokens, pigment formulations, and geometry. It never
+designs from the model's memory of what "good design" looks like.
 
-The design skill that never repeats itself.
+The design language engine that never repeats itself.
 
 ---
 
