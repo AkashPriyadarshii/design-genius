@@ -106,9 +106,11 @@ generic.
    emotion, what makes it different from a template. This is the debt you
    cannot break in the redesign.
 2. **Redesign, don't retint.** Pick a structurally NEW archetype (Stage 4
-   layout list), fresh accent from the domain router (Stage 4.5 — must clear
-   15°–45°), new type pairing, new motion. It is not the old site with a new
-   brush.
+   layout list), fresh bespoke pigment formulation from the paint-atelier doctrine
+   (Stage 4.2 — must clear 15°–45° and break SaaS tropes: no predictable tech blue,
+   no medical green, no food orange; use nuanced pigments like Acid Chartreuse,
+   Smoked Aubergine, Verdigris, Cinnabar Ink, Celadon Ash, Raw Ochre), new type
+   pairing, new motion. It is not the old site with a new brush.
 3. **The matched test (both directions, enforced):**
    - Not generic: a stranger sees no warm-cream/orange-amber default, no
      centered-3-cards, no Inter — the nine levers all pass.

@@ -186,20 +186,32 @@ If a lever's natural output is a default, rush past it to a better one.
    hero+cards+footer is still slop — the LAYOUT must be structurally unlike
    the template, not just recolored. Pick a layout a generic agent would NOT
    reach for.
-2. **Color strategy** — never a purple gradient, and avoid the new clichés:
-   warm-cream Claude clone, olive/terracotta. Options: single dominant + one
-   accent pulled from the user's domain/reference; a named system's palette;
-   duotone; near-monochrome with one hot accent; light-on-dark invert; a
-   domain-derived palette (terminal ANSI, circuit board, paper index cards).
+2. **Color strategy & pigment formulation (paint-atelier doctrine)** —
+   NEVER default to industry tropes ("blue for tech", "green for health/finance",
+   "red for urgency"). That predictability is just second-order AI slop. Treat
+   color like a bespoke paint atelier (Farrow & Ball, Pantone experimental labs,
+   Japanese pigment archives, pigment-blending studios):
+   - **Formulate bespoke, non-obvious chromatic anchors:** Instead of raw primary
+     or SaaS tones, formulate distinct pigments — e.g. *Acid Chartreuse* (~75°),
+     *Smoked Aubergine* (~290°), *Verdigris / Patina* (~165°), *Japanese Persimmon*
+     (~20° on non-warm paper), *Electric Lapis / Klein Blue* (~225° with hot chroma),
+     *Dried Lichen* (~85°), *Oxblood / Deep Madder* (~350°), *Raw Ochre* (~48°),
+     *Celadon Ash* (~145°), *Ultraviolet* (~275°), *Safety Fluor Sulphur* (~60°).
+   - **Formulation rules:**
+     1. **Name the bespoke pigment** (e.g. "Specimen Verdigris", "Cinnabar Ink").
+     2. **Break standard industry clichés:** Do not give tech blue, medical green,
+        or food orange. Give medical an icy surgical cobalt or dried sage; give
+        developer tools an electric chartreuse or deep plum; give finance raw bone
+        and burnt umber.
+     3. **Anti-monotony test:** If the color looks like Tailwind `blue-500`,
+        `green-500`, `orange-500`, or standard Bootstrap/shadcn tokens, discard it.
+        Add nuance (shift hue ±15°, tweak lightness, drop or boost chroma).
    **HUE-WHEEL RE-PICK GATE (HARD):** after naming the accent, check it
    mechanically — do not trust the "avoid" prose. If the accent Hue falls in
    the orange-amber band (HSL **15°–45°**) AND the bg is cream (`L>85%`,
    `S<35%`) or near-black (`L<15%`), the design is not finished: **re-pick the
-   accent from a DIFFERENT hue wheel**. Pull the replacement from the product's
-   domain — green for finance/nature/health, blue for enterprise/tech/
-   government, red for danger/news/urgency, gold for heritage/editorial,
-   violet for creative/premium. If your final accent is orange on cream or
-   near-black, you have reproduced the AI default exactly; go back. Stating
+   accent from an unexpected hue wheel**. If your final accent is orange on cream
+   or near-black, you have reproduced the AI default exactly; go back. Stating
    the accent hex in the emit line is mandatory so this is provable.
    **Accent scarcity (corpus-proven):** one chromatic event per band — count
    color-bearing elements in a viewport and kill to ONE accent-bearing
