@@ -23,6 +23,11 @@ you need; the skill adapts to whatever is present (it `ls`es before reading).
 | ui-ux-pro-max-skill | Broader design skill corpus (28MB — heavy, borderline bloat) |
 | diagram-design | Editorial diagram HTML+SVG patterns |
 | threeui | 3D UI — only clone if 3D is in scope (146MB, 1/3 of the whole lib) |
+| react-bits | Animated React components, background shaders, kinetic text |
+| img2threejs | 2D image to interactive Three.js / WebGL shader pipeline |
+| nothing-design-skill | Dot-matrix, NDot typeface, monochrome + hot red archetype |
+| scroll-craft | WebGL canvas scroll animations and GLSL post-processing |
+| pretext | Pure canvas text layout and precise multi-line typography |
 
 ## Skip — README-only shells (audit: zero token content)
 
