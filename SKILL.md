@@ -62,6 +62,12 @@ saw, so the receipt is provable.
    one family. Fusing three warm-amber systems is how "landed warm by
    statistics" happens; refuse it. Name each system's accent hue family when
    you pick.
+   **DEGREE-SPACING GATE (family alone is not enough):** even within a family,
+   the systems' accent hues must sit **≥40° apart on the wheel** (e.g. two
+   warm-coral systems at 18° and 35° do NOT count as diverse — that is how a
+   corpus re-converges on one warm uniform while "passing" a family check).
+   State each picked system's accent Hue number and confirm no two are within
+   40° of each other.
 2. **Name your base fusion** — which two carry the skeleton vs the texture.
 3. **Nested fusion** — then pull 1-2 *single* tokens/levers from 1-2 more
    systems (this one's mobile nav, that one's hover motion, one accent color).
@@ -83,6 +89,18 @@ If a lever's natural output is a default, rush past it to a better one.
    design; most template-feel is copy, not paint. Every heading earns its
    words. No "Boost your workflow", no "Unlock the power of". Read copy
    aloud; if a human wouldn't say it, cut it.
+   **Copy precision (Hallmark corpus):**
+   - **Buttons name the verb, never the destination's noun.** "Save",
+     "Deploy", "Send invite" over "Submit", "Click here", "Learn more".
+     A generic CTA verb is the fastest copy tell.
+   - **Error = what-happened → why → imperative.** "Couldn't reach the
+     server (timeout). Check your connection and retry." Not "An error
+     occurred." Blame is banned; the fix comes last.
+   - **Success is silent.** No toast for a save that clearly saved. Reward
+     only breakpoints and destructive-undo, else the page is covered in
+     cheerleader confirmations.
+   - **Anatomy beats abstraction in UI text:** "2 of 12 files uploaded"
+     over "Upload in progress" — the number is the progress.
 
 1. **Layout archetype** — pick from: editorial/magazine, Swiss grid,
    bento, asymmetric split, terminal/TUI, brutalist, glass-light, paper/zine,
@@ -110,6 +128,18 @@ If a lever's natural output is a default, rush past it to a better one.
    color-bearing elements in a viewport and kill to ONE accent-bearing
    element (one colored CTA, one lit node, one color block) with white/neutral
    between color moments. Scarcity is what makes the color read intentional.
+   **OKLCH mechanics (construct, don't guess — Hallmark corpus):**
+   - **Every neutral/grey carries the anchor hue's chroma ≥0.005** — pure
+     grey (`chroma 0`) next to a warm/cool accent is the cohesion killer. Tint
+     warm accent → warm greys; blue accent → cool greys. Verify no neutral
+     token has chroma == 0.
+   - **Anchor on OKLCH lightness bands, not hex intuition:** light-mode paper
+     L 96-98%, ink 16-22%; dark-mode paper 12-16%, ink 92-96%. Accent needs
+     chroma 0.12-0.22. Banned pure `#000`/`#fff` — always tint toward anchor.
+   - **Dark mode never changes hue** — only lightness/chroma move (paper
+     L 12-18%, ink 92-96%, accent chroma -0.02-0.04 + lightness +5-10%).
+   - **Elevation on dark = lightness, not shadow:** each higher surface adds
+     ~3% lightness; a coloured glow/halo on dark is the tell.
    **Lit-surface dark-on-color:** on a saturated button/fill put near-black
    ink (e.g. `#171717`), not white — lighter and more confident than white-
    on-brand.
@@ -138,6 +168,22 @@ If a lever's natural output is a default, rush past it to a better one.
    - **Enable OpenType:** `font-feature-settings` with `ss01/ss03` (stylistic
      set = brand flavor) + `tnum` (tabular figures on all numerals/data). The
      AI default never touches font features.
+   **Typecraft precision (Hallmark corpus):**
+   - **2+1 rule:** at most 3 families — display + body + one outlier (wordmark,
+     hero stat, pull quote). The outlier is a capped register (≤2 slots on the
+     page); a third use = it's now a body font. Mono counts as a face outside
+     code.
+   - **Weight contrast ≥300 units:** body 400/350 → headings 700 or 200; never
+     500/600 next to 400 (reads as un-tuned default).
+   - **Scale by ratio, not increments:** pick ONE of 1.25 / 1.333 / 1.5 / 1.618
+     off a 16px body. Display cap ≤5.5rem (88px), hard 6rem; a single word
+     ≤12ch may reach 7rem.
+   - **Size the headline to its character count:** ≤20ch → full display; 21-50ch
+     → default; 51-90ch → step DOWN one rung; >90ch → rewrite. Write headlines
+     ≤7 words / ≤50 chars. A huge headline too big for its words is the #1
+     AI tell.
+   - **All-caps display heads need line-height ≥1.02-1.08** — uppercase has no
+     descenders; below 1.0 line-N+1 caps collide with line-N baselines.
 4. **Motion/state (MANDATORY, from interaction-patterns.md)** — meet the
    scene baseline: entrance (fadeInUp + stagger), scroll-reveal, hero layered
    entrance, hover/focus states. At L2+: sticky-nav blur, reveal-on-scroll.
@@ -171,6 +217,18 @@ If a lever's natural output is a default, rush past it to a better one.
    - **Scenes that need immediate scannability (dashboard, app-UI, PPT)
      FORBID scroll-reveal** — info must be visible at once; use hover border
      highlight instead of lift.
+   **Timing canon (Hallmark corpus, exact ms — stop inventing durations):**
+   80-120ms instant feedback (button press, keystroke) / 150-200ms hover +
+   focus rings / 250-300ms modal-sheet-dropdown opens / 400-500ms toasts +
+   page reveals. Exit = 60-75% of enter, never the reverse.
+   **Tooltip delay is asymmetric by intent:** hover = 800-1000ms (no flash on
+   casual movement), focus = 0ms (keyboard user reached it deliberately —
+   never delay them). Equal delays on both = the generated tell.
+   **Motion restraint cap:** ≤3 distinct animation primitives per page (a
+   counter + a hover-lift + a marquee = 3); no single animation >2s except a
+   continuous loop; ONE orchestrated entrance, never per-section
+   fade-up-stagger. Banned curve: the browser default `ease` (flat) — use the
+   three-token canon, overshoot >110% only for physical interactions.
    **A11y is not a line-item, it's a gate.** Before emit, confirm each:
    contrast ≥4.5:1 (body)/3:1 (large, UI) on every token pair, all
    interactives keyboard-reachable with visible focus, no hover-only
@@ -227,7 +285,9 @@ If a lever's natural output is a default, rush past it to a better one.
    banned premium-consumer palette family (beige/cream bg: #f5f1ea #f7f5f1
    #fbf8f1 #efeae0 #ece6db #faf7f1 #e8dfcb · brass/clay/oxblood accent: #b08947
    #b6553a #9a2436 #9c6e2a #bc7c3a #7d5621 · espresso/ink text: #1a1714
-   #1a1814 #1b1814); eyebrow overuse (max ONE per 3 sections, hero counts);
+   #1a1814 #1b1814); eyebrow overuse (max ONE per 3 sections, hero counts); hanging
+   "01 · THE TOUR" left-margin markers (eyebrow + number + rule line) is the
+   "premium editorial" template tell — drop the number or the eyebrow;
    CTA line-wrap on a wide breakpoint (a two-word button spilling onto two
    lines = fail — fix by shortening the label to ≤3 words, never constraining
    width); hero overflowing one viewport with top-padding panic (cap ≈6rem);
