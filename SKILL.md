@@ -9,11 +9,12 @@ description: >-
   Trigger on: "design X", "rebuild Y", "make a unique look for Z", "not generic",
   "no AI slop", "design system", "style for X". Works from text description,
   PRD, reference URL, or screenshot. Three modes: NEW (emit a fresh spec),
-  REVISE — audit/critique/review/redesign an existing site or DESIGN.md against
-  the slop bar and emit a diff-map. Trigger revise on: "audit my site",
-  "critique this design", "is this slop", "redesign this", "fix the look".
-  NOT for codegen (hand off to web-design); this skill EMITS the spec or the
-  diff.
+  REVISE — audit/critique/review an existing site or DESIGN.md against the
+  slop bar and emit a diff-map — or REDESIGN — a full unique re-look matched
+  to the product's DNA, never generic, never a costume. Trigger revise/redesign
+  on: "audit my site", "critique this design", "is this slop", "redesign
+  this", "fix the look". NOT for codegen (hand off to web-design); this skill
+  EMITS the spec or the diff.
 ---
 
 # design-genius
@@ -26,11 +27,23 @@ per request, and you can defend every choice.
 **Ground truth: the library is the receipt, not your training memory.** Every
 run, READ the actual files. Never lean on remembered "good design."
 
-## Stage 0 · Pick the mode — NEW or REVISE (audit/critique/redesign)
+## Stage 0 · Pick the mode — NEW, REVISE, or REDESIGN
 
 Before anything, detect whether a design already exists HERE (the project you
-were opened in): list for `index.html`, `*.css`, `*.scss`, `*.tsx`, `DESIGN.md`,
-a `styles/` dir, or any other styling surface.
+were opened in). Detect at the PROJECT ROOT only, and filter out build noise:
+list the project root for `index.html`, `*.css`, `*.scss`, `*.tsx`, `DESIGN.md`,
+a `styles/` dir, or any styling surface — but IGNORE `node_modules/`, `dist/`,
+`build/`, `.next/`, and anything under a dependency or generated-output dir.
+A needless `.css` on disk is NOT a design to audit.
+
+**Reject falsely-present artifacts:** if the only styling you found lives in a
+scaffold/template/dependency (a vendored UI kit, a Tailwind default install, a
+`create-*` boilerplate) or is clearly not the user's own product, treat it as
+NO artifact → NEW mode. An artifact only counts if it is THE product's real,
+owned styling — otherwise you would audit a dependency instead of designting
+fresh, which is a wrong mode and a wasted run. When in doubt, ask one sharp
+question ("is this an existing site to redesign, or a fresh build?") rather
+than guessing.
 
 - **No existing artifact** → NEW mode: run the pipeline below (harvest → read →
   fuse → emit). You are the original designer; the library is your material.
@@ -55,18 +68,23 @@ a `styles/` dir, or any other styling surface.
 
 Same doctrine, three entry points, branched on artifact presence + intent.
 
-Same doctrine, two entry points, branched on artifact presence.
-
 ## The library (RESOLVE, then READ)
 
-The library lives beside this skill by default — its path is this file's
-parent dir. If you were installed differently, `$DESIGN_LIB` overrides.
+The library root is the skill's PARENT dir — the skill ships as one folder
+inside a design-library workspace (`awesome-design-md/`, `web-design/`,
+`shadcn-ui/` sit beside it). If you were installed differently, `$DESIGN_LIB`
+overrides. Resolve in order:
 
-1. `LIB = $(dirname of this SKILL.md)` — unless `$DESIGN_LIB` is set, then that.
-2. `ls "$LIB"` — if a path below is missing, ADAPT: use whatever is there
-   (don't silently skip to memory). `ls` each directory before relying on it.
+1. `LIB = $DESIGN_LIB` if set, else `dirname(dirname(SKILL.md))` — the dir
+   containing this skill's dir. (NOT `dirname(SKILL.md)` alone — that is the
+   skill dir itself, which holds no library.)
+2. `ls "$LIB"` and confirm a library item is actually there before reading.
+   If `"$LIB"` has no design systems, walk up once more or ask where the
+   library is — never silently skip to memory. `ls` each directory you rely on.
 
-## Pipeline — 4 stages, always
+## Pipeline — stages 0–5, always (Stage 0 already picked the mode above; these
+are the design stages. Numbering is non-linear: 3.5 and 4.5 are refinements,
+5 is the audit). Run them in order.
 
 ### Stage 1 · Harvest intent (adaptive dialog, not a form)
 Extract from the prompt/reference/screenshot: audience, mood, brand voice,
@@ -339,7 +357,7 @@ If a lever's natural output is a default, rush past it to a better one.
    hover-scrub, a cursor behavior, a layout quirk, a refresh animation, a
    diagonal divider, a prompt line, a block cursor. Make it structural (part
    of the layout/metaphor), not a sticker onto a template.
-7. **Slop-rejection check** — grep the result for these; renumber to 8. If
+7. **Slop-rejection check** — grep the result for these. If
    any present, REPLACE: centered hero, 3 feature cards, purple/blue gradient,
    drop-shadow on everything, "Modern SaaS" w/ generic icon grid, invisible
    type hierarchy, warm-cream pale portfolio, Inter-everywhere, no-motion
@@ -423,6 +441,12 @@ is, in one line") so the beneficiary can say yes/no fast.
 
 ## Output contract
 
+**NEW mode** (fusing systems, no existing artifact):
 1. `DESIGN.md` content (ready to save to project root).
 2. One line: which 2 systems were fused.
 3. One line: the signature detail.
+
+**REVISE / REDESIGN mode** (existing artifact): the diff-map / rebuild spec
+from CRITIQUE.md — not a fused-systems DESIGN.md. Do NOT emit a "which 2
+systems were fused" line in these modes; you audited or rebuilt an existing
+look, you did not fuse a fresh one. Scope this contract to NEW.

@@ -74,6 +74,18 @@ non-warm bg). If it lands back in band, re-pick from another family.
 Accent scarcity: one chromatic moment per viewport. Kill to one accent-bearing
 element, white/neutral between color moments. Ink never pure `#000`.
 
+**The token map is not enough — hunt every occurrence.** A production site
+bakes the accent into `linear-gradient()`, `box-shadow`, `drop-shadow`/filter,
+`background: <accent> + overlay`, and `hsla(var(--accent)/0.4)` alpha — none of
+which a `:root` token re-tint rewrites. After the token map, grep the whole
+styling surface for every literal use of the old accent/old palette value
+(hex, rgb, hsl, and the var references that carry alpha) and list each as a
+separate `old → new` line. If you only re-tint the tokens, the hero gradient
+stays the old hue and the site reads as a bi-hue mashup that still trips the
+band — the re-tint silently half-applies. The diff is complete only when every
+color-bearing occurrence of the old palette is accounted for, not just the
+`:root` block.
+
 ## 5. Verify
 
 After the fix map is applied, re-run step 2. It must now read DISTINCT. That
