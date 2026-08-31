@@ -193,8 +193,11 @@ If a lever's natural output is a default, rush past it to a better one.
    ≥40px hit targets on every interactive. Emit these as rules in the
    component-patterns section, not vibes.
    **Depth + geometry mechanics (corpus-proven):**
-   - **4px grid:** every coordinate/font-size/gap/radius divisible by 4 — a
-     non-integer coordinate is the instant "AI-generated" tell.
+   - **4px grid (geometry, not type):** spacing, padding, gaps, coordinates,
+     and radiuses on the 4px/8dp ladder — a non-integer coordinate is the
+     instant "AI-generated" tell. EXEMPT font-size: type needs fine increments
+     (11/13/15px mono is legit terminal/UI type); the grid governs layout
+     rhythm, not the type ramp.
    - **Surface ladder over drop shadows:** elevate with a 2-4 step background-
      color stack (and/or a 1px inset hairline ring) before reaching for a
      shadow; reserve a real shadow for "above the page" (modal). When you do
