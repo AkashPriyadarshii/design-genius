@@ -56,6 +56,12 @@ saw, so the receipt is provable.
 1. `ls "$LIB"/awesome-design-md/design-md/` and pick **2-3 structurally
    DIFFERENT** systems for this task (one minimal/editorial + one dark/tech +
    one brutalist/kinetic). Read their actual token blocks.
+   **HUE-DIVERSITY GATE:** the fused systems must span **distinct hue
+   families** — one cool (blue/violet/teal), one warm (red/orange/gold), one
+   neutral (black/grey/cream) — unless the product's domain genuinely demands
+   one family. Fusing three warm-amber systems is how "landed warm by
+   statistics" happens; refuse it. Name each system's accent hue family when
+   you pick.
 2. **Name your base fusion** — which two carry the skeleton vs the texture.
 3. **Nested fusion** — then pull 1-2 *single* tokens/levers from 1-2 more
    systems (this one's mobile nav, that one's hover motion, one accent color).
@@ -90,6 +96,16 @@ If a lever's natural output is a default, rush past it to a better one.
    accent pulled from the user's domain/reference; a named system's palette;
    duotone; near-monochrome with one hot accent; light-on-dark invert; a
    domain-derived palette (terminal ANSI, circuit board, paper index cards).
+   **HUE-WHEEL RE-PICK GATE (HARD):** after naming the accent, check it
+   mechanically — do not trust the "avoid" prose. If the accent Hue falls in
+   the orange-amber band (HSL **15°–45°**) AND the bg is cream (`L>85%`,
+   `S<35%`) or near-black (`L<15%`), the design is not finished: **re-pick the
+   accent from a DIFFERENT hue wheel**. Pull the replacement from the product's
+   domain — green for finance/nature/health, blue for enterprise/tech/
+   government, red for danger/news/urgency, gold for heritage/editorial,
+   violet for creative/premium. If your final accent is orange on cream or
+   near-black, you have reproduced the AI default exactly; go back. Stating
+   the accent hex in the emit line is mandatory so this is provable.
 3. **Type voice** — choose TWO faces and the scale logic (why this serif/x).
    Most AI-slop dies here because it ignores type. Also: overused faces
    (Inter, Roboto, Space Grotesk, plus Jakarta) read as slop on sight — if the
