@@ -8,8 +8,12 @@ description: >-
   from this skill's own directory (or $DESIGN_LIB), never hardcoded.
   Trigger on: "design X", "rebuild Y", "make a unique look for Z", "not generic",
   "no AI slop", "design system", "style for X". Works from text description,
-  PRD, reference URL, or screenshot. NOT for codegen (hand off to web-design);
-  this skill EMITS the spec.
+  PRD, reference URL, or screenshot. Two modes: NEW (emit a fresh spec) or
+  REVISE — audit/critique/review/redesign an existing site or DESIGN.md against
+  the slop bar and emit a diff-map. Trigger revise on: "audit my site",
+  "critique this design", "is this slop", "redesign this", "fix the look".
+  NOT for codegen (hand off to web-design); this skill EMITS the spec or the
+  diff.
 ---
 
 # design-genius
@@ -21,6 +25,25 @@ per request, and you can defend every choice.
 
 **Ground truth: the library is the receipt, not your training memory.** Every
 run, READ the actual files. Never lean on remembered "good design."
+
+## Stage 0 · Pick the mode — NEW or REVISE (audit/critique/redesign)
+
+Before anything, detect whether a design already exists HERE (the project you
+were opened in): list for `index.html`, `*.css`, `*.scss`, `*.tsx`, `DESIGN.md`,
+a `styles/` dir, or any other styling surface.
+
+- **No existing artifact** → NEW mode: run the pipeline below (harvest → read →
+  fuse → emit). You are the original designer; the library is your material.
+- **An existing artifact** → REVISE mode: you are the auditor/reviewer/critic/
+  redesigner. STOP the emit pipeline. Read the real files, extract their actual
+  palette (hex → HSL), fonts, and layout, classify SLOP vs DISTINCT, and emit a
+  **diff-style DESIGN.md** (old→new token map, font/layout/copy fix, accent hue
+  proof cleared of 15°–45°). Full command + rubric: **CRITIQUE.md** in this
+  skill's dir. Same nine levers, same slop bar — the only difference is input
+  (existing code instead of a fresh brief) and output (a diff to apply, not a
+  blank spec).
+
+Same doctrine, two entry points, branched on artifact presence.
 
 ## The library (RESOLVE, then READ)
 
@@ -38,6 +61,11 @@ Extract from the prompt/reference/screenshot: audience, mood, brand voice,
 platform, and ONE constraint that matters. If a direction is ambiguous, ask ONE
 sharp either/or (never a form). If it's a revamp, state what's wrong with the
 current look first — fix that.
+**Design-read (taste-skill 0.B): before any code or library glance, state
+direction in ONE line** — "this is a warm editorial archive with one acid
+accent, read as a long-form magazine." If you can't write that line yet, you
+haven't harvested enough; go back. The one-liner is the rudder for the whole
+emit; a spec without it drifts back to generic.
 
 ### Stage 2 · Name the product's world first (subject grounding)
 Before touching the library: in ONE list, say what this product IS — audience,
@@ -101,6 +129,9 @@ If a lever's natural output is a default, rush past it to a better one.
      cheerleader confirmations.
    - **Anatomy beats abstraction in UI text:** "2 of 12 files uploaded"
      over "Upload in progress" — the number is the progress.
+   - **Em-dash hard ban in spec copy** (taste-skill 9.G): no "—" in the
+     DESIGN.md copy you emit. It is the single loudest AI-prose tell. A
+     comma, colon, or full stop does the job the em-dash was reaching for.
 
 1. **Layout archetype** — pick from: editorial/magazine, Swiss grid,
    bento, asymmetric split, terminal/TUI, brutalist, glass-light, paper/zine,
@@ -149,7 +180,10 @@ If a lever's natural output is a default, rush past it to a better one.
    (Inter, Roboto, Space Grotesk, plus Jakarta) read as slop on sight — if the
    face is one every agent ships, pick the distinctive alternative. Justify
    the pairing, don't inherit a default. Serif-default ban: a serif only
-   because "serif looks premium" is a tell — it must earn the words.
+   because "serif looks premium" is a tell — it must earn the words. LLM-favorite
+   serifs Fraunces and Instrument Serif are active tells — pick them ONLY when
+   the brand is genuinely editorial/literary, and say why; any other default
+   use of them reads as AI on sight (taste-skill 4.1).
    **Typecraft mechanics (corpus-proven, apply all):**
    - **Drive hierarchy with weight, not size/opacity.** Variable font at
      in-between weights (320/340/480/540): a 20px link @480 next to 20px body
