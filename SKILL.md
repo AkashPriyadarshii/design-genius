@@ -178,12 +178,23 @@ If a lever's natural output is a default, rush past it to a better one.
    Adapt the spatial logic and surface geometry to the medium:
    - **Industrial / Hardware**: Braun/Rams functionalism, Teenage Engineering tactile
      density, Leica precision mechanical, analog dial/switch instrumentation.
-   - **Editorial & Print**: Swiss grid, Dutch conceptual typography, Bauhaus structural,
-     manifesto zine, Japanese asymmetric balance, broadsheet newspaper density.
+     *Rules:* 0.5mm 90° diamond knurling, 2.8N mechanical snap detent, bead-blasted AA15
+     anodized unibody, 0px-radius raw chamfers ($R = 0.1\text{--}0.2\text{mm}$), exposed hex/Torx fasteners.
+   - **Editorial & Print**: Swiss grid (Müller-Brockmann 16-field modular), Dutch conceptual typography,
+     manifesto zine, Japanese asymmetric balance (*Ku* emptiness), broadsheet newspaper density.
+     *Rules:* 1:1.414 ($\sqrt{2}$) or 1:1.618 ($\Phi$) proportional scaling, 130gsm uncoated Munken Lynx substrate
+     texture ($R_a = 1.8\text{--}3.5\,\mu\text{m}$), optical hanging punctuation on margins, tabular lining figures for all metrics.
    - **Spatial / OS / GUI / TUI**: Ray-traced glass, NeXTSTEP clean windowing,
      Xerox PARC clarity, high-density HUD / cockpit telemetry, terminal ANSI matrix.
-   - **Digital Web / Apps**: Asymmetric split, bento grid, magazine column, brutalist
-     monochrome with hot pigment, kinetic canvas shader, museum white. NOT centered-hero-3-cards.
+     *Rules:* 80x24 character cell matrix, fixed 1px hairline grid dividers, 1-bit segment display tokens,
+     $0.5\text{m}\text{--}2.0\text{m}$ comfort depth planes.
+   - **Digital Web / Apps**: Asymmetric 38.2% / 61.8% golden mass tension, bento grid, magazine column,
+     brutalist monochrome with hot pigment interrupt, kinetic canvas shader ($DPR \le 2$, linear palette texture).
+     NOT centered-hero-3-cards.
+   **Concentric Radii Mathematics (STRICT):**
+   Arbitrary corner radii are banned. Radii must follow strict concentric geometry:
+   $$R_{\text{inner}} = \max(0, R_{\text{outer}} - \text{Padding})$$
+   (e.g., if outer container is 12px radius with 8px padding, inner element MUST be 4px radius, never 12px/24px pill).
    **Tokens are not a design.** A warm-cream palette over a standard
    hero+cards+footer is still slop — the LAYOUT and MEDIUM FORM must be structurally
    unlike the template, not just recolored. Pick a form a generic agent would NOT
@@ -194,11 +205,15 @@ If a lever's natural output is a default, rush past it to a better one.
    color like a bespoke paint atelier (Farrow & Ball, Pantone experimental labs,
    Japanese pigment archives, pigment-blending studios):
    - **Formulate bespoke, non-obvious chromatic anchors:** Instead of raw primary
-     or SaaS tones, formulate distinct pigments — e.g. *Acid Chartreuse* (~75°),
-     *Smoked Aubergine* (~290°), *Verdigris / Patina* (~165°), *Japanese Persimmon*
-     (~20° on non-warm paper), *Electric Lapis / Klein Blue* (~225° with hot chroma),
-     *Dried Lichen* (~85°), *Oxblood / Deep Madder* (~350°), *Raw Ochre* (~48°),
-     *Celadon Ash* (~145°), *Ultraviolet* (~275°), *Safety Fluor Sulphur* (~60°).
+     or SaaS tones, formulate distinct pigments in OKLCH:
+     - *Specimen Verdigris* (`oklch(0.72 0.13 168.4)`)
+     - *Acid Chartreuse* (`oklch(0.86 0.19 112.5)`)
+     - *Electric Lapis / Klein Blue* (`oklch(0.45 0.24 255.0)`)
+     - *Deep Oxblood / Madder Lake* (`oklch(0.38 0.16 18.5)`)
+     - *Smoked Aubergine* (`oklch(0.28 0.09 308.2)`)
+     - *Raw Celadon Ash* (`oklch(0.78 0.06 142.0)`)
+     - *Sulfur Fluor* (`oklch(0.92 0.22 108.0)`)
+     - *Cinnabar Red* (`oklch(0.62 0.22 28.0)`)
    - **Formulation rules:**
      1. **Name the bespoke pigment** (e.g. "Specimen Verdigris", "Cinnabar Ink").
      2. **Break standard industry clichés:** Do not give tech blue, medical green,
@@ -208,22 +223,25 @@ If a lever's natural output is a default, rush past it to a better one.
      3. **Anti-monotony test:** If the color looks like Tailwind `blue-500`,
         `green-500`, `orange-500`, or standard Bootstrap/shadcn tokens, discard it.
         Add nuance (shift hue ±15°, tweak lightness, drop or boost chroma).
-   **HUE-WHEEL RE-PICK GATE (HARD):** after naming the accent, check it
-   mechanically — do not trust the "avoid" prose. If the accent Hue falls in
-   the orange-amber band (HSL **15°–45°**) AND the bg is cream (`L>85%`,
-   `S<35%`) or near-black (`L<15%`), the design is not finished: **re-pick the
+   **OKLCH HUE-WHEEL RE-PICK GATE (HARD):** after naming the accent, check it
+   mechanically in OKLCH — do not trust the "avoid" prose. If the accent Hue falls in
+   the orange-amber band (OKLCH **45°–75°** / HSL **15°–45°**) AND the bg is cream (`L>85%`,
+   `C<0.03`) or near-black (`L<15%`), the design is not finished: **re-pick the
    accent from an unexpected hue wheel**. If your final accent is orange on cream
    or near-black, you have reproduced the AI default exactly; go back. Stating
-   the accent hex in the emit line is mandatory so this is provable.
+   the accent OKLCH + hex in the emit line is mandatory so this is provable.
    **Accent scarcity (corpus-proven):** one chromatic event per band — count
    color-bearing elements in a viewport and kill to ONE accent-bearing
    element (one colored CTA, one lit node, one color block) with white/neutral
    between color moments. Scarcity is what makes the color read intentional.
    **OKLCH mechanics (construct, don't guess — Hallmark corpus):**
-   - **Every neutral/grey carries the anchor hue's chroma ≥0.005** — pure
+   - **Every neutral/grey carries the anchor hue's chroma ≥0.006** — pure
      grey (`chroma 0`) next to a warm/cool accent is the cohesion killer. Tint
      warm accent → warm greys; blue accent → cool greys. Verify no neutral
      token has chroma == 0.
+   - **Substrate Micro-Grain over Flat Void:** Never use flat `#000` or `#fff`.
+     Inject subtle micro-grain texture filter ($R_a = 1.8\text{--}3.5\,\mu\text{m}$) or
+     bead-blasted metal shader to give the substrate tangible tactile friction.
    - **Anchor on OKLCH lightness bands, not hex intuition:** light-mode paper
      L 96-98%, ink 16-22%; dark-mode paper 12-16%, ink 92-96%. Accent needs
      chroma 0.12-0.22. Banned pure `#000`/`#fff` — always tint toward anchor.
@@ -237,7 +255,8 @@ If a lever's natural output is a default, rush past it to a better one.
    **Semantic up/down/delta stays text-color only**, never a filled pill.
 3. **Type voice** — choose TWO faces and the scale logic (why this serif/x).
    Most AI-slop dies here because it ignores type. Also: overused faces
-   (Inter, Roboto, Space Grotesk, plus Jakarta) read as slop on sight — if the
+   (Inter, Roboto, Space Grotesk, Plus Jakarta, Geist, Satoshi, Sora, Cabinet Grotesk,
+   Bricolage Grotesque, Outfit, DM Sans) read as slop on sight — if the
    face is one every agent ships, pick the distinctive alternative. Justify
    the pairing, don't inherit a default. Serif-default ban: a serif only
    because "serif looks premium" is a tell — it must earn the words. LLM-favorite
@@ -283,31 +302,21 @@ If a lever's natural output is a default, rush past it to a better one.
    entrance, hover/focus states. At L2+: sticky-nav blur, reveal-on-scroll.
    INCLUDE `prefers-reduced-motion` fallback and focus-visible states. A
    design with no motion or no focus states fails the bar — it's vibecode.
-   **Motion mechanics (corpus-proven, apply all):**
-   - **Three workhorse easings, never `ease-in-out`:** enter/arrive
-     `cubic-bezier(0.16, 1, 0.3, 1)` (decelerating settle); overshoot/pop
-     `cubic-bezier(0.34, 1.56, 0.64, 1)`; exit = shorter `ease-in` at 60-70%
-     of enter duration, capped ~250ms — **exit must resolve faster than
-     enter** or back/forward feels sluggish.
-   - **Press state:** 0.1s `transform: scale(0.97)` on transform only, shadow
-     dropped, <150ms; hover lift ≤2px, anything bigger reads as motion not
-     feedback.
-   - **Stagger 30-50ms per item, cap ~8 children** and total cascade ~700ms;
-     on long lists shrink per-item delay, never item duration.
-   - **Animate ≤1-2 key elements per view**; ≤2 heavy backgrounds/page, 1
-     WebGL scene/page, ≤3 timelines/page. A whole page gets 4-10 signature
-     moments; >10 is noise.
-   - **Opacity never lingers below 0.2** — parked 0.05-0.15 ghost states read
-     as broken.
-   - **Composite-only + FLIP:** animate only `transform`/`opacity` (never
-     width/top/color); for layout-like effects use FLIP (measure, apply
-     class, measure, animate the transform delta, clear). Blur ≤8px, never
-     continuous. A project killed by jank is a failure — see ui-skills.
-   - **Parallax on background/decorative layers only, yPercent 5-15**, never
-     on text/CTAs; `overflow:hidden` wrapper.
-   - **Reduced-motion = a distinct static frame that carries the full
-     meaning**, not just "no animation." Render the complete no-JS state;
-     keep opacity fades, cut large displacement/parallax/auto-scroll.
+   **Motion & physics mechanics (corpus-proven, apply all):**
+   - **Three workhorse easings, never `ease-in-out`:**
+     - Enter/arrive: `cubic-bezier(0.16, 1, 0.3, 1)` (decelerating settle)
+     - Mechanical snap / tactile switch: `cubic-bezier(0.18, 0.89, 0.32, 1.28)` (80-120ms sharp snap)
+     - Overshoot/pop: `cubic-bezier(0.34, 1.56, 0.64, 1)` (900ms playful loops)
+     - Exit = shorter `ease-in` at 60-70% of enter duration, capped ~200ms — **exit must resolve faster than enter** or back/forward feels sluggish.
+   - **Spring Physics Standard:** standard UI `stiffness: 200, damping: 20`, high-response `stiffness: 300, damping: 25`, heavy spatial surface `stiffness: 120, damping: 18`.
+   - **Press state:** 0.08s mechanical tactile drop (2.8N simulation) on transform only, shadow dropped, <120ms; hover lift ≤1.5px with 1px lightened top hairline.
+   - **Canvas & WebGL Zero-Jank Contract:** clamp `renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2))`, disconnect RAF when offscreen via `IntersectionObserver`, 1D palette textures over branch-heavy shaders.
+   - **Stagger 30-50ms per item, cap ~8 children** and total cascade ~600ms; on long lists shrink per-item delay, never item duration.
+   - **Animate ≤1-2 key elements per view**; ≤2 heavy backgrounds/page, 1 WebGL scene/page, ≤3 timelines/page. A whole page gets 4-10 signature moments; >10 is noise.
+   - **Opacity never lingers below 0.2** — parked 0.05-0.15 ghost states read as broken.
+   - **Composite-only + FLIP:** animate only `transform`/`opacity` (never width/top/color); for layout-like effects use FLIP (measure, apply class, measure, animate the transform delta, clear). Blur ≤8px, never continuous. A project killed by jank is a failure — see ui-skills.
+   - **Parallax on background/decorative layers only, yPercent 5-15**, never on text/CTAs; `overflow:hidden` wrapper.
+   - **Reduced-motion = a distinct static frame that carries the full meaning**, not just "no animation." Render the complete no-JS state; keep opacity fades, cut large displacement/parallax/auto-scroll.
    - **Scenes that need immediate scannability (dashboard, app-UI, PPT)
      FORBID scroll-reveal** — info must be visible at once; use hover border
      highlight instead of lift.
