@@ -106,17 +106,71 @@ If a lever's natural output is a default, rush past it to a better one.
    violet for creative/premium. If your final accent is orange on cream or
    near-black, you have reproduced the AI default exactly; go back. Stating
    the accent hex in the emit line is mandatory so this is provable.
+   **Accent scarcity (corpus-proven):** one chromatic event per band — count
+   color-bearing elements in a viewport and kill to ONE accent-bearing
+   element (one colored CTA, one lit node, one color block) with white/neutral
+   between color moments. Scarcity is what makes the color read intentional.
+   **Lit-surface dark-on-color:** on a saturated button/fill put near-black
+   ink (e.g. `#171717`), not white — lighter and more confident than white-
+   on-brand.
+   **Semantic up/down/delta stays text-color only**, never a filled pill.
 3. **Type voice** — choose TWO faces and the scale logic (why this serif/x).
    Most AI-slop dies here because it ignores type. Also: overused faces
    (Inter, Roboto, Space Grotesk, plus Jakarta) read as slop on sight — if the
    face is one every agent ships, pick the distinctive alternative. Justify
    the pairing, don't inherit a default. Serif-default ban: a serif only
    because "serif looks premium" is a tell — it must earn the words.
+   **Typecraft mechanics (corpus-proven, apply all):**
+   - **Drive hierarchy with weight, not size/opacity.** Variable font at
+     in-between weights (320/340/480/540): a 20px link @480 next to 20px body
+     @330 reads as emphasis with no scale change and no grey text. Never
+     default to 400-vs-700-plus-grey.
+   - **Fix a display weight ceiling** (Stripe 300, Coinbase 400, Linear 600,
+     Spotify 700/400 binary) and hold it — never unbounded weight-700 shout.
+   - **Negative letter-spacing scales with size, asymptote ~0 at text**:
+     ~-1.4px @ >80px, ~-0.5px @ 48px, ~0 at body. Not constant, not none.
+   - **Whisper vs shout:** pair a thin-300 all-caps mono/sans eyebrow with a
+     64-107px display; tighten display leading (0.80-1.30), relax body
+     (1.60-2.00).
+   - **Two-tier copy voice:** button/label labels uppercase + wide tracking
+     (0.5-2px); headlines sentence-case, often period-terminated. Don't shout
+     headlines.
+   - **Enable OpenType:** `font-feature-settings` with `ss01/ss03` (stylistic
+     set = brand flavor) + `tnum` (tabular figures on all numerals/data). The
+     AI default never touches font features.
 4. **Motion/state (MANDATORY, from interaction-patterns.md)** — meet the
    scene baseline: entrance (fadeInUp + stagger), scroll-reveal, hero layered
    entrance, hover/focus states. At L2+: sticky-nav blur, reveal-on-scroll.
    INCLUDE `prefers-reduced-motion` fallback and focus-visible states. A
    design with no motion or no focus states fails the bar — it's vibecode.
+   **Motion mechanics (corpus-proven, apply all):**
+   - **Three workhorse easings, never `ease-in-out`:** enter/arrive
+     `cubic-bezier(0.16, 1, 0.3, 1)` (decelerating settle); overshoot/pop
+     `cubic-bezier(0.34, 1.56, 0.64, 1)`; exit = shorter `ease-in` at 60-70%
+     of enter duration, capped ~250ms — **exit must resolve faster than
+     enter** or back/forward feels sluggish.
+   - **Press state:** 0.1s `transform: scale(0.97)` on transform only, shadow
+     dropped, <150ms; hover lift ≤2px, anything bigger reads as motion not
+     feedback.
+   - **Stagger 30-50ms per item, cap ~8 children** and total cascade ~700ms;
+     on long lists shrink per-item delay, never item duration.
+   - **Animate ≤1-2 key elements per view**; ≤2 heavy backgrounds/page, 1
+     WebGL scene/page, ≤3 timelines/page. A whole page gets 4-10 signature
+     moments; >10 is noise.
+   - **Opacity never lingers below 0.2** — parked 0.05-0.15 ghost states read
+     as broken.
+   - **Composite-only + FLIP:** animate only `transform`/`opacity` (never
+     width/top/color); for layout-like effects use FLIP (measure, apply
+     class, measure, animate the transform delta, clear). Blur ≤8px, never
+     continuous. A project killed by jank is a failure — see ui-skills.
+   - **Parallax on background/decorative layers only, yPercent 5-15**, never
+     on text/CTAs; `overflow:hidden` wrapper.
+   - **Reduced-motion = a distinct static frame that carries the full
+     meaning**, not just "no animation." Render the complete no-JS state;
+     keep opacity fades, cut large displacement/parallax/auto-scroll.
+   - **Scenes that need immediate scannability (dashboard, app-UI, PPT)
+     FORBID scroll-reveal** — info must be visible at once; use hover border
+     highlight instead of lift.
    **A11y is not a line-item, it's a gate.** Before emit, confirm each:
    contrast ≥4.5:1 (body)/3:1 (large, UI) on every token pair, all
    interactives keyboard-reachable with visible focus, no hover-only
@@ -124,6 +178,10 @@ If a lever's natural output is a default, rush past it to a better one.
    alt or aria-hidden + aria-label on meaningful ones, links describe
    destination (no bare "click here"), form fields labeled. Any miss → fix
    in the spec, not deferred.
+   **Color never carries meaning alone** — pair every color signal with text,
+   shape, or dash (color-blind safe), never hue-only dots.
+   **Dialog/Sheet/Overlay must have an accessible title** (sr-only is fine,
+   absent is a fail); `Avatar` gets an `AvatarFallback`.
 5. **Craft / micro-polish (production tell)** — apply the mechanics that
    separate "built" from "designed by an LLM": concentric radius (compute
    every nested corner with `outer - padding`, never all-equal), optical
@@ -134,6 +192,26 @@ If a lever's natural output is a default, rush past it to a better one.
    dark), a `transition: all` ban (transition real properties only), and
    ≥40px hit targets on every interactive. Emit these as rules in the
    component-patterns section, not vibes.
+   **Depth + geometry mechanics (corpus-proven):**
+   - **4px grid:** every coordinate/font-size/gap/radius divisible by 4 — a
+     non-integer coordinate is the instant "AI-generated" tell.
+   - **Surface ladder over drop shadows:** elevate with a 2-4 step background-
+     color stack (and/or a 1px inset hairline ring) before reaching for a
+     shadow; reserve a real shadow for "above the page" (modal). When you do
+     shadow, stack multi-offset + `0 0 0 1px inset` hairline — the ring is
+     what reads "machined."
+   - **Dark-mode-proof elevation:** `ring-1 ring-foreground/10` on
+     overlays/popovers/cards — the ring derives from foreground so it flips
+     in dark mode; a fixed light-grey shadow goes invisible on dark paper.
+   - **Destructive/error = tinted, not solid:** `bg-destructive/10
+     text-destructive`, hover `/20`, never saturated solid red fills.
+   - **Button geometry is a brand signature:** pick pill vs rounded-rectangle
+     once and hold it (hero-only pill, 8px in-body, etc.) — don't let corner
+     radius be arbitrary.
+   - **Honest axes:** never fake linear spacing on temporal/data sections —
+     non-equal intervals get non-equal spacing; splitting beats shrinking.
+   - **Ink is never pure #000:** pick a blu-black or warm dark-grey and warm
+     hairlines to match.
 6. **Signature detail** — ONE memorable mechanic: a noise/grain texture, a
    hover-scrub, a cursor behavior, a layout quirk, a refresh animation, a
    diagonal divider, a prompt line, a block cursor. Make it structural (part
