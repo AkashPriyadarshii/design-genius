@@ -105,23 +105,32 @@ generic.
    content). Name in one list: what the product IS, who it's for, the one
    emotion, what makes it different from a template. This is the debt you
    cannot break in the redesign.
-2. **Redesign, don't retint.** Pick a structurally NEW archetype (Stage 4
+2. **Synthesize 3 distinct redesign directions (always recommend ONE):**
+   Produce 3 structurally independent redesign candidates from distinct
+   mediums/archetypes (e.g. Archetype A: Precision Instrument, Archetype B:
+   Editorial Broadsheet, Archetype C: Spatial Cockpit), formulate bespoke
+   OKLCH pigments for each, and explicitly mark the top recommendation:
+   - **Option 1 (Recommended)**: The highest-conviction fusion for the product's DNA.
+   - **Option 2**: An alternative high-contrast or extreme-craft archetype.
+   - **Option 3**: An experimental or tactile-medium interpretation.
+   For the recommended option, proceed immediately to emit the full `DESIGN.md` spec.
+3. **Redesign, don't retint.** Pick a structurally NEW archetype (Stage 4
    layout list), fresh bespoke pigment formulation from the paint-atelier doctrine
-   (Stage 4.2 — must clear 15°–45° and break SaaS tropes: no predictable tech blue,
+   (Stage 4.2 — must clear 45°–75° OKLCH / 15°–45° HSL and break SaaS tropes: no predictable tech blue,
    no medical green, no food orange; use nuanced pigments like Acid Chartreuse,
-   Smoked Aubergine, Verdigris, Cinnabar Ink, Celadon Ash, Raw Ochre), new type
-   pairing, new motion. It is not the old site with a new brush.
-3. **The matched test (both directions, enforced):**
+   Smoked Aubergine, Verdigris, Cinnabar Ink, Celadon Ash, Raw Ochre, Radar Phosphor,
+   Cathode UV, Iron-Gall), new type pairing, new motion. It is not the old site with a new brush.
+4. **The matched test (both directions, enforced):**
    - Not generic: a stranger sees no warm-cream/orange-amber default, no
      centered-3-cards, no Inter — the nine levers all pass.
    - Not a costume: a stranger says "that's clearly X's product," not "that
      looks like some other brand" and not "generic template." The DNA from
      step 1 must be visible: the content, voice, and domain read through the
      new look.
-4. **Hue proof still required.** State the accent hex + Hue number; outside
-   15°–45° on a non-warm bg. If it lands back in band, re-pick a different
+5. **Hue proof still required.** State the accent hex + OKLCH + Hue number; outside
+   45°–75° OKLCH on a non-warm bg. If it lands back in band, re-pick a different
    family.
-5. **Verify:** re-run classify (step 2) on the redesign. Must read DISTINCT
+6. **Verify:** re-run classify (step 2) on the redesign. Must read DISTINCT
    AND on-product. A redesign that is unique but off-brand is a fail; one
    that is on-brand but slop is also a fail. Both gates pass or it isn't
    done.
@@ -129,11 +138,11 @@ generic.
 ## Rules
 
 - Audit is cold: read as a stranger, no loyalty to the existing design.
-- One report, not a menu. If the user wants options, that's follow-up.
+- In REDESIGN mode, present the 3 distinct conceptual options with Option 1 (Recommended) leading, then emit the complete buildable spec for Option 1.
 - Never redesign into a fallback AI-default to "fix" another ban (e.g. don't
   trade orange-on-cream for purple gradient, that's still in the family of
   slop). The re-pick must be structurally different, per Stage 4.5.
-- Terse. Report + the diff map + the hue proof. No preamble.
+- Terse. Report + the 3 directions + the diff/spec map + the hue proof. No preamble.
 
 ## Reference
 
