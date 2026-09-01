@@ -459,8 +459,9 @@ context, no memory of your choices — with this same rubric and the DESIGN.md;
 accept their fails as ground truth and fix, don't argue. (Small tasks: your
 own cold audit is enough. Never a critic panel; one is unbiased, many is
 bloat.)
-**Dual-lane (strongest anti-bias pass, for the biggest asks):** instead of a
-single critic after the fact, run TWO designers IN PARALLEL, then fuse —
+**Dual-lane (strongest anti-bias pass — run it in NEW mode AND the biggest
+asks, not only when stakes are high):** instead of a single critic after the
+fact, run TWO designers IN PARALLEL, then fuse —
 one lane runs THIS pipeline, the other runs fully INDEPENDENT (does NOT load
 design-genius; uses the taste/design libraries + `find-skills`/agent skills
 directly + its own prior). Each writes its own spec (e.g. `DESIGN.md` and
