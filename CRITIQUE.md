@@ -49,7 +49,8 @@ consistency, (5) responsive below 768px, (6) dark/light both promised,
 (7) motion baseline, (8) a11y gate, (9) density, (10) polish/craft. Plus the
 four judgment checks: generic-at-a-glance, human copy, on-product or costume,
 holds at the real payload. Hard fails are mechanical tells from the nine
-levers: accent in band, em-dash spray, eyebrow overuse, CTA dead text
+levers: accent in band on a flat default bg with no causal line (per §2),
+em-dash spray, eyebrow overuse, CTA dead text
 ("Learn more"), serif-for-taste, drop-shadow-everything, centered-3-cards.
 
 ## 4. Emit the diff-DESIGN.md (what to change, exactly)
@@ -179,6 +180,6 @@ generic.
 
 ## Reference
 
-The nine levers, seed router, hue re-pick gate, and typecraft/motion/copy
+The nine levers, seed router, color-reproduction gate, and typecraft/motion/copy
 mechanics all live in SKILL.md Stages 4–5. Reuse those rules verbatim; this
 file only changes the input target and the output shape.

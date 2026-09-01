@@ -130,6 +130,14 @@ write that line for a choice, the choice comes from the corpus or the sample
 list, not this product — re-derive it. State the lines in the emit. This is
 the mechanical form of the "stranger says that's clearly X" test; the causal
 line is what makes it falsifiable instead of vibes.
+**Causal-line receipt (hard, closes the fabrication hole):** a causal line
+must CITE ITS SOURCE like the read-gate does — name the artifact file AND the
+specific line/token/value it derives from ("--accent: the clay-tile hex
+#b3402a pulled from components/card.css", "the copy line 'field-tested'
+in index.html §hero"). A line that names no file and no token is an
+after-the-fact excuse, not a derivation — it FAILS condition (c) of the
+color-reproduction gate and must be re-derived. "The warm of the brand's
+voice" is not a receipt; it is invented.
 
 ### Stage 3 · Reason over the library — read-gate, then nested fusion
 **READ-GATE (hard):** you will design from MEMORY unless you open files. Before
@@ -438,10 +446,13 @@ If a lever's natural output is a default, rush past it to a better one.
    drop-shadow on everything, "Modern SaaS" w/ generic icon grid, invisible
    type hierarchy, warm-cream pale portfolio, Inter-everywhere, no-motion
    page, hover-only interactivity (no focus). Plus the quantified tells:
-   banned premium-consumer palette family (beige/cream bg: #f5f1ea #f7f5f1
-   #fbf8f1 #efeae0 #ece6db #faf7f1 #e8dfcb · brass/clay/oxblood accent: #b08947
-   #b6553a #9a2436 #9c6e2a #bc7c3a #7d5621 · espresso/ink text: #1a1714
-   #1a1814 #1b1814); eyebrow overuse (max ONE per 3 sections, hero counts); hanging
+   default premium-consumer palette family AS A WHOLE (beige/cream flat bg:
+   #f5f1ea #f7f5f1 #fbf8f1 #efeae0 #ece6db #faf7f1 #e8dfcb · brass/clay/oxblood
+   accent on that flat bg with no causal line: #b08947 #b6553a #9a2436 #9c6e2a
+   #bc7c3a #7d5621 · espresso/ink text: #1a1714 #1a1814 #1b1814) — a swatch is
+   only slop when it lands as the whole default reproduction; a brass accent
+   with a real substrate + a causal-line receipt (Stage 2) is DISTINCT, not
+   slop, per the color-reproduction gate; eyebrow overuse (max ONE per 3 sections, hero counts); hanging
    "01 · THE TOUR" left-margin markers (eyebrow + number + rule line) is the
    "premium editorial" template tell — drop the number or the eyebrow;
    CTA line-wrap on a wide breakpoint (a two-word button spilling onto two
@@ -453,7 +464,7 @@ If a lever's natural output is a default, rush past it to a better one.
    every other AI portfolio?" If you can't name the answer in one sharp
    sentence, deepen the signature detail until you can.
 
-### Stage 4.5 · Seed Lab (domain → swatch, guaranteed off-orange)
+### Stage 4.5 · Seed Lab (domain → swatch, gate-checked)
 The palette derives from the product's DOMAIN, never the model's body heat.
 Like a paint company: domain = the room, fan deck = hue family, engine =
 mixing, and this stage prints the swatch before commit. Do it in order:
@@ -462,15 +473,18 @@ mixing, and this stage prints the swatch before commit. Do it in order:
    (the seed router).** The routing is a starting shelf, never a hardcoded
    destination — a fixed family-per-domain mapping is how the corpus
    re-converges on the same few swatches, and how a heritage/editorial domain
-   gets routed straight into the canned default it then must escape:
+   gets routed straight into the canned default reproduction it must avoid:
    finance/wealth/gov → mint, teal, or deep green · health/nature/wellness →
    green, sage, aqua · enterprise/tech/B2B → blue, indigo, steel · news/danger/
    urgency/alerts → red, vermilion, crimson · heritage/history/editorial →
    gold, saffron, bronze, oxblood · creative/premium/art → violet, magenta,
    cyan · science/energy → teal-cyan, electric blue · food/warmth/hospitality →
-   terracotta is PROHIBITED here (it is the default) — use amber-yellow,
-   leaf-green, or deep plum instead. If the domain does not map, default to a
-   COOL family (blue/teal/violet), never warm.
+   terracotta is the default trap here — use a real substrate + a causal line
+   (per the reproduction gate) or step off that canonical hue to amber-yellow,
+   leaf-green, or deep plum instead. The routing is never a hue-family ban; a
+   terracotta with a substrate + a debt line stands. If the domain does not
+   map, default to a COOL family (blue/teal/violet) — still overridable by a
+   real warm causal line.
    **Rotation rule (anti-convergence, observed failure):** never take the
    routed family as-is on its own — it is the body of the corpus default.
    Offset the accent by a non-trivial step (±40° or full hue-swap) and/or
