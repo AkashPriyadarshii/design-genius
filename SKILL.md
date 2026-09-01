@@ -44,8 +44,8 @@ than guessing.
 - **An existing artifact** → REVISE mode: you are the auditor/reviewer/critic/
   redesigner. STOP the emit pipeline. Read the real files, extract their actual
   palette (hex → HSL), fonts, and layout, classify SLOP vs DISTINCT, and emit a
-  **diff-style DESIGN.md** (old→new token map, font/layout/copy fix, accent hue
-  proof cleared of 15°–45°). Full command + rubric: **CRITIQUE.md** in this
+  **diff-style DESIGN.md** (old→new token map, font/layout/copy fix, accent
+  hue proof passed of the reproduction gate). Full command + rubric: **CRITIQUE.md** in this
   skill's dir. Same nine levers, same slop bar — the only difference is input
   (existing code instead of a fresh brief) and output (a diff to apply, not a
   blank spec).
@@ -55,7 +55,7 @@ than guessing.
   artifact to pull its product DNA (voice, domain, features, what the content
   really is), route that domain, then rebuild the entire look from scratch as a
   NEW design (fresh archetype, palette, type, motion) that only makes sense for
-  THIS product. It must clear 15°–45° AND read on-product: a stranger opening
+  THIS product. It must pass the reproduction gate ALL read on-product: a stranger opening
   it should say "that's clearly X," not "that's a generic template" and not
   "that's some other brand's look." Unique = the signature is new; matched =
   the DNA is still this site's. Same CRITIQUE.md, REDESIGN variant section.
@@ -267,13 +267,22 @@ If a lever's natural output is a default, rush past it to a better one.
      3. **Anti-monotony test:** If the color looks like Tailwind `blue-500`,
         `green-500`, `orange-500`, or standard Bootstrap/shadcn tokens, discard it.
         Add nuance (shift hue ±15°, tweak lightness, drop or boost chroma).
-   **OKLCH HUE-WHEEL RE-PICK GATE (HARD):** after naming the accent, check it
-   mechanically in OKLCH — do not trust the "avoid" prose. If the accent Hue falls in
-   the orange-amber band (OKLCH **45°–75°** / HSL **15°–45°**) AND the bg is cream (`L>85%`,
-   `C<0.03`) or near-black (`L<15%`), the design is not finished: **re-pick the
-   accent from an unexpected hue wheel**. If your final accent is orange on cream
-   or near-black, you have reproduced the AI default exactly; go back. Stating
-   the accent OKLCH + hex in the emit line is mandatory so this is provable.
+   **OKLCH COLOR-REPRODUCTION GATE (HARD) — gates the DEFAULT REPRODUCTION,
+   never a hue family.** Do not trust the "avoid" prose; check mechanically.
+   The accent FAILS only if it reproduces the AI default AS A WHOLE — ALL
+   THREE of: (a) accent hue in the orange-amber band (OKLCH **45°–75°** /
+   HSL **15°–45°**) AND (b) a flat cream (`L>85%`, `C<0.03`) or flat
+   near-black (`L<15%`) background AND (c) NO causal derivation line for the
+   accent (per the Stage 2 derivation gate). If all three hold, the design is
+   not finished: **re-pick the accent from an unexpected hue wheel, or add a
+   real substrate, or derive a causal line**. If it clears ANY ONE — a
+   non-band hue, a non-default substrate (warm ivory with micro-grain, deep
+   oxblood-brown, a saturated not-flat field), or a genuine causal line
+   ("the gold of the real gilt stamp on the product") — it stands. State the
+   accent OKLCH + hex + causal line in the emit line, mandatory. A bespoke
+   heritage gold on warm ivory with a causal line clears; un-reasoned
+   orange-on-flat-black fails. Do NOT ban a hue family outright — gold is not
+   bad, gold-as-wallpaper is.
    **Accent scarcity (corpus-proven):** one chromatic event per band — count
    color-bearing elements in a viewport and kill to ONE accent-bearing
    element (one colored CTA, one lit node, one color block) with white/neutral
@@ -453,7 +462,7 @@ mixing, and this stage prints the swatch before commit. Do it in order:
    (the seed router).** The routing is a starting shelf, never a hardcoded
    destination — a fixed family-per-domain mapping is how the corpus
    re-converges on the same few swatches, and how a heritage/editorial domain
-   gets routed straight into the 15°–45° ban it then must escape:
+   gets routed straight into the canned default it then must escape:
    finance/wealth/gov → mint, teal, or deep green · health/nature/wellness →
    green, sage, aqua · enterprise/tech/B2B → blue, indigo, steel · news/danger/
    urgency/alerts → red, vermilion, crimson · heritage/history/editorial →
@@ -467,19 +476,23 @@ mixing, and this stage prints the swatch before commit. Do it in order:
    Offset the accent by a non-trivial step (±40° or full hue-swap) and/or
    swap the supporting hues out of family, so the swatch does not reproduce
    the router's canonical answer. heritage/editorial → gold is the specific
-   trap: route there, then step the accent OUT of the 15°–45° band (or pair
-   it on a surface where the ban does not apply) — never emit the canonical
-   gold. If your final accent equals the route line's literal hue, you have
+   trap: route there, then NEVER emit the canonical gold as-is — give it a
+   real substrate and a causal line (per the color-reproduction gate) or step
+   the accent off the canonical hue. If your final accent equals the route
+   line's literal hue on a flat default bg with no derivation, you have
    re-converged; go back.
 2. **Generate the swatch block**: ONE accent + 2 supporting hues from that
    family — an analogous step (same hue, ±20° on the wheel) and one
    complement/triad partner. Give real hex values for each of the 3, with the
-   Hue(S,L) written beside them so the off-orange proof is visible.
-3. **Prove it cleared the band**: state the accent Hue number. If it is in
-   `15°–45°`, you are still in the default band — go back to step 1 and pick a
-   different family. Print the swatch as a named token block in the emit line.
-   A design whose accent carries a Hue number outside 15°–45° on a non-warm
-   bg is the whole point of this skill; write it down.
+   Hue(S,L) written beside them so the reproduction-gate proof is visible.
+3. **Prove it cleared the reproduction gate**: state the accent Hue number,
+   the substrate, and the causal derivation line. It fails only if ALL THREE
+   hold — banded orange-amber (`15°–45°` HSL / `45°–75°` OKLCH) on flat
+   cream/near-black WITH no causal line. If it clears any one (non-band hue,
+   non-default substrate, or a real derivation line), it stands and clears.
+   Print the swatch as a named token block in the emit line. A design whose
+   accent reproduces the corpus default as a whole is the failure this skill
+   exists to stop; write the causal line, not just the number.
 
 ### Stage 5 · Emit DESIGN.md + audit
 Use the structure in `"$LIB"/web-design/references/design-md-template.md`
