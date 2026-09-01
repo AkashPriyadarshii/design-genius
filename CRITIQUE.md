@@ -115,8 +115,8 @@ generic.
    - **Option 3**: An experimental or tactile-medium interpretation.
    For the recommended option, proceed immediately to emit the full `DESIGN.md` spec.
 3. **Redesign, don't retint.** Pick a structurally NEW archetype (Stage 4
-   layout list), fresh bespoke pigment formulation from the paint-atelier doctrine
-   (Stage 4.2 — must clear 45°–75° OKLCH / 15°–45° HSL and break SaaS tropes: no predictable tech blue,
+   lever 1, medium & layout list), fresh bespoke pigment formulation from the
+   paint-atelier doctrine (Stage 4 lever 2 — must clear 45°–75° OKLCH / 15°–45° HSL and break SaaS tropes: no predictable tech blue,
    no medical green, no food orange; use nuanced pigments like Acid Chartreuse,
    Smoked Aubergine, Verdigris, Cinnabar Ink, Celadon Ash, Raw Ochre, Radar Phosphor,
    Cathode UV, Iron-Gall), new type pairing, new motion. It is not the old site with a new brush.
@@ -137,17 +137,18 @@ generic.
 7. **Dual-lane (REDESIGN only — the escalate tier, not REVISE):** the 3 options
    above come from ONE seeded context, so all three share the same blind spot
    (the direction you were seeded toward — e.g. a gold-led direction cannot
-   see its own gold-as-wallpaper overuse or shine-on-black). For a RADICAL
-   redesign, run ONE independent reviewer who
-   does NOT load this skill/CRITIQUE flow — uses the taste/design libraries +
-   `find-skills` + its own prior, and is told on ONE line what the product is.
-   Feed it the recommendation and ask: what trope is this direction still
-   blind to, and what does a plain, unseeded designer change? Treat its
-   anti-trope flags as ground truth to fix, not to argue — fusion beats any
-   single lane. This replaces, never stacks with, the single critic. For a plain
-   REVISE (surgical diff), skip the dual-lane: the Section audit plus one
-   independent critic on a high-stakes audit is enough — a full unseeded
-   designer lane on a narrow retint is cost the route does not need.
+   see its own gold-as-wallpaper overuse or shine-on-black). Run the
+   SKILL.md Stage 5 dual-lane procedure AS-IS — one unseeded independent
+   designer (does NOT load this skill/CRITIQUE flow; uses the taste/design
+   libraries + `find-skills` + its own prior, told on ONE line what the
+   product is) papers its spec against yours, then fuse hybrid and treat its
+   anti-trope flags as ground truth to fix, not to argue. The SKILL Stage 5
+   dual-lane is the single authoritative procedure; do not invent a second
+   one here. It replaces, never stacks with, the single critic.
+   For a plain REVISE (surgical diff), skip the dual-lane: the Section 3
+   scored rubric (this file §3) plus one independent critic on a high-stakes
+   audit is enough — a full unseeded designer lane on a narrow retint is
+   cost the route does not need.
 
 ## Rules
 

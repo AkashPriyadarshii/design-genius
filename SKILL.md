@@ -119,6 +119,17 @@ what it does, the one emotion it must evoke, the constraint that matters. This
 is the anchor. The library is SECONDARY texture layered over THIS world, never
 a costume that hides it. If the fused tokens would make it look like another
 brand's product instead of itself, reject the fusion.
+**Derivation gate (on-product, not costume — observed failure):** every
+signature choice the emit makes (accent hue, archetype, type voice) must trace
+to a specific line of THIS product's actual DNA — a real feature, a piece of
+real copy, a physical property of the thing being designed. Before emit,
+write the causal lines ("the accent is the acid-yellow of the real warning
+stencil the hardware ships with" / "the archetype is telemetry because the
+whole product is a live feed, not because telemetry is trendy"). If you cannot
+write that line for a choice, the choice comes from the corpus or the sample
+list, not this product — re-derive it. State the lines in the emit. This is
+the mechanical form of the "stranger says that's clearly X" test; the causal
+line is what makes it falsifiable instead of vibes.
 
 ### Stage 3 · Reason over the library — read-gate, then nested fusion
 **READ-GATE (hard):** you will design from MEMORY unless you open files. Before
@@ -149,11 +160,15 @@ saw, so the receipt is provable.
    third opinion, not a costume. Name every borrow.
 
 ### Stage 3.5 · Read the PRO bar (scene + interaction defaults)
-Before designing, read `"$LIB"/web-design/references/scene-defaults.md` for the task
-type (portfolio/landing/app/blog) and `interaction-patterns.md` for motion.
-This sets the interaction baseline (L1/L2/L3) and real hero/section sizes.
-**Designing WITHOUT these is how vibecode happens** — silently missing L2
-motion makes the output read as flat/template.
+For WEB task types (portfolio/landing/app/blog), read
+`"$LIB"/web-design/references/scene-defaults.md` + `interaction-patterns.md`
+for the interaction baseline (L1/L2/L3) and real hero/section sizes.
+**Designing a web surface WITHOUT these is how vibecode happens** — silently
+missing L2 motion makes the output read as flat/template. For NON-web
+mediums (industrial, print, spatial, instrument), these files do not apply —
+the medium's own physical rules in Stage 4 lever 1 (knurling, substrate,
+grid, cell matrix) are the PRO bar; do not force web L2/L3 conventions onto
+a physical or print surface where they have no counterpart.
 
 ### Stage 4 · Force uniqueness + copy — the nine levers
 Apply EVERY lever. Each must produce something that is NOT the AI default.
@@ -230,6 +245,19 @@ If a lever's natural output is a default, rush past it to a better one.
      - *Iron-Gall Blue-Black* (`oklch(0.24 0.04 240.5)`)
      - *Cathode Ultraviolet* (`oklch(0.42 0.31 292.0)`)
      - *Nautical Signal Beam* (`oklch(0.93 0.08 88.5)`)
+     - **These are illustration, NOT a pick-list — DERIVE, don't copy
+       (anti-convergence, observed failure).** The pigment literals above are
+       examples of the atelier's range, but copying one verbatim is the new
+       default: the skill's own swatches become the corpus every agent ships.
+       Never emit a literal OKLCH value from this list as your final accent.
+       Derive your swatch from the product's real DNA — the physical material
+       the product is made of, an actual brand asset, the chemistry of the
+       medium — and state the causal line ("this accent is the anodized
+       titanium of the chassis" / "the citrus of the app's actual accent").
+       If your final accent equals any literal above, you have re-converged:
+       re-derive. (Same rule kills the banned-face-list-as-recommendation
+       trap in lever 3: swapping Inter for the sample faces fires the class
+       of the same defect.)
    - **Formulation rules:**
      1. **Name the bespoke pigment** (e.g. "Specimen Verdigris", "Cinnabar Ink").
      2. **Break standard industry clichés:** Do not give tech blue, medical green,
@@ -421,7 +449,11 @@ The palette derives from the product's DOMAIN, never the model's body heat.
 Like a paint company: domain = the room, fan deck = hue family, engine =
 mixing, and this stage prints the swatch before commit. Do it in order:
 
-1. **Route the domain to a hue family** (the seed router):
+1. **Route the domain to a hue family, then ROTATE away from the fixed map
+   (the seed router).** The routing is a starting shelf, never a hardcoded
+   destination — a fixed family-per-domain mapping is how the corpus
+   re-converges on the same few swatches, and how a heritage/editorial domain
+   gets routed straight into the 15°–45° ban it then must escape:
    finance/wealth/gov → mint, teal, or deep green · health/nature/wellness →
    green, sage, aqua · enterprise/tech/B2B → blue, indigo, steel · news/danger/
    urgency/alerts → red, vermilion, crimson · heritage/history/editorial →
@@ -430,6 +462,15 @@ mixing, and this stage prints the swatch before commit. Do it in order:
    terracotta is PROHIBITED here (it is the default) — use amber-yellow,
    leaf-green, or deep plum instead. If the domain does not map, default to a
    COOL family (blue/teal/violet), never warm.
+   **Rotation rule (anti-convergence, observed failure):** never take the
+   routed family as-is on its own — it is the body of the corpus default.
+   Offset the accent by a non-trivial step (±40° or full hue-swap) and/or
+   swap the supporting hues out of family, so the swatch does not reproduce
+   the router's canonical answer. heritage/editorial → gold is the specific
+   trap: route there, then step the accent OUT of the 15°–45° band (or pair
+   it on a surface where the ban does not apply) — never emit the canonical
+   gold. If your final accent equals the route line's literal hue, you have
+   re-converged; go back.
 2. **Generate the swatch block**: ONE accent + 2 supporting hues from that
    family — an analogous step (same hue, ±20° on the wheel) and one
    complement/triad partner. Give real hex values for each of the 3, with the
@@ -485,9 +526,12 @@ scarcity and substrate rules below.)
   deliverable):** dual-lane replaces the single critic — do not stack both,
   the single critic and the independent lane review the same artifact and
   would double the cost for the same surface.
-**If a reference/screenshot exists, run a deterministic visual gate**: compare
-the intended look against the reference and score read-back; a wide divergence
-means the spec reads wrong — fix the spec, don't ship it.
+- **The deterministic visual gate is a SEPARATE axis, not a fourth review
+  pass over the same artifact.** It fires only when a reference/screenshot
+  exists (compared against the intended look for read-back), so it stacks on
+  top of whichever critic tier runs — it checks the reference, the critic
+  tiers check the spec. That is not duplicate review, so no resolution needed
+  beyond: it always runs when a reference exists, alongside any critic path.
 
 **End with the signature detail and the one-sentence pitch** ("What this look
 is, in one line") so the beneficiary can say yes/no fast.
@@ -511,7 +555,14 @@ is, in one line") so the beneficiary can say yes/no fast.
 2. One line: which 2 systems were fused.
 3. One line: the signature detail.
 
-**REVISE / REDESIGN mode** (existing artifact): the diff-map / rebuild spec
-from CRITIQUE.md — not a fused-systems DESIGN.md. Do NOT emit a "which 2
-systems were fused" line in these modes; you audited or rebuilt an existing
-look, you did not fuse a fresh one. Scope this contract to NEW.
+**REVISE mode** (existing artifact, surgical diff): the diff-map from
+CRITIQUE.md — old→new token map, not a full spec. Do NOT emit a "which 2
+systems were fused" line; you audited an existing look, you did not fuse a
+fresh one.
+
+**REDESIGN mode** (existing artifact, radical rebuild — this is NOT a diff):
+the full buildable `DESIGN.md` spec for the recommended direction, per
+CRITIQUE.md §6 step 2/3. REDESIGN rebuilds the entire look as a new
+design, so its output is a complete spec, not a token diff. Only REVISE
+emits a diff-map; only REDESIGN carries the full-spec contract on an
+existing artifact.
