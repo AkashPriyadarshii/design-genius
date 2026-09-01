@@ -61,6 +61,10 @@ than guessing.
   the DNA is still this site's. Same CRITIQUE.md, REDESIGN variant section.
 
 Same doctrine, three entry points, branched on artifact presence + intent.
+If the existing-artifact intent is ambiguous between "fix the slop" (REVISE)
+and "rebuild it new" (REDESIGN), ask ONE sharp question rather than guessing
+("surgical fix, or a full re-look?") — a REVISE that redraws the whole look
+or a REDESIGN that only retints are both the wrong lane and a wasted run.
 
 ## The library (RESOLVE, then READ)
 
@@ -138,6 +142,14 @@ in index.html §hero"). A line that names no file and no token is an
 after-the-fact excuse, not a derivation — it FAILS condition (c) of the
 color-reproduction gate and must be re-derived. "The warm of the brand's
 voice" is not a receipt; it is invented.
+**NEW-mode receipt (no artifact yet — don't dead-loop):** in NEW mode there is
+no file to cite. The receipt is then the PRODUCT DNA you harvested in Stage 1
+(REVISE exists to audit a file; NEW exists to invent the file). Cite the
+harvested fact directly and label it NEW-derived: "--accent: the acid-yellow
+the product's warning copy implies (NEW-derived from brief: 'alerts are the
+core job'), no artifact exists yet." If you can name only the brief and no
+concrete product fact, you have not harvested enough — go back to Stage 1, do
+not invent a token to satisfy the form.
 
 ### Stage 3 · Reason over the library — read-gate, then nested fusion
 **READ-GATE (hard):** you will design from MEMORY unless you open files. Before
@@ -275,22 +287,35 @@ If a lever's natural output is a default, rush past it to a better one.
      3. **Anti-monotony test:** If the color looks like Tailwind `blue-500`,
         `green-500`, `orange-500`, or standard Bootstrap/shadcn tokens, discard it.
         Add nuance (shift hue ±15°, tweak lightness, drop or boost chroma).
-   **OKLCH COLOR-REPRODUCTION GATE (HARD) — gates the DEFAULT REPRODUCTION,
-   never a hue family.** Do not trust the "avoid" prose; check mechanically.
+   **OKLCH COLOR-REPRODUCTION GATE (HARD) — the ONE canonical gate (all other
+   copies cite THIS; edit only here).** Gates the DEFAULT REPRODUCTION, never a
+   hue family. Do not trust the "avoid" prose; check mechanically. This gate is
+   stated in full here and referenced (not restated) at Stage 4.5 step 3 and in
+   CRITIQUE.md §2 / §4 / §6.5 — keep those pointers, don't paraphrase the band
+   so it cannot drift.
    The accent FAILS only if it reproduces the AI default AS A WHOLE — ALL
-   THREE of: (a) accent hue in the orange-amber band (OKLCH **45°–75°** /
-   HSL **15°–45°**) AND (b) a flat cream (`L>85%`, `C<0.03`) or flat
+   THREE of: (a) accent hue in the orange-amber band (HSL **15°–45°**, or OKLCH
+   ≈ **45°–85°** — see note) AND (b) a flat cream (`L>85%`, `C<0.03`) or flat
    near-black (`L<15%`) background AND (c) NO causal derivation line for the
    accent (per the Stage 2 derivation gate). If all three hold, the design is
    not finished: **re-pick the accent from an unexpected hue wheel, or add a
    real substrate, or derive a causal line**. If it clears ANY ONE — a
    non-band hue, a non-default substrate (warm ivory with micro-grain, deep
-   oxblood-brown, a saturated not-flat field), or a genuine causal line
-   ("the gold of the real gilt stamp on the product") — it stands. State the
-   accent OKLCH + hex + causal line in the emit line, mandatory. A bespoke
-   heritage gold on warm ivory with a causal line clears; un-reasoned
-   orange-on-flat-black fails. Do NOT ban a hue family outright — gold is not
-   bad, gold-as-wallpaper is.
+   oxblood-brown, a saturated not-flat field), or a genuine causal line —
+   it stands. The causal line is a product receipt, and it is NOT warm-only:
+   cite whichever real source the hue reproduces, e.g. "the gilt stamp on the
+   product" (gold) OR "the cobalt of the machined turbine blade" (cool) OR
+   "the chlorophyll of the ingredient" (green) — the derivation, not the hue
+   family, is what clears. State the accent OKLCH + hex + causal line in the
+   emit line, mandatory. A bespoke heritage gold on warm ivory WITH a causal
+   line clears, and so does a cool or green accent with its own receipt;
+   un-reasoned orange-on-flat-black fails. Do NOT ban a hue family outright —
+   gold is not bad, gold-as-wallpaper is.
+   **Band note (color-space accuracy):** OKLCH and HSL hue axes are NOT
+   linearly equivalent. HSL 45° (amber) maps to roughly OKLCH 80–85°, not 45°.
+   Resolve band membership on the accent's actual HSL hue — the paired OKLCH
+   number is an approximation, never a substitute. Treat "is this amber?" as the
+   test, not a hard-coded OKLCH cap.
    **Accent scarcity (corpus-proven):** one chromatic event per band — count
    color-bearing elements in a viewport and kill to ONE accent-bearing
    element (one colored CTA, one lit node, one color block) with white/neutral
@@ -441,7 +466,13 @@ If a lever's natural output is a default, rush past it to a better one.
    hover-scrub, a cursor behavior, a layout quirk, a refresh animation, a
    diagonal divider, a prompt line, a block cursor. Make it structural (part
    of the layout/metaphor), not a sticker onto a template.
-7. **Slop-rejection check** — grep the result for these. If
+7. **Slop-rejection check** — grep the result for these. Many tells are
+   WEB-only (centered hero, cards, CTA line-wrap, hover, viewport). On a
+   physical/print/industrial surface — no viewport, no cursor, no scroll —
+   judge slop by the medium's OWN form rules (lever 1): the physical tells are
+   generic material/shape/typography defaults of that medium, not the web
+   checklist. Apply the web tells only to a screen medium; a print poster is
+   not "hover-only" and a physical device has no "CTA line-wrap." If
    any present, REPLACE: centered hero, 3 feature cards, purple/blue gradient,
    drop-shadow on everything, "Modern SaaS" w/ generic icon grid, invisible
    type hierarchy, warm-cream pale portfolio, Inter-everywhere, no-motion
@@ -499,11 +530,13 @@ mixing, and this stage prints the swatch before commit. Do it in order:
    family — an analogous step (same hue, ±20° on the wheel) and one
    complement/triad partner. Give real hex values for each of the 3, with the
    Hue(S,L) written beside them so the reproduction-gate proof is visible.
-3. **Prove it cleared the reproduction gate**: state the accent Hue number,
+3. **Prove it cleared the reproduction gate**: apply the ONE canonical gate
+   (Stage 4 lever 2 — the band, conditions, and escapes live there, single
+   authority; do not re-derive the band here). State the accent Hue number,
    the substrate, and the causal derivation line. It fails only if ALL THREE
-   hold — banded orange-amber (`15°–45°` HSL / `45°–75°` OKLCH) on flat
-   cream/near-black WITH no causal line. If it clears any one (non-band hue,
-   non-default substrate, or a real derivation line), it stands and clears.
+   hold — banded orange-amber on flat cream/near-black WITH no causal line.
+   If it clears any one (non-band hue, non-default substrate, or a real
+   derivation line), it stands and clears.
    Print the swatch as a named token block in the emit line. A design whose
    accent reproduces the corpus default as a whole is the failure this skill
    exists to stop; write the causal line, not just the number.
@@ -516,9 +549,11 @@ directly buildable by web-design/shadcn.
 
 **Then audit your own spec cold** — read it as a stranger. Score ALL TEN
 dimensions, not just looks: (1) color, (2) type, (3) spacing/rhythm,
-(4) component consistency, (5) responsive (does it hold below 768px?),
-(6) dark/light if both promised, (7) motion baseline, (8) a11y gate,
-(9) density, (10) polish/craft. Plus the four judgment checks: would this be
+(4) component consistency, (5) responsive (does it hold below 768px, and at
+200% zoom / reflow without horizontal scroll?), (6) dark/light if both
+promised — re-run the FULL a11y contrast gate independently in BOTH themes,
+(7) motion baseline, (8) a11y gate, (9) density, (10) polish/craft. Plus the
+four judgment checks: would this be
 called generic at a glance, does copy sound human, is it on-product or a
 costume, does it hold at the payload (the real content, not the hero). Any
 fail → fix in the same pass, don't ship the hopeful version.
@@ -566,7 +601,12 @@ is, in one line") so the beneficiary can say yes/no fast.
 ## Rules
 
 - NEVER output a default that any agent would produce. If unsure, make the
-  choice louder, not safer.
+  choice louder, not safer — BUT a11y always outranks uniqueness: "not safer"
+  never means contrast <4.5:1 (body) / 3:1 (large), no focus state, hover-only
+  interaction, motion without a reduced-motion fallback, or color-alone
+  meaning. Uniqueness shapes the look; it never licenses an inaccessible one.
+  The Stage 5 a11y gate (dimension 8) is a hard FIX-before-ship, not a
+  preference.
 - The library is ground truth: cite which systems you fused and why.
 - One design, not a menu. The default emit is ONE bespoke DESIGN.md. Options
   are a Stage-1 decision point ONLY when intent is genuinely open: lead with

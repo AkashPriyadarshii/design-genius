@@ -23,23 +23,31 @@ declared intent; the code is the reality. Score reality.
 ## 2. Classify: SLOP or DISTINCT
 
 SLOP = the default-reproduction family — a banded orange-amber accent
-(`15°–45°` HSL) on a FLAT cream (`#f1ede4`–`#fbfaf7`) or FLAT near-black
+(`15°–45°` HSL — the ONE canonical band in SKILL.md Stage 4 lever 2, single
+authority) on a FLAT cream (`#f1ede4`–`#fbfaf7`) or FLAT near-black
 (`#0a0a0a`–`#0d0b08`) background WITH no causal derivation line behind the
 accent. The FAIL is that whole default reproduction, not the hue alone:
 - bg warm-cream or near-black as-is (flat, no substrate) is the default base
 - accent Hue in **15°–45°** is a slop SIGNAL only when it lands on the flat
   default bg with no derivation — a bespoke heritage gold on warm ivory with
-  a causal line is NOT slop (do not force it off; the hue is not the defect)
+  a causal line is NOT slop (do not force it off; the hue is not the defect;
+  neither is a cool or green accent with its own receipt — the derivation,
+  not the hue family, clears)
 - centered hero + 3 feature cards + footer
 - Inter / Roboto / Space Grotesk / Plus Jakarta as the only faces
 - purple or blue-purple gradient hero
 - em-dashes as the default connector in prose
 
-DISTINCT = the palette does NOT reproduce the default as a whole — accent
-outside 15–45°, OR a non-flat non-default substrate under a warm accent, OR a
-deliberate single accent carried by a real derivation line (Stage 2 gate).
-DISTINCT → say so, mark "no change needed," and stop. Do not force-color a
-site off a hue that clears the reproduction gate.
+DISTINCT on color = the palette does NOT reproduce the default as a whole —
+accent outside 15–45°, OR a non-flat non-default substrate under a warm
+accent, OR a deliberate single accent carried by a real derivation line
+(Stage 2 gate). Do not force-color a site off a hue that clears the
+reproduction gate. BUT color-clear is NECESSARY, NOT SUFFICIENT for overall
+DISTINCT: the color gate only passes the COLOR lever. A generic-blue site on
+a default flat bg clears the amber gate and can still fail type (Inter), layout
+(centered-3-cards), copy, or motion levers — it is NOT DISTINCT. Run the full
+ten-dimension rubric (§3); mark "no change needed" only when the color axis
+AND every other lever pass.
 
 ## 3. The scored rubric — all ten dimensions, pass/fail
 
@@ -73,9 +81,10 @@ structure must change, not just the paint)
 "Learn more" → "Read the field log"  (verb/name the exact string)
 
 ## Hue proof
-final accent {hex} = {HSL}: Hue {N}° → reproduction gate (State the hue +
-substrate + causal line; FAILS only if ALL three — banded amber 15–45° AND
-flat default bg AND no derivation. Passes if it clears any one.)
+final accent {hex} = {HSL}: Hue {N}° → reproduction gate (band per the ONE
+canonical gate in SKILL.md Stage 4 lever 2; state the hue + substrate + causal
+line; FAILS only if ALL three — banded amber AND flat default bg AND no
+derivation. Passes if it clears any one.)
 ```
 
 Accent scarcity: one chromatic moment per viewport. Kill to one accent-bearing
@@ -130,11 +139,11 @@ generic.
    For the recommended option only, proceed to emit the full `DESIGN.md` spec.
 3. **Redesign, don't retint.** Pick a structurally NEW archetype (Stage 4
    lever 1, medium & layout list), fresh bespoke pigment formulation from the
-   paint-atelier doctrine (Stage 4 lever 2 — must pass the reproduction gate
-   and break SaaS tropes: no predictable tech blue,
-   no medical green, no default orange; use nuanced pigments like Acid Chartreuse,
-   Smoked Aubergine, Verdigris, Cinnabar Ink, Celadon Ash, Raw Ochre, Radar Phosphor,
-   Cathode UV, Iron-Gall), new type pairing, new motion. It is not the old site with a new brush.
+   paint-atelier doctrine (Stage 4 lever 2 — DERIVE, never reuse the sample
+   literals; must pass the color-reproduction gate and the Stage 2 causal-line
+   receipt. Break SaaS tropes: no predictable tech blue, no medical green, no
+   default orange. The atelier's sample pigments are illustration only — never
+   emit one verbatim). New type pairing, new motion. It is not the old site with a new brush.
 4. **The matched test (both directions, enforced):**
    - Not generic: a stranger sees no warm-cream/orange-amber default, no
      centered-3-cards, no Inter — the nine levers all pass.
@@ -143,9 +152,10 @@ generic.
      step 1 must be visible: the content, voice, and domain read through the
      new look.
 5. **Hue proof still required.** State the accent hex + OKLCH + Hue number +
-   the substrate + the causal line. FAILS only if ALL three hold — banded amber
-   OKLCH 45–75° / HSL 15–45° AND flat cream/near-black bg AND no derivation.
-   Passes if it clears any one; never ban a hue family outright.
+   the substrate + the causal line. Band membership per the ONE canonical gate
+   (SKILL.md Stage 4 lever 2) — FAILS only if ALL three hold: banded amber on
+   flat cream/near-black bg AND no derivation. Passes if it clears any one;
+   never ban a hue family outright.
 6. **Verify:** re-run classify (step 2) on the redesign. Must read DISTINCT
    AND on-product. A redesign that is unique but off-brand is a fail; one
    that is on-brand but slop is also a fail. Both gates pass or it isn't
