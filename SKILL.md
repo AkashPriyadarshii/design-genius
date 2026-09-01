@@ -97,6 +97,12 @@ real gap — never to fill a form. Rules that keep it sharp, not bloat:
   read from the library (each a one-liner: archetype + hue family + why).
   User picks; silence = your recommendation. One line is the default; three
   options are the ceiling, never a 10-choice gallery.
+- **Fork the aesthetic from the product flow.** You decide the look (archetype,
+  pigment, type, motion). You do NOT decide the opening screen or default
+  navigation flow when it encodes how the user actually uses the product
+  daily (e.g. "log-first vs dashboard-first") — that is a product decision,
+  ask one sharp question and stop. A design engine that silently imposes the
+  default screen smuggles in a product opinion it has no right to.
 - If it's a revamp/redesign, state what's wrong with the current look first —
   fix that. In REVISE/REDESIGN mode the artifact's own files answer most of
   these; ask only what the code can't tell you (product intent, brand
@@ -453,6 +459,21 @@ context, no memory of your choices — with this same rubric and the DESIGN.md;
 accept their fails as ground truth and fix, don't argue. (Small tasks: your
 own cold audit is enough. Never a critic panel; one is unbiased, many is
 bloat.)
+**Dual-lane (strongest anti-bias pass, for the biggest asks):** instead of a
+single critic after the fact, run TWO designers IN PARALLEL, then fuse —
+one lane runs THIS pipeline, the other runs fully INDEPENDENT (does NOT load
+design-genius; uses the taste/design libraries + `find-skills`/agent skills
+directly + its own prior). Each writes its own spec (e.g. `DESIGN.md` and
+`DESIGN-independent.md`). Then compare head-to-head and emit a HYBRID verdict:
+take the independent lane's foundational restraint + navigation wins (it is
+not seeded toward your direction, so it is the one that catches the trope you
+optimized toward) and your lane's structural signature mechanic. A seeded lane
+cannot see the failure it was seeded toward; the independent lane can. Log
+the fork and the winner per screen. Discipline: the independent lane's
+anti-trope flags are ground truth to fix, not to argue — fusion beats either
+single lane. (This is the observed pattern from a real two-lane run, where
+the independent lane caught "casino gold / gym look" that the seeded gold
+direction could not.)
 **If a reference/screenshot exists, run a deterministic visual gate**: compare
 the intended look against the reference and score read-back; a wide divergence
 means the spec reads wrong — fix the spec, don't ship it.
