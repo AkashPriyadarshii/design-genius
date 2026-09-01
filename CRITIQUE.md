@@ -136,8 +136,9 @@ generic.
    done.
 7. **Dual-lane (REDESIGN only — the escalate tier, not REVISE):** the 3 options
    above come from ONE seeded context, so all three share the same blind spot
-   (the direction you were seeded toward — e.g. a gold direction cannot see
-   "casino gold"). For a RADICAL redesign, run ONE independent reviewer who
+   (the direction you were seeded toward — e.g. a gold-led direction cannot
+   see its own gold-as-wallpaper overuse or shine-on-black). For a RADICAL
+   redesign, run ONE independent reviewer who
    does NOT load this skill/CRITIQUE flow — uses the taste/design libraries +
    `find-skills` + its own prior, and is told on ONE line what the product is.
    Feed it the recommendation and ask: what trope is this direction still

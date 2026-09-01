@@ -472,9 +472,11 @@ optimized toward) and your lane's structural signature mechanic. A seeded lane
 cannot see the failure it was seeded toward; the independent lane can. Log
 the fork and the winner per screen. Discipline: the independent lane's
 anti-trope flags are ground truth to fix, not to argue — fusion beats either
-single lane. (This is the observed pattern from a real two-lane run, where
-the independent lane caught "casino gold / gym look" that the seeded gold
-direction could not.)
+single lane. (Observed in a real two-lane run: a seeded gold direction had
+gold everywhere and bright gold on pure black; the independent lane flagged
+the overuse and the shine-on-black, which the seeded lane could not see —
+not "gold is bad," but gold-as-wallpaper and shine-on-glossy-black fail the
+scarcity and substrate rules below.)
 
 **Which fires when — keep it unambiguous, never both:**
 - **Default (every emit):** your own cold Stage 5 audit; one independent
