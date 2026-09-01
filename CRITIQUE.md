@@ -134,17 +134,19 @@ generic.
    AND on-product. A redesign that is unique but off-brand is a fail; one
    that is on-brand but slop is also a fail. Both gates pass or it isn't
    done.
-7. **Dual-lane (apply to REVISE and REDESIGN, not just NEW):** the 3 options
+7. **Dual-lane (REDESIGN only — the escalate tier, not REVISE):** the 3 options
    above come from ONE seeded context, so all three share the same blind spot
    (the direction you were seeded toward — e.g. a gold direction cannot see
-   "casino gold"). For the recommended direction, run ONE independent
-   reviewer who does NOT load this skill/CRITIQUE flow — uses the taste/design
-   libraries + `find-skills` + its own prior, and is told on ONE line what the
-   product is. Feed it the recommendation and ask: what trope is this
-   direction still blind to, and what does a plain, unseeded designer change?
-   Treat its anti-trope flags as ground truth to fix, not to argue — fusion
-   beats any single lane. This is the same two-lane anti-bias discipline as
-   SKILL.md Stage 5, applied to the redesign/audit route.
+   "casino gold"). For a RADICAL redesign, run ONE independent reviewer who
+   does NOT load this skill/CRITIQUE flow — uses the taste/design libraries +
+   `find-skills` + its own prior, and is told on ONE line what the product is.
+   Feed it the recommendation and ask: what trope is this direction still
+   blind to, and what does a plain, unseeded designer change? Treat its
+   anti-trope flags as ground truth to fix, not to argue — fusion beats any
+   single lane. This replaces, never stacks with, the single critic. For a plain
+   REVISE (surgical diff), skip the dual-lane: the Section audit plus one
+   independent critic on a high-stakes audit is enough — a full unseeded
+   designer lane on a narrow retint is cost the route does not need.
 
 ## Rules
 

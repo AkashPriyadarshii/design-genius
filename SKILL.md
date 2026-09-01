@@ -459,9 +459,9 @@ context, no memory of your choices — with this same rubric and the DESIGN.md;
 accept their fails as ground truth and fix, don't argue. (Small tasks: your
 own cold audit is enough. Never a critic panel; one is unbiased, many is
 bloat.)
-**Dual-lane (strongest anti-bias pass — run it in NEW mode AND the biggest
-asks, not only when stakes are high):** instead of a single critic after the
-fact, run TWO designers IN PARALLEL, then fuse —
+**Escalate to dual-lane (the strongest anti-bias pass) for a NEW product's
+foundation design, or any high-stakes emit — not the default:** instead of a
+single critic after the fact, run TWO designers IN PARALLEL, then fuse —
 one lane runs THIS pipeline, the other runs fully INDEPENDENT (does NOT load
 design-genius; uses the taste/design libraries + `find-skills`/agent skills
 directly + its own prior). Each writes its own spec (e.g. `DESIGN.md` and
@@ -475,6 +475,14 @@ anti-trope flags are ground truth to fix, not to argue — fusion beats either
 single lane. (This is the observed pattern from a real two-lane run, where
 the independent lane caught "casino gold / gym look" that the seeded gold
 direction could not.)
+
+**Which fires when — keep it unambiguous, never both:**
+- **Default (every emit):** your own cold Stage 5 audit; one independent
+  critic only for big/high-stakes tasks.
+- **Escalated (foundation NEW design, radical REDESIGN, or a client-priced
+  deliverable):** dual-lane replaces the single critic — do not stack both,
+  the single critic and the independent lane review the same artifact and
+  would double the cost for the same surface.
 **If a reference/screenshot exists, run a deterministic visual gate**: compare
 the intended look against the reference and score read-back; a wide divergence
 means the spec reads wrong — fix the spec, don't ship it.
