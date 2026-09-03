@@ -6,7 +6,8 @@ description: >-
   wearables, editorial print, luxury packaging, spatial/AR, posters, canvas shaders,
   instruments, apps, dashboards, and digital products. Reads a local design library
   and fuses 2-3 structurally distinct systems to emit a bespoke DESIGN.md spec with
-  real tokens, pigment formulations, and geometry. Never generates AI defaults from memory.
+  real tokens, pigment formulations, and geometry. Hands off downstream implementation
+  to akash-design-engineering (@design-engineer/{tokens,physics,shaders,audio,android,react}).
   Three modes: NEW (fresh system), REVISE (cold audit/critique diff), REDESIGN (radical DNA rebuild).
 ---
 
