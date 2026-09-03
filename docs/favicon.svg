@@ -1,0 +1,16 @@
+﻿<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64">
+  <defs>
+    <radialGradient id="waxGrad" cx="35%" cy="35%" r="65%">
+      <stop offset="0%" stop-color="#d44e33"/>
+      <stop offset="60%" stop-color="#ba3c26"/>
+      <stop offset="100%" stop-color="#8a2512"/>
+    </radialGradient>
+    <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="1" dy="2" stdDeviation="1.5" flood-color="#000000" flood-opacity="0.25"/>
+    </filter>
+  </defs>
+  <circle cx="32" cy="32" r="28" fill="url(#waxGrad)" filter="url(#shadow)"/>
+  <circle cx="32" cy="32" r="23" fill="none" stroke="#f7f4ed" stroke-width="1.2" stroke-dasharray="3 2" opacity="0.85"/>
+  <text x="32" y="38" font-family="'Courier New', Courier, monospace" font-size="18" font-weight="900" fill="#f7f4ed" text-anchor="middle" letter-spacing="1">DG</text>
+  <circle cx="32" cy="16" r="1.5" fill="#f7f4ed" opacity="0.9"/>
+</svg>

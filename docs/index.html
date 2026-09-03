@@ -40,6 +40,10 @@
 
     <meta property="og:description" content="Reads the library. Fuses systems. Emits bespoke DESIGN.md specs with real OKLCH tokens and zero template monoculture.">
 
+        <meta property="og:image" content="https://akashpriyadarshii.github.io/design-genius/og-cover.png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:image:alt" content="design-genius universal design specification engine">
     <meta property="og:site_name" content="design-genius">
 
     <meta property="og:locale" content="en_US">
@@ -56,6 +60,7 @@
 
     <meta name="twitter:description" content="The universal design specification engine that physically bars LLMs from hallucinating generic UI.">
 
+        <meta name="twitter:image" content="https://akashpriyadarshii.github.io/design-genius/og-cover.png">
     <meta name="twitter:site" content="@Akash__ydv001">
 
     <meta name="twitter:creator" content="@Akash__ydv001">
@@ -376,65 +381,7 @@
 
 
 
-        /* --- Top Telemetry Banner --- */
-
-        .status-banner {
-
-            background-color: var(--ink);
-
-            color: var(--paper);
-
-            font-family: "IBM Plex Mono", monospace;
-
-            font-size: 0.72rem;
-
-            letter-spacing: 0.12em;
-
-            text-transform: uppercase;
-
-            padding: 0.5rem 0;
-
-            border-bottom: 1px solid var(--hairline-dark);
-
-        }
-
-        .status-inner {
-
-            display: flex;
-
-            justify-content: space-between;
-
-            align-items: center;
-
-            flex-wrap: wrap;
-
-            gap: 0.8rem;
-
-        }
-
-        .status-pill {
-
-            display: inline-flex;
-
-            align-items: center;
-
-            gap: 0.5rem;
-
-        }
-
-        .status-indicator {
-
-            width: 8px;
-
-            height: 8px;
-
-            border-radius: 50%;
-
-            background-color: var(--success);
-
-            box-shadow: 0 0 8px var(--success);
-
-        }
+        
 
 
 
@@ -1790,38 +1737,230 @@
 
 
 
-        /* --- Responsive Queries --- */
+        
+        /* ==========================================================================
+           AKASH-DESIGN-ENGINEERING: MULTI-DEVICE RESPONSIVE AUTO-LAYOUT
+           Handles 320px mobile -> 4K ultra-wide without breaking or horizontal shifts.
+           ========================================================================== */
 
-        @media (max-width: 1024px) {
+        /* Root overflow and layout safety */
+        html, body {
+            overflow-x: clip;
+            max-width: 100vw;
+        }
 
-            .hero-layout { grid-template-columns: 1fr; }
+        /* Prevent grid children from blowing out containers */
+        .swiss-grid-4 > *, .pipeline-matrix > *, .hero-layout > *, .fuser-controls > * {
+            min-width: 0;
+        }
 
-            .mandate-grid { grid-template-columns: 1fr; }
+        /* Responsive Table Wrapper */
+        .table-responsive-wrapper {
+            width: 100%;
+            overflow-x: auto;
+            -webkit-overflow-scrolling: touch;
+            border: 1px solid var(--hairline-dark);
+            margin-top: 2rem;
+            background-color: var(--paper);
+        }
+        .table-responsive-wrapper .dimension-table {
+            margin-top: 0;
+            border: none;
+            min-width: 680px;
+        }
+        .table-responsive-wrapper::-webkit-scrollbar {
+            height: 6px;
+        }
+        .table-responsive-wrapper::-webkit-scrollbar-track {
+            background: var(--paper-deep);
+        }
+        .table-responsive-wrapper::-webkit-scrollbar-thumb {
+            background: var(--hairline-dark);
+            border-radius: 1px;
+        }
 
-            .pipeline-matrix { grid-template-columns: 1fr 1fr; }
+        /* Code block scroll safety */
+        .code-row {
+            overflow: hidden;
+            gap: 0.75rem;
+        }
+        .code-text {
+            overflow-x: auto;
+            white-space: nowrap;
+            -webkit-overflow-scrolling: touch;
+            padding-bottom: 2px;
+            flex: 1;
+            min-width: 0;
+        }
+        .code-text::-webkit-scrollbar {
+            height: 3px;
+        }
+        .code-text::-webkit-scrollbar-thumb {
+            background: var(--hairline);
+        }
 
-            .fuser-controls { grid-template-columns: 1fr; }
+        /* --- Large Tablets & Laptops (<= 1100px) --- */
+        @media (max-width: 1100px) {
+            .hero-layout {
+                grid-template-columns: 1fr;
+                gap: 3rem;
+            }
+            .mandate-grid {
+                grid-template-columns: 1fr;
+                gap: 2.5rem;
+            }
+            .stamp-container {
+                padding: 1rem 0;
+            }
+            .fuser-controls {
+                grid-template-columns: 1fr 1fr;
+            }
+            .fuser-controls .btn-fuse {
+                grid-column: 1 / -1;
+                width: 100%;
+            }
+        }
 
-            .dossier-row { grid-template-columns: 2rem 1fr; }
+        /* --- Tablets & Phablets (<= 860px) --- */
+        @media (max-width: 860px) {
+            .nav-links {
+                display: none;
+            }
+            .pipeline-matrix {
+                grid-template-columns: 1fr 1fr;
+            }
+            .fuser-controls {
+                grid-template-columns: 1fr;
+            }
+            .dossier-row {
+                grid-template-columns: 2.5rem 1fr auto;
+                gap: 1rem;
+                padding: 1.25rem 1.5rem;
+            }
+            .dossier-summary {
+                grid-column: 2 / -1;
+                margin-top: 0.25rem;
+            }
+            .footer-grid {
+                grid-template-columns: 1fr 1fr;
+                gap: 2rem;
+            }
+        }
 
-            .dossier-summary, .dossier-stamp-tag { display: none; }
+        /* --- Mobile Handsets (<= 600px) --- */
+        @media (max-width: 600px) {
+            .wrap {
+                padding: 0 1.25rem;
+            }
+            .nav-author {
+                display: none;
+            }
+            .nav-cta {
+                padding: 0.5rem 0.9rem;
+                font-size: 0.7rem;
+            }
+            .hero-section {
+                padding: 3rem 0 2.5rem;
+            }
+            .hero-headline {
+                font-size: clamp(2.2rem, 9vw, 3.2rem);
+                line-height: 1.12;
+            }
+            .hero-actions {
+                flex-direction: column;
+                align-items: stretch;
+                gap: 0.75rem;
+            }
+            .hero-actions .btn-primary, .hero-actions .btn-secondary {
+                width: 100%;
+                text-align: center;
+                padding: 0.85rem 1.2rem;
+            }
+            .pipeline-matrix {
+                grid-template-columns: 1fr;
+            }
+            .stage-box {
+                padding: 1.5rem 1.25rem;
+            }
+            .telemetry-box {
+                padding: 1.4rem 1.2rem;
+            }
+            .wax-seal-badge {
+                width: 190px;
+                height: 190px;
+            }
+            .dossier-row {
+                grid-template-columns: 2rem 1fr;
+                padding: 1.2rem 1rem;
+            }
+            .dossier-stamp-tag {
+                display: none;
+            }
+            .dossier-summary {
+                grid-column: 2;
+                font-size: 0.85rem;
+            }
+            .footer-grid {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+            .footer-bottom {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 0.75rem;
+            }
+            .code-row {
+                flex-direction: column;
+                align-items: stretch;
+                gap: 0.5rem;
+            }
+            .code-text {
+                font-size: 0.78rem;
+            }
+            .btn-copy {
+                align-self: flex-end;
+                padding: 0.35rem 0.8rem;
+            }
+        }
 
-            .footer-grid { grid-template-columns: 1fr 1fr; }
-
+        /* --- Ultra-Compact Devices (<= 380px) --- */
+        @media (max-width: 380px) {
+            .hero-headline {
+                font-size: 1.95rem;
+            }
+            .nav-title {
+                font-size: 1rem;
+            }
+            .wax-seal-badge {
+                width: 160px;
+                height: 160px;
+            }
+            .wax-seal-inner {
+                font-size: 0.75rem;
+            }
         }
 
 
 
-        @media (max-width: 640px) {
-
-            .pipeline-matrix { grid-template-columns: 1fr; }
-
-            .nav-links { display: none; }
-
-            .footer-grid { grid-template-columns: 1fr; }
-
+        /* --- Print Media Stylesheet --- */
+        @media print {
+            nav.main-nav, .hero-actions, .fuser-controls, .btn-copy, .btn-fuse, .status-banner {
+                display: none !important;
+            }
+            body {
+                background: #ffffff !important;
+                color: #000000 !important;
+                font-size: 12pt;
+            }
+            .wrap {
+                max-width: 100% !important;
+                padding: 0 !important;
+            }
+            .telemetry-box, .fuser-panel, .stage-box, .dimension-table {
+                box-shadow: none !important;
+                border: 1px solid #000000 !important;
+            }
         }
-
     </style>
 
 </head>
@@ -1829,36 +1968,6 @@
 <body>
 
 
-
-    <!-- TOP TELEMETRY STATUS BAR -->
-
-    <div class="status-banner">
-
-        <div class="wrap status-inner">
-
-            <div class="status-pill">
-
-                <span class="status-indicator"></span>
-
-                <span>SYSTEM STATUS: SPECIFICATION ENGINE ACTIVE</span>
-
-            </div>
-
-            <div class="status-pill">
-
-                <span>LOCAL LIBRARY: <strong style="color:var(--accent-brass)">74 SYSTEMS ON DISK</strong></span>
-
-                <span style="opacity:0.4">|</span>
-
-                <span>HUE SEPARATION: <strong style="color:var(--accent-brass)">≥ 40° ENFORCED</strong></span>
-
-                <span style="opacity:0.4">|</span>
-
-                <span>AI SLOP RISK: <strong style="color:var(--success)">0.0%</strong></span>
-
-            </div>
-
-        </div>
 
     </div>
 
@@ -2324,6 +2433,7 @@
 
 
 
+                <div class="table-responsive-wrapper">
                 <table class="dimension-table">
 
                     <thead>
@@ -2445,6 +2555,7 @@
                     </tbody>
 
                 </table>
+                </div>
 
             </div>
 

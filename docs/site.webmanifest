@@ -1,0 +1,16 @@
+﻿{
+  "name": "design-genius",
+  "short_name": "design-genius",
+  "description": "Universal design language specification engine by Akash Priyadarshi",
+  "start_url": "./index.html",
+  "display": "standalone",
+  "background_color": "#f7f4ed",
+  "theme_color": "#ba3c26",
+  "icons": [
+    {
+      "src": "favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml"
+    }
+  ]
+}
