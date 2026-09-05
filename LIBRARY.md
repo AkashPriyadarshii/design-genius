@@ -28,6 +28,13 @@ you need; the skill adapts to whatever is present (it `ls`es before reading).
 | nothing-design-skill | Dot-matrix, NDot typeface, monochrome + hot red archetype |
 | scroll-craft | WebGL canvas scroll animations and GLSL post-processing |
 | pretext | Pure canvas text layout and precise multi-line typography |
+| .impeccable / taste-skill / hallmark | Anti-AI-slop craft rules, design language, and aesthetic taste constraints |
+| nexu-io/open-design | Open-source design engine and Claude Design alternative |
+| coss / facebook/astryx | Production enterprise design systems (Cal.com & agent-ready Astryx) |
+| remotion / hyperframes | Programmatic video, canvas rendering, and CSS motion for agents |
+| liquid-glass-js | Apple-inspired real-time glassmorphism and blur shader primitives |
+| AnmolSaini16/mapcn | Copy-paste interactive map components (shadcn style) |
+
 
 ## Skip — README-only shells (audit: zero token content)
 

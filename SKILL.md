@@ -599,6 +599,18 @@ scarcity and substrate rules below.)
 **End with the signature detail and the one-sentence pitch** ("What this look
 is, in one line") so the beneficiary can say yes/no fast.
 
+## Ponytail Anti-Overengineering Ladder in Design (MANDATORY)
+
+Before specifying any layout, component, or interaction, stop at the first rung that holds. Never skip rungs:
+
+1. **Does this element/layer need to exist?** -> No 3-card grid if 1 clear statement works. No decorative wrapper `div`s, no synthetic container abstractions. Skip it (YAGNI).
+2. **Already in this design system/codebase?** -> Reuse existing semantic tokens, typography scales, and primitives. Don't invent one-off hex values, bespoke classes, or duplicate layouts.
+3. **Stdlib/Platform does it?** -> Use native CSS features (`grid`, `flex`, `:has()`, `clamp()`, semantic HTML `<dialog>`, `<details>`, `<aside>`, `<time>`, native form controls) instead of custom JS or heavy third-party UI widgets.
+4. **Native platform feature?** -> Native scroll snapping, CSS transitions, CSS custom properties, native inline SVG instead of external icon bundles or heavy animation runtimes.
+5. **Installed dependency?** -> Reuse installed components (`shadcn-ui`, `@design-engineer/*`) rather than pulling new external dependencies.
+6. **One line?** -> Single-line CSS (`accent-color`, `aspect-ratio`, `text-wrap: balance`, `scrollbar-gutter: stable`).
+7. **Only then: the minimum that works.** -> The leanest, sharpest implementation that passes the 10-dimension standard without excess code weight.
+
 ## Rules
 
 - NEVER output a default that any agent would produce. If unsure, make the
@@ -608,6 +620,8 @@ is, in one line") so the beneficiary can say yes/no fast.
   meaning. Uniqueness shapes the look; it never licenses an inaccessible one.
   The Stage 5 a11y gate (dimension 8) is a hard FIX-before-ship, not a
   preference.
+- Apply the Ponytail ladder: stop at the lowest rung that holds. Never specify
+  heavy JS widgets or deep nesting when semantic HTML, native CSS, or existing tokens suffice.
 - The library is ground truth: cite which systems you fused and why.
 - One design, not a menu. The default emit is ONE bespoke DESIGN.md. Options
   are a Stage-1 decision point ONLY when intent is genuinely open: lead with
