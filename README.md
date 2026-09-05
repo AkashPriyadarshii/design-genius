@@ -98,11 +98,16 @@ Three repos are required:
   patterns, a motion library, style seeds, and the DESIGN.md template.
 - **shadcn-ui/ui** — accessible component source for buildable output.
 
-Optional repos add surface area: inspira-ui, animate-ui, pixel2motion,
-ui-skills, diagram-design, threeui. The full clone list, the explicit skip
-list, and the layout live in **[LIBRARY.md](LIBRARY.md)**. The path resolves
-from the skill's own directory by default, or from `$DESIGN_LIB` when you set
-it, so you can point the skill at any library folder you want.
+Optional repos add surface area across 32 active local repositories and skills:
+anti-slop kits (`taste-skill`, `hallmark`, `.impeccable`), design systems
+(`astryx`, `coss`), specialized primitives (`assistant-ui`, `mapcn`,
+`liquid-glass-js`, `styleseed`, `tui-studio`), interactive components
+(`inspira-ui`, `react-bits`), layout engines (`pretext`, `scroll-craft`),
+diagrams (`diagram-design`), and 3D (`threeui`, `img2threejs`). The full
+inventory, skip list, and catalog live in **[LIBRARY.md](LIBRARY.md)** and
+**[../README.md](../README.md)**. The path resolves from the skill's own directory
+by default, or from `$DESIGN_LIB` when you set it.
+
 
 The payoff is compounding. Drop any real design system into
 `awesome-design-md/design-md/<name>/DESIGN.md` and the skill designs in that
