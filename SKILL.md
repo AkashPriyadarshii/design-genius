@@ -80,6 +80,10 @@ overrides. Resolve in order:
 2. `ls "$LIB"` and confirm a library item is actually there before reading.
    If `"$LIB"` has no design systems, walk up once more or ask where the
    library is — never silently skip to memory. `ls` each directory you rely on.
+   Consult `"$LIB"/README.md` and `"$LIB"/design-genius/LIBRARY.md` for the
+   central inventory of 23 local repos/skills and 151 starred design repos
+   (shadcn, open-design, taste-skill, .impeccable, hallmark, remotion, astryx).
+
 
 ## Pipeline — stages 0–5, always (Stage 0 already picked the mode above; these
 are the design stages. Numbering is non-linear: 3.5 and 4.5 are refinements,
@@ -613,6 +617,7 @@ Before specifying any layout, component, or interaction, stop at the first rung 
 
 ## Rules
 
+
 - NEVER output a default that any agent would produce. If unsure, make the
   choice louder, not safer — BUT a11y always outranks uniqueness: "not safer"
   never means contrast <4.5:1 (body) / 3:1 (large), no focus state, hover-only
@@ -623,6 +628,7 @@ Before specifying any layout, component, or interaction, stop at the first rung 
 - Apply the Ponytail ladder: stop at the lowest rung that holds. Never specify
   heavy JS widgets or deep nesting when semantic HTML, native CSS, or existing tokens suffice.
 - The library is ground truth: cite which systems you fused and why.
+
 - One design, not a menu. The default emit is ONE bespoke DESIGN.md. Options
   are a Stage-1 decision point ONLY when intent is genuinely open: lead with
   your recommendation, then at most three fusion choices, one line each; pick

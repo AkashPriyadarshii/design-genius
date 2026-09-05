@@ -16,6 +16,19 @@ you need; the skill adapts to whatever is present (it `ls`es before reading).
 
 | Repo | What it adds |
 |------|--------------|
+| open-design | 94k★ Claude Design alternative, local-first design engine (prototypes, landing pages, decks) |
+| .impeccable | 65k★ AI harness design language, craft constraints & anti-slop doctrine |
+| taste-skill | 84k★ Prevents LLM design convergence into generic SaaS templates |
+| hallmark | 28k★ Anti-AI-slop design skill and rigorous copy discipline |
+| remotion | 58k★ Programmatic video creation with React & CSS |
+| hyperframes | 44k★ Agent-ready HTML/CSS-to-video rendering |
+| astryx | 12k★ Facebook agent-ready open-source design system |
+| coss | 10k★ Official design system of Cal.com (`coss.com/ui`) |
+| assistant-ui | 12k★ TypeScript/React primitives for AI chat & agent cockpit UI |
+| mapcn | 12k★ Interactive shadcn-style map components |
+| liquid-glass-js | 901★ Apple-inspired glassmorphism and real-time blur shaders |
+| styleseed | 943★ 23 agent skills for fixed design jobs (contrast, typography, spacing) |
+| tui-studio | 1.5k★ Visual design canvas for Terminal User Interfaces (TUIs) |
 | inspira-ui | Modern React components (RibbonBackground etc.) |
 | animate-ui | Motion/animation component patterns |
 | pixel2motion | Motion reference patterns |
@@ -28,13 +41,8 @@ you need; the skill adapts to whatever is present (it `ls`es before reading).
 | nothing-design-skill | Dot-matrix, NDot typeface, monochrome + hot red archetype |
 | scroll-craft | WebGL canvas scroll animations and GLSL post-processing |
 | pretext | Pure canvas text layout and precise multi-line typography |
-| .impeccable / taste-skill / hallmark | Anti-AI-slop craft rules, design language, and aesthetic taste constraints |
-| nexu-io/open-design | Open-source design engine and Claude Design alternative |
-| coss / facebook/astryx | Production enterprise design systems (Cal.com & agent-ready Astryx) |
-| remotion / hyperframes | Programmatic video, canvas rendering, and CSS motion for agents |
-| liquid-glass-js | Apple-inspired real-time glassmorphism and blur shader primitives |
-| AnmolSaini16/mapcn | Copy-paste interactive map components (shadcn style) |
 
+See `../README.md` for the full local inventory and the 151-repo starred design catalog.
 
 ## Skip — README-only shells (audit: zero token content)
 
