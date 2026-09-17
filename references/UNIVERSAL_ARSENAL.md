@@ -132,3 +132,35 @@ $$F = -k(x - x_0) - c v$$
 | **Serifs** | Fraunces or Instrument Serif by default | Earned serif choices (Source Serif 4, EB Garamond, Charter) justified by editorial context |
 | **Surfaces** | Generic drop shadows (`box-shadow: 0 10px 25px rgba(0,0,0,0.1)`) | Solid 1px hairlines, surface lightness ladder, or real physical liquid glass |
 | **Palette** | Tailwind `blue-500` / `indigo-600` / `#000000` / `#ffffff` | Micro-grain OKLCH pigments with anchor-tinted neutrals ($\text{chroma} \ge 0.006$) |
+
+---
+
+## 7. High-Craft Specialized Doctrines & Micro-Systems
+
+### A. Emil Kowalski Interaction Laws (`emil-skills` / Linear & Vercel)
+1. **Directional Easing Asymmetry:**
+   - **Enter Animations:** MUST strictly use `ease-out` (rapid deceleration). The user initiated an action; the result must appear immediately. Never `ease-in` on enter.
+   - **Exit Animations:** MUST strictly use `ease-in` (rapid acceleration out of frame). Once dismissed, elements should exit fast without lagging.
+2. **GPU Compositing Rule (Zero Layout Thrashing):**
+   - Strictly animate **`transform`** and **`opacity`** only.
+   - Never animate `width`, `height`, `top`, `left`, `margin`, or `padding` (causes layout recalculation and dropped frames).
+3. **Distance-Scaled Duration:**
+   - Animation duration must scale dynamically with distance traveled ($d$). A 20px nudge takes ~100ms; a full-screen drawer take ~300ms. Fixed arbitrary durations feel sluggish or abrupt.
+4. **Origin-Aware Spatial Anchoring:**
+   - Set `transform-origin` to match the exact trigger source (e.g. dropdowns scale out directly from the button click coordinate, dialogs expand from the trigger pill).
+
+### B. Geometry-Matched Skeletons (`boneyard`)
+- Generic animated gray boxes are banned.
+- Skeleton loading screens must mirror the exact layout geometry, aspect ratio, and typography heights of the resolved UI children to prevent layout shifts (CLS = 0).
+
+### C. Curated Flow Calibration (`refero-skill`)
+- Base complex workflows (onboarding funnels, multi-tier checkout, audit logs, command palettes) on empirically proven patterns from top production products rather than speculative wireframes.
+
+### D. Mathematical Stroke Drawing (`tegaki`)
+- For handwriting, sketch vectors, and signature line reveals, compute exact path lengths:
+  $$\text{stroke-dasharray} = L, \quad \text{stroke-dashoffset}: L \longrightarrow 0$$
+  where $L = \text{path.getTotalLength()}$, easing with `cubic-bezier(0.16, 1, 0.3, 1)`.
+
+### E. Viscosity & Fluid Velocity Fields (`liquid-logo`)
+- Fluid warping effects apply a Navier-Stokes grid approximation to SVG paths, maintaining volume conservation ($div(\mathbf{u}) = 0$) during distortion.
+
