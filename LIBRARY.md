@@ -41,8 +41,10 @@ you need; the skill adapts to whatever is present (it `ls`es before reading).
 | nothing-design-skill | Dot-matrix, NDot typeface, monochrome + hot red archetype |
 | scroll-craft | WebGL canvas scroll animations and GLSL post-processing |
 | pretext | Pure canvas text layout and precise multi-line typography |
+| **UNIVERSAL ARSENAL** | Unified mathematical laws, motion physics, and anti-slop rules extracted across all 60 design subdirectories -> **[references/UNIVERSAL_ARSENAL.md](references/UNIVERSAL_ARSENAL.md)** |
 
 See `../README.md` for the full local inventory and the 151-repo starred design catalog.
+
 
 ## Skip — README-only shells (audit: zero token content)
 

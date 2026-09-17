@@ -80,9 +80,11 @@ overrides. Resolve in order:
 2. `ls "$LIB"` and confirm a library item is actually there before reading.
    If `"$LIB"` has no design systems, walk up once more or ask where the
    library is — never silently skip to memory. `ls` each directory you rely on.
-   Consult `"$LIB"/README.md` and `"$LIB"/design-genius/LIBRARY.md` for the
-   central inventory of 23 local repos/skills and 151 starred design repos
-   (shadcn, open-design, taste-skill, .impeccable, hallmark, remotion, astryx).
+   Consult `"$LIB"/README.md`, `"$LIB"/design-genius/LIBRARY.md`, and
+   `"$LIB"/design-genius/references/UNIVERSAL_ARSENAL.md` for the central
+   synthesized intelligence across all 60 local design subdirectories
+   (taste-skill, hallmark, impeccable, pixel2motion, liquid-glass-js, coss,
+   tui-studio, pretext, assistant-ui, mapcn, shadcn, etc.).
 
 
 ## Pipeline — stages 0–5, always (Stage 0 already picked the mode above; these
@@ -198,6 +200,9 @@ a physical or print surface where they have no counterpart.
 ### Stage 4 · Force uniqueness + copy — the nine levers
 Apply EVERY lever. Each must produce something that is NOT the AI default.
 If a lever's natural output is a default, rush past it to a better one.
+For deep mathematical formulas, motion physics equations, shader recipes,
+and copywriting doctrines extracted across all 60 design subdirectories,
+consult `references/UNIVERSAL_ARSENAL.md`.
 
 0. **Copy discipline** — write the real headline/sub/CTAs as part of the
    design; most template-feel is copy, not paint. Every heading earns its
