@@ -23,5 +23,5 @@ direction. Keep the corpus honest.
 
 ## Skill itself
 
-Small, sharp diffs to `SKILL.md`. Eight levers and the audit gate are load-bearing —
+Small, sharp diffs to `SKILL.md`. Nine levers (Levers 0 through 8) and the audit gate are load-bearing:
 don't weaken or reorder them. Pitch a change in a few lines, not an essay.

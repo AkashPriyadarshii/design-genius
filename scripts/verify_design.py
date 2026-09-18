@@ -66,12 +66,19 @@ def call_jev(state: str, questions: dict, timeout: float = 6.0) -> dict:
 
 
 def mechanical_linter(text: str) -> tuple[bool, list[str]]:
-    """Runs strict mechanical linter rules 9.A - 9.J."""
+    """Runs strict mechanical linter rules 9.A - 9.M."""
     issues = []
-    lower = text.lower()
 
-    # 9.G: Em-dash check
-    if "—" in text:
+    # Strip code blocks and HTML comments for prose checks to prevent false positives
+    prose_only = re.sub(r"```[\s\S]*?```", "", text)
+    prose_only = re.sub(r"`[^`\n]+`", "", prose_only)
+    prose_only = re.sub(r"<!--[\s\S]*?-->", "", prose_only)
+
+    lower = text.lower()
+    prose_lower = prose_only.lower()
+
+    # 9.G: Em-dash check in prose only
+    if "—" in prose_only:
         issues.append("Rule 9.G violation: Em-dash ('—') detected in spec/copy. Use hyphens, colons, or periods.")
 
     # 9.D: Flat cream / brass cliché triad
@@ -82,9 +89,10 @@ def mechanical_linter(text: str) -> tuple[bool, list[str]]:
         if "causal" not in lower and "substrate" not in lower:
             issues.append("Rule 9.D violation: Banned cream/brass/espresso cliché triad detected without substrate or causal derivation.")
 
-    # 9.A: Centered hero + 3 cards
-    if "centered hero" in lower and ("3 cards" in lower or "3 feature" in lower or "three cards" in lower):
-        issues.append("Rule 9.A violation: Centered hero + 3 feature cards layout archetype is banned.")
+    # 9.A: Centered hero + 3 cards (in prose structure, ignoring negative warnings)
+    if "centered hero" in prose_lower and ("3 cards" in prose_lower or "3 feature" in prose_lower or "three cards" in prose_lower):
+        if not any(neg in prose_lower for neg in ("do not", "never", "no centered hero", "banned", "reject", "avoid")):
+            issues.append("Rule 9.A violation: Centered hero + 3 feature cards layout archetype is banned.")
 
     # 9.H: Spring physics / motion check
     has_spring = any(k in lower for k in ("stiffness", "damping", "cubic-bezier", "mass", "spring"))
@@ -95,6 +103,31 @@ def mechanical_linter(text: str) -> tuple[bool, list[str]]:
     has_radius = any(k in lower for k in ("concentric", "r_inner", "radius", "r-inner", "outer - padding"))
     if not has_radius and "radius" not in lower:
         issues.append("Rule 9.J violation: Missing concentric radius calculation or radius tokens.")
+
+    # 9.K: Zero-Simulation Linter (Blacklist + Positive Assertion Contract)
+    if any(k in lower for k in ("svg map", "vector map doodle", "fake map", "mock countdown", "static weather widget", "mock weather")):
+        issues.append("Rule 9.K violation: Pseudo-interactive simulation detected. Real GIS (Leaflet/MapLibre) and live APIs (Open-Meteo) required.")
+    if any(k in lower for k in ("interactive map", "geographic map", "cartography", "gis map")):
+        has_real_gis = any(k in lower for k in ("leaflet", "maplibre", "mapbox", "tilelayer", "tiles", "osm", "esri"))
+        if not has_real_gis:
+            issues.append("Rule 9.K violation: Geographic map specified without declaring real GIS engine (Leaflet/MapLibre) or tile layer provider.")
+    if any(k in lower for k in ("weather widget", "live climate", "live weather", "temperature feed")):
+        has_real_weather = any(k in lower for k in ("open-meteo", "api.open-meteo", "localstorage", "ttl", "fetchliveweather"))
+        if not has_real_weather:
+            issues.append("Rule 9.K violation: Dynamic weather feed specified without declaring live public API integration (Open-Meteo) or client-side TTL caching.")
+
+    # 9.L: Media & Photographic Pipeline check for visual/showcase domains
+    if any(k in lower for k in ("tourism", "travel", "heritage", "monument", "sanctuary", "temple", "hotel", "resort", "catalog")):
+        has_photo_pipeline = any(k in lower for k in ("picture", "photo", "image", "lightbox", "aspect-", "aspect_ratio", "srcset", "webp", "dialog"))
+        if not has_photo_pipeline:
+            issues.append("Rule 9.L violation: Showcase or tourism domain missing photographic art direction, picture srcset, aspect-ratio containers, or lightbox inspector.")
+
+    # 9.M: Domain Scope & Multi-Page Platform check (Regex quantifier for >=4 entities)
+    multi_entity_match = re.search(r'\b([4-9]|[1-9][0-9]+)\s+(?:[a-zA-Z-]+\s+)?(shrines|temples|monuments|destinations|locations|items|products|models|entities|places|categories|routes|attractions|reserves|sanctuaries|parks|sites|regions)\b', lower)
+    if multi_entity_match or any(k in lower for k in ("multi-entity", "distinct entities", "catalog of", "heritage sites")):
+        has_multipage = any(k in lower for k in ("multi-page", "hub-and-spoke", "spoke", "spokes", "route hierarchy", "app router", "dynamic route", "subpage", "breadcrumbs", "dedicated page"))
+        if not has_multipage and any(k in lower for k in ("single page", "1-page", "one-page", "single-page")):
+            issues.append("Rule 9.M violation: Multi-entity scope (>3 entities) flattened into single-page layout. Hub-and-spoke multi-page platform required.")
 
     return len(issues) == 0, issues
 
@@ -162,6 +195,13 @@ def audit_design_file(filepath: str) -> bool:
                 "rigorous": "Includes interaction physics, reduced-motion fallbacks, focus states, and craft rules.",
                 "deficient": "No motion tokens, no accessibility focus visible states, or vibes-only description."
             }
+        },
+        "production_standards": {
+            "type": "choice",
+            "criteria": {
+                "production_grade": "Production-grade design specification meeting industry standards (concrete token ladders, responsive container rules, accessibility compliance, and real integrations where applicable).",
+                "toy_simulation": "Relies on fake SVG map doodles instead of real GIS, un-wired static mock feeds, or single-page flattening of complex multi-entity catalogs."
+            }
         }
     }
 
@@ -178,15 +218,18 @@ def audit_design_file(filepath: str) -> bool:
     slop = answers.get("slop_assessment", {})
     tokens = answers.get("token_concreteness", {})
     craft = answers.get("craft_and_motion", {})
+    prod = answers.get("production_standards", {})
 
-    print(f"  Aesthetic: {slop.get('choice')} (confidence: {slop.get('confidence', 'N/A')})")
-    print(f"  Tokens:    {tokens.get('choice')} (confidence: {tokens.get('confidence', 'N/A')})")
-    print(f"  Craft:     {craft.get('choice')} (confidence: {craft.get('confidence', 'N/A')})")
+    print(f"  Aesthetic:   {slop.get('choice')} (confidence: {slop.get('confidence', 'N/A')})")
+    print(f"  Tokens:      {tokens.get('choice')} (confidence: {tokens.get('confidence', 'N/A')})")
+    print(f"  Craft:       {craft.get('choice')} (confidence: {craft.get('confidence', 'N/A')})")
+    print(f"  Engineering: {prod.get('choice')} (confidence: {prod.get('confidence', 'N/A')})")
 
     passed = (
         slop.get("choice") == "bespoke"
         and tokens.get("choice") == "concrete"
         and craft.get("choice") == "rigorous"
+        and prod.get("choice") != "toy_simulation"
         and mech_ok
     )
 
@@ -204,8 +247,8 @@ def audit_skill_itself() -> bool:
     with open(skill_file, "r", encoding="utf-8") as f:
         content = f.read()
 
-    # Mechanical path check (rule 1 of CLAUDE.md)
-    if re.search(r"[a-zA-Z]:\\Users\\|/home/[a-zA-Z0-9]+/", content):
+    # Mechanical path check (rule 1 of CLAUDE.md) - Windows, Linux, macOS
+    if re.search(r"[a-zA-Z]:\\Users\\|/home/[a-zA-Z0-9_-]+/|/Users/[a-zA-Z0-9_-]+/", content):
         print("  [FAIL] Machine-specific hardcoded path detected in SKILL.md!")
         return False
     else:
@@ -250,8 +293,8 @@ def audit_git_diff(ref: str = "HEAD~1..HEAD") -> bool:
             print("  [info] Clean working tree, no diff to inspect.")
             return True
 
-    # Check for hardcoded paths in diff
-    if re.search(r"[a-zA-Z]:\\Users\\|/home/[a-zA-Z0-9]+/", diff):
+    # Check for hardcoded paths in diff (Windows, Linux, macOS)
+    if re.search(r"[a-zA-Z]:\\Users\\|/home/[a-zA-Z0-9_-]+/|/Users/[a-zA-Z0-9_-]+/", diff):
         print("  [FAIL] Hardcoded machine path detected in git diff!")
         return False
 

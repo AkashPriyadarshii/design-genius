@@ -6,8 +6,8 @@ description: >-
   wearables, editorial print, luxury packaging, spatial/AR, posters, canvas shaders,
   instruments, apps, dashboards, and digital products. Reads a local design library
   and fuses 2-3 structurally distinct systems to emit a bespoke DESIGN.md spec with
-  real tokens, pigment formulations, and geometry. Hands off downstream implementation
-  to akash-design-engineering (@design-engineer/{tokens,physics,shaders,audio,android,react}).
+  real tokens, pigment formulations, and geometry. Directly implementable by
+  downstream engineering pipelines (Tailwind CSS v4, W3C DTCG tokens, CSS variables, React, Compose).
   Three modes: NEW (fresh system), REVISE (cold audit/critique diff), REDESIGN (radical DNA rebuild).
 ---
 
@@ -66,6 +66,16 @@ If the existing-artifact intent is ambiguous between "fix the slop" (REVISE)
 and "rebuild it new" (REDESIGN), ask ONE sharp question rather than guessing
 ("surgical fix, or a full re-look?") — a REVISE that redraws the whole look
 or a REDESIGN that only retints are both the wrong lane and a wasted run.
+
+### Stage 0.B · Architecture Scope Gate (Single-Page Landing vs Multi-Page Platform)
+
+Before picking layout archetypes or emitting specs, evaluate the domain entity count and content depth:
+- **Multi-Entity Scope (>3 discrete entities):** If the domain represents >3 distinct primary entities with unique historical records, coordinate locations, specifications, catalogs, or dedicated sub-pages (e.g. regional tourism platforms with multiple heritage shrines, e-commerce catalogs, municipal systems, multi-model automotive showcases, or documentation hubs):
+  - **MANDATE MULTI-PAGE PLATFORM (or App Router Dynamic Route Hierarchy):**
+    - **Never cram multi-entity domains into a single shallow 1-page vertical scroll.** Single-page flattening of deep domains is an immediate failure.
+    - **Hub-and-Spoke Topology:** Emit `index.html` (or root page) as the high-level thematic gateway (overview map, curated highlights, live environmental metrics) and dedicated entity spokes (`/entity/[slug].html` or dynamic route `/entities/[slug]/page.tsx`) with full depth, dedicated photography, transit directions, and deep context.
+    - **Persistent Global Chrome:** Every page must share a unified header navigation, semantic breadcrumb trail (`Home > Sanctuary > Detail`), language toggle (`data-i18n`), and deep-linked interactive map state.
+- **Single-Page Landing (<=3 entities or focused conversion funnel):** Permitted only when the product scope is a singular tool, waitlist, individual app utility, or focused personal portfolio with a unified narrative flow.
 
 ## The library (RESOLVE, then READ)
 
@@ -461,6 +471,12 @@ consult `references/UNIVERSAL_ARSENAL.md`.
    shape, or dash (color-blind safe), never hue-only dots.
    **Dialog/Sheet/Overlay must have an accessible title** (sr-only is fine,
    absent is a fail); `Avatar` gets an `AvatarFallback`.
+    **Zero-Simulation Interactive Contract (STRICT):**
+    Never emit toy SVG sketches, mock static charts, or simulated widget placeholders. When real-world features are required:
+    - **Real GIS Cartography:** Geographical and regional surfaces must integrate real Leaflet.js or MapLibre GL with dual tile layers (OpenStreetMap cartographic baseline + Esri World Imagery high-resolution satellite), custom vector markers, interactive popups, bounding-box fit (`fitBounds`), and browser geolocation (`navigator.geolocation`). Never draw toy SVG coordinate doodles when mapping real geography.
+    - **Asset Precondition Standard:** Specifications requiring Leaflet/MapLibre must explicitly declare production stylesheet and script bundle tags (e.g. `<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">` and `<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js">` or npm packages) to prevent downstream runtime errors (`L is not defined`).
+    - **Real Live APIs with Client-Side TTL Caching:** Real-time environmental metrics (weather, temperature, humidity, transit feeds, air quality) must integrate zero-auth public REST endpoints (such as Open-Meteo) backed by client-side `localStorage` caching with strict TTL expiration (e.g. 30 minutes) and graceful fallback. Never output hardcoded fake weather strings or mock countdown timers lacking real date math.
+    - **Client-Side Localization (i18n):** Multi-language surfaces must provide a declarative `data-i18n` dictionary architecture with persistent language preference (`localStorage`), zero-reload DOM node text swapping, and explicit ARIA radiogroup controls.
 5. **Craft / micro-polish (production tell)** — apply the mechanics that
    separate "built" from "designed by an LLM": concentric radius (compute
    every nested corner with `outer - padding`, never all-equal), optical
@@ -494,6 +510,15 @@ consult `references/UNIVERSAL_ARSENAL.md`.
      non-equal intervals get non-equal spacing; splitting beats shrinking.
    - **Ink is never pure #000:** pick a blu-black or warm dark-grey and warm
      hairlines to match.
+   - **Production Fluid CSS Invariants:** Use CSS Container Queries (`@container (min-width: ...)`) for component-level responsiveness rather than rigid global viewport breakpoints. Mandate dynamic viewport height (`100dvh`) to prevent mobile browser URL-bar layout jumps, and enforce `env(safe-area-inset-*)` padding for mobile notches and home-indicator strips.
+    **Media & Photographic Art Direction Pipeline (STRICT):**
+    Visual, cultural, hospitality, tourism, product, and architectural surfaces cannot rely on empty tinted boxes or abstract SVG vector doodles:
+    - **Curated Photographic Sourcing:** Real high-resolution imagery sourced from authentic repositories (Wikimedia Commons, Unsplash verified collections, or curated project assets).
+    - **Responsive Picture Standard:** Every visual container must implement responsive `<picture>` tags with modern WebP formats, multi-tier `srcset` for mobile/tablet/desktop breakpoints, explicit `width` and `height` dimensions, and `loading="lazy"` on below-the-fold media.
+    - **Aspect-Ratio Stability (CLS = 0):** Every image container must enforce fixed geometric aspect ratios (`aspect-[16/9]`, `aspect-[4/3]`, `aspect-square`, `aspect-[21/9]`) with `object-cover` to prevent cumulative layout shift.
+    - **LCP Hero Preload:** The primary above-the-fold hero image must specify `fetchpriority="high"`, `loading="eager"`, and `<link rel="preload" as="image">` in `<head>`.
+    - **Native Accessible Lightbox Engine:** Photography inspection must provide a native HTML5 `<dialog>` modal with backdrop blur, keyboard ESC dismissal, focus trapping, high-res zoom view, and descriptive captions.
+    - **Banned SVG Mock Doodles:** Absolute ban on drawing naive geometric SVG blobs or vector outlines to simulate real photographic, historical, cultural, or physical subjects.
 6. **Signature detail** — ONE memorable mechanic: a noise/grain texture, a
    hover-scrub, a cursor behavior, a layout quirk, a refresh animation, a
    diagonal divider, a prompt line, a block cursor. Make it structural (part

@@ -10,7 +10,7 @@ designs from the model's memory of what "good design" looks like.
 
 The design language engine that never repeats itself.
 
-> **Downstream Implementation:** Hands off specifications to [akash-design-engineering](https://github.com/AkashPriyadarshii/akash-design-engineering) for tactile physics, shaders, procedural acoustics, OKLCH tokens, and React/Compose implementation.
+> **Downstream Implementation:** Directly implementable across modern production stacks: Tailwind CSS v4, W3C DTCG design tokens, CSS variables, React, and Android Jetpack Compose.
 
 ---
 

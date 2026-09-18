@@ -1,63 +1,79 @@
-# DESIGN SPEC — design-genius Marketing Site (Light Mode Archival Spec)
+# DESIGN SPEC : design-genius Marketing Site (Dual-Theme Engineering Spec)
 
-> Bespoke design specification produced by **design-genius** (reading its own brief and local library). 
-> Fused: **akash** (`awesome-design-md/design-md/akash` — Archival ivory newsprint, cinnabar sealing-wax causal line, typographic clip-path reveals) + **IBM Carbon** (`awesome-design-md/design-md/ibm` — 0-4px flat geometry, light display weight, tabular data rows) + **Raycast** (`awesome-design-md/design-md/raycast` — telemetry instrument readout, one-accent scarcity).
-> Downstream implementation: **akash-design-engineering** (@design-engineer/{tokens,physics,shaders,android,react}).
+> Bespoke design specification produced by **design-genius** (reading its own brief and local library).
+> Fused: **Stripe** (`awesome-design-md/design-md/stripe` : Substrate illumination, precision hairlines, high-contrast elevation) + **IBM Carbon** (`awesome-design-md/design-md/ibm` : 0-4px flat geometry, light display weight, tabular data rows) + **Raycast** (`awesome-design-md/design-md/raycast` : telemetry instrument readout, one-accent scarcity).
+> Downstream implementation: Framework-agnostic CSS/HTML production standards.
 
 ---
 
 ## 1. Visual Theme & Atmosphere
 
 - **Medium**: Web Long-Scroll Marketing & Interactive Specification Dossier.
-- **Theme Mode**: **Strictly Light Mode Only** (No dark mode theme). The site is an authentic physical artifact—an archival gazette and verified technical dossier.
-- **Substrate**: Archival Munken Newsprint (`oklch(0.968 0.012 88.0)`) infused with SVG procedural micro-grain noise ($R_a \approx 2.4\,\mu\text{m}$) and 32px ledger hairlines. Never flat cream, never sterile digital white.
-- **The Mandate**: The physical sealing-wax stamp verifies that zero AI slop, zero template monoculture, and zero generic purple gradients were used.
-- **Tone**: Authoritative, tactile, mathematically grounded, direct. A senior systems/design engineer communicating with developers.
+- **Theme Mode**: **Dual Theme Supported (Dark Default + Light Contrast)**. The site functions as a high-precision engineering instrument across both light and dark operating environments.
+- **Substrate**: High-contrast OLED Slate Void (`oklch(0.12 0.005 260)`) on dark, Crisp Optical Canvas (`oklch(0.985 0.002 90)`) on light, with 1px structural hairlines. Never flat muddy grey, never sterile digital white.
+- **The Mandate**: Strict mechanical enforcement verifying zero AI slop, zero template monoculture, and zero ungrounded gradients.
+- **Tone**: Authoritative, tactile, mathematically grounded, direct. A senior systems design engineer communicating with developers.
 
 ---
 
 ## 2. Pigmentation & OKLCH Color Tokens
 
-Strictly Light Mode palette. Color reproduction gate passed via physical causal receipts:
+Dual Theme palette with paired lightness ladders and contrast-verified tokens:
 
 ```css
 :root {
-  /* Substrate & Paper — Archival Munken Newsprint (Ra ≈ 2.4μm) */
-  --paper:           oklch(0.968 0.012 88.0); /* Base canvas: warm archival ivory */
-  --paper-deep:      oklch(0.932 0.015 86.0); /* Secondary surface / card tiles / dossiers */
-  --paper-elevated:  oklch(0.985 0.008 90.0); /* Lifted inspection panels */
+  /* Substrate & Surfaces : Crisp Optical Canvas (Light Mode) */
+  --paper:           oklch(0.985 0.002 90.0); /* Base canvas */
+  --paper-deep:      oklch(0.950 0.005 90.0); /* Secondary surface / cards */
+  --paper-elevated:  oklch(1.000 0.000 0.0);  /* Lifted inspection panels */
 
-  /* Ink & Typography — Deep Iron Gall Slate (Anchor Chroma >= 0.006) */
-  --ink:             oklch(0.160 0.022 260.0); /* Primary typography & stark rules */
-  --ink-muted:       oklch(0.440 0.020 260.0); /* Body text / secondary descriptions */
-  --ink-faint:       oklch(0.600 0.018 260.0); /* Column headers / metadata labels */
+  /* Ink & Typography : Deep Carbon Slate */
+  --ink:             oklch(0.140 0.015 260.0); /* Primary typography */
+  --ink-muted:       oklch(0.420 0.015 260.0); /* Body text / secondary descriptions */
+  --ink-faint:       oklch(0.600 0.012 260.0); /* Column headers / metadata labels */
 
-  /* Primary Accent — Sealing-Wax Vermillion (The Anti-Slop Seal) */
-  /* Causal receipt: Historical Indian gazette iron-oxide wax stamp sealing verified documents */
-  --accent:          oklch(0.600 0.220 26.5);  /* The Verification Stamp */
-  --accent-hover:    oklch(0.520 0.200 26.5);  /* Pressed seal interaction */
-  --accent-ink:      oklch(0.140 0.030 26.5);  /* Text on top of accent */
-  --accent-ghost:    color-mix(in oklch, oklch(0.600 0.220 26.5) 12%, transparent);
+  /* Primary Accent : Precision Signal Crimson */
+  --accent:          oklch(0.580 0.230 27.0);  /* Primary focal interrupt */
+  --accent-hover:    oklch(0.500 0.210 27.0);  /* Pressed action */
+  --accent-ink:      oklch(0.980 0.005 27.0);  /* Text on top of accent */
+  --accent-ghost:    color-mix(in oklch, oklch(0.580 0.230 27.0) 12%, transparent);
 
-  /* Secondary Functional Accent — Archive Brass / Phosphor Amber */
-  /* Causal receipt: Analog brass hardware indicators and active library telemetry */
-  --accent-brass:    oklch(0.800 0.170 76.0);  /* Telemetry meters / active state */
-  --brass-faint:     color-mix(in oklch, oklch(0.800 0.170 76.0) 15%, transparent);
-
-  /* Hairlines & Boundaries — 1px Structural Grid Lines */
-  --hairline:        oklch(0.820 0.015 85.0);  /* Subtle ledger divider */
-  --hairline-strong: oklch(0.400 0.020 260.0); /* Heavy structural border */
+  /* Hairlines & Boundaries : 1px Structural Grid Lines */
+  --hairline:        oklch(0.880 0.005 90.0);  /* Structural divider */
+  --hairline-strong: oklch(0.700 0.010 260.0); /* Heavy structural border */
 
   /* Semantic State Tokens */
-  --success:         oklch(0.550 0.160 148.0); /* Terminal verified / tests pass */
+  --success:         oklch(0.580 0.170 148.0); /* Terminal verified / tests pass */
   --warning:         oklch(0.720 0.180 65.0);  /* Audit advisory */
+}
+
+[data-theme="dark"] {
+  /* Substrate & Surfaces : High-Contrast Slate Void */
+  --paper:           oklch(0.120 0.005 260.0); /* Base canvas */
+  --paper-deep:      oklch(0.160 0.008 260.0); /* Elevated cards */
+  --paper-elevated:  oklch(0.200 0.012 260.0); /* Overlays and modals */
+
+  /* Ink & Typography : Crisp Polar White */
+  --ink:             oklch(0.960 0.005 260.0); /* Primary typography */
+  --ink-muted:       oklch(0.720 0.010 260.0); /* Body copy */
+  --ink-faint:       oklch(0.520 0.010 260.0); /* Metadata */
+
+  /* Primary Accent : High-Chroma Signal Crimson */
+  --accent:          oklch(0.640 0.240 27.0);
+  --accent-hover:    oklch(0.700 0.220 27.0);
+  --accent-ink:      oklch(0.120 0.005 27.0);
+  --accent-ghost:    color-mix(in oklch, oklch(0.640 0.240 27.0) 18%, transparent);
+
+  /* Hairlines & Rings : 1px Translucent Bevels */
+  --hairline:        rgba(255, 255, 255, 0.08);
+  --hairline-strong: rgba(255, 255, 255, 0.18);
 }
 ```
 
 ### Color Gate Receipts:
-1. **Accent Hue:** 26.5° (Vermillion/Cinnabar) sits at the sharp edge of red-orange, separated ≥ 40° from cool slates (260°) and brass amber (76°).
-2. **Substrate Chroma:** Base canvas has C = 0.012 at hue 88° with SVG noise, proving physical newsprint grain over flat AI cream.
-3. **Contrast Verification:** AAA compliance for body ink on paper (14.2:1); AA compliance for accent on paper (5.4:1).
+1. **Accent Hue:** 27.0° (Precision Signal Crimson) maintained consistently across modes with compensated lightness/chroma.
+2. **Substrate Depth:** Lightness ladder (+4% L per elevation tier) with 1px inset specular rings.
+3. **Contrast Verification:** WCAG AAA compliance for text (13.8:1 on light, 15.2:1 on dark); AA compliance for accent indicators.
 
 ---
 
@@ -65,12 +81,12 @@ Strictly Light Mode palette. Color reproduction gate passed via physical causal 
 
 Enforces the strict 2+1 font family ceiling:
 
-1. **Display & Wordmark**: `Special Elite` (Authentic mechanical typewriter — the physical soul of un-templated documentation).
-2. **Body & Prose**: `Source Serif 4` (Refined humanist editorial serif, 400 weight, 1.7 line-height).
-3. **Telemetry, Mono & Code**: `IBM Plex Mono` (Tabular numbers, command palette, live telemetry counters).
+1. **Display & Wordmark**: `Space Grotesk` or `Syne` (Precision geometric display with optical weight contrast at 300/600).
+2. **Body & Prose**: `Inter Tight` or `Source Sans 3` (Engineered UI sans, 400 weight, 1.65 line-height, zero orphan balance).
+3. **Telemetry, Mono & Code**: `IBM Plex Mono` (Tabular figures, command palette, live telemetry counters).
 
 ### Fluid Scale (Off 15px Base):
-- `display-hero`: `clamp(2.8rem, 6.5vw, 4.8rem)` / `line-height: 1.08` / `letter-spacing: -0.02em`
+- `display-hero`: `clamp(2.8rem, 6.5vw, 4.8rem)` / `line-height: 1.08` / `letter-spacing: -0.03em`
 - `heading-1`: `clamp(2.0rem, 4.0vw, 2.8rem)` / `line-height: 1.15`
 - `heading-2`: `clamp(1.4rem, 2.5vw, 1.8rem)` / `line-height: 1.25`
 - `body-large`: `1.15rem` / `line-height: 1.65`
@@ -87,15 +103,14 @@ Enforces the strict 2+1 font family ceiling:
 
 ---
 
-## 5. Kinetic Motion & Interaction (akash-design-engineering Bridge)
+## 5. Kinetic Motion & Interaction (Production Standards)
 
 - **Audio Engine**: **DISABLED (Silent)**. Absolutely zero Web Audio synthesis or clicks.
 - **Mechanical Easing Curves**:
   - `var(--ease-snap)`: `cubic-bezier(0.18, 0.89, 0.32, 1.28)` (120ms snap for hover stamps and button presses).
-  - `var(--ease-enter)`: `cubic-bezier(0.16, 1.0, 0.3, 1.0)` (Typographic clip-path reveal and scroll entry).
+  - `var(--ease-enter)`: `cubic-bezier(0.16, 1.0, 0.3, 1.0)` (Typographic reveal and scroll entry).
 - **Signature Interactive Details**:
   - **Live Fuser Widget**: Interactive terminal where visitors select 2 systems (e.g. *Nothing* + *Swiss Editorial*) and see a synthesized `DESIGN.md` token receipt live.
-  - **The Sealing-Wax Stamp**: Verified stamps on shipped systems rotate -4° and stamp into cinnabar on hover.
   - **Telemetry Rollup**: Pure JavaScript `requestAnimationFrame` counters for library systems (74), levers (9), and audit dimensions (10).
 
 ---
@@ -106,11 +121,11 @@ Enforces the strict 2+1 font family ceiling:
 |---|---|---|
 | **1. Concentric Radii** | R_inner = max(0, R_outer - p) | Strictly 0px–2px crisp square mechanical edges |
 | **2. Spring Physics** | Analytical ODE / Custom cubic-bezier | Snappy 120ms mechanical detents |
-| **3. Pigments** | OKLCH with Anchor Chroma >= 0.006 | Deep Iron Gall Slate + Sealing-Wax Vermillion |
-| **4. Shaders & Noise** | Procedural SVG Noise | Ra ≈ 2.4μm newsprint grain substrate |
+| **3. Pigments** | OKLCH with Anchor Chroma >= 0.006 | Dual-mode Slate Void + Signal Crimson |
+| **4. Shaders & Noise** | Clean 1px Bevels | High-contrast elevation without diffuse shadows |
 | **5. Sensory Audio** | Disabled | 100% silent interaction |
-| **6. Fluid Typography** | clamp() + tabular figures | Special Elite + Source Serif 4 + IBM Plex Mono |
+| **6. Fluid Typography** | clamp() + tabular figures | Space Grotesk + Inter Tight + IBM Plex Mono |
 | **7. Spatial Grid** | 4px rhythmic ladder | Swiss modular grid with 1px hairlines |
-| **8. Accessibility** | WCAG 2.2 AAA Contrast | 14.2:1 body ink on archival paper |
+| **8. Accessibility** | WCAG 2.2 AAA Contrast | 13.8:1 text on light, 15.2:1 text on dark |
 | **9. Semantic HTML** | Structural Landmarks | <main>, <nav>, <aside>, <section>, JSON-LD |
 | **10. Zero AI Slop** | No 3-card rows, no purple gradients | Asymmetric editorial layout with verifiable receipts |

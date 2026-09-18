@@ -186,13 +186,13 @@ Replace arbitrary `transition: all 0.3s ease` with standardized 4-tier spring ph
 
 ---
 
-## 9. Tested Substrates & Material Elevations (`AkashDesigns` & `awesome-design-md`)
+## 9. Tested Substrates & Material Elevations (Bespoke Production Reference Systems)
 
 ### A. Substrate Pigment Library
-- **Void Obsidian (`#08090a` / `#000000`):** Pure absence substrate (`oklch(0.12 0.005 260)`), hairline border `rgba(255, 255, 255, 0.08)`, card surface `#0e1219`.
-- **Munken Parchment (`#fdfbf7`):** Warm tactile ground (`oklch(0.98 0.008 85)`), raw ink `#2c2825`, divider `#e8e4dc`.
-- **Newsprint Rag (`#f4f1ea`):** Dense editorial paper (`oklch(0.95 0.012 88)`), muted charcoal `#59534a`, hairline rule `#d5cfc2`.
-- **Bone Ceramic (`#f9f6f0`):** Polished mineral base (`oklch(0.97 0.008 90)`), elevated `#ffffff`, recessed wells `#ede7db`.
+- **Void Obsidian (`#08090a` / `#000000`):** Pure absence OLED substrate (`oklch(0.12 0.005 260)`), hairline border `rgba(255, 255, 255, 0.08)`, card surface `#0e1219`.
+- **Titanium Gray Neutral (`#f4f5f7`):** Precision industrial anodized alloy ground (`oklch(0.96 0.002 240)`), stark graphite ink `#12151a`, divider `#e2e4e9`.
+- **Deep Industrial Slate (`#0f141c`):** Technical telemetry cockpit (`oklch(0.14 0.015 220)`), glowing cyan/electric accents, borders `rgba(255, 255, 255, 0.06)`.
+- **Crisp Optical Canvas (`#fcfcfd`):** Razor-clean modern product substrate (`oklch(0.985 0.002 90)`), elevated `#ffffff`, hairline dividers `#eaedf1`.
 
 ### B. Dark Mode Elevation (Banning Diffuse Black Drop-Shadows)
 Dark mode surfaces cannot cast black shadows on dark backgrounds. Elevation is constructed through stepped lightness + inner specular bevels:
@@ -273,5 +273,209 @@ True optical refraction displaces background geometry via SVG turbulence rather 
 - **Surfaces:** Classic 3D beveled surfaces (Border-Top/Left: `2px solid #ffffff`, Border-Bottom/Right: `2px solid #808080`, Background: `#c0c0c0`).
 - **Typography:** Tabular fixed-pitch bitmap or monospaced font with zero anti-aliasing.
 - **Palettes:** Warm pastel ribbon tints (`#ffffe0` lemon chiffon, `#e0f0ff` ice blue) against industrial battleship gray.
+
+---
+
+## 13. Corporate Giant Design Engineering Standards & Media Pipelines
+
+### A. Real GIS & Dual-Layer Cartography Engine (Zero-Simulation Mandate)
+Toy SVG paths or simulated coordinate sketches representing real geography are strictly banned. Real cartography mandates Leaflet.js or MapLibre GL with dual tile layers (OpenStreetMap cartographic baseline + Esri World Imagery high-resolution satellite):
+
+```html
+<!-- Leaflet Dual-Layer Cartography Container -->
+<div id="map" class="w-full h-[480px] rounded-2xl border border-border shadow-inner" role="region" aria-label="Interactive Geographic Map"></div>
+```
+```javascript
+// Dual-Layer Map Initialization with OSM + Satellite Fallback
+const osmLayer = L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+  maxZoom: 19,
+  attribution: '&copy; OpenStreetMap contributors'
+});
+
+const satelliteLayer = L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}', {
+  maxZoom: 19,
+  attribution: 'Tiles &copy; Esri'
+});
+
+const map = L.map('map', {
+  center: [lat, lng],
+  zoom: 13,
+  layers: [osmLayer],
+  scrollWheelZoom: false
+});
+
+const baseMaps = {
+  "Map View": osmLayer,
+  "Satellite": satelliteLayer
+};
+
+L.control.layers(baseMaps, null, { position: 'topright' }).addTo(map);
+
+// Accessible Custom Vector Markers
+const marker = L.marker([lat, lng], {
+  icon: L.divIcon({
+    className: 'custom-pin',
+    html: `<div class="w-8 h-8 rounded-full bg-accent border-2 border-white shadow-lg flex items-center justify-center text-white"><svg class="w-4 h-4" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z"/></svg></div>`,
+    iconSize: [32, 32],
+    iconAnchor: [16, 32]
+  })
+}).addTo(map);
+```
+
+### B. Real Zero-Auth Public APIs with Client-Side TTL Caching
+Simulated static counters or hardcoded mock weather feeds are banned. Real live data feeds must call public zero-auth REST APIs (e.g. Open-Meteo for atmospheric metrics) wrapped in a deterministic `localStorage` cache with a TTL:
+
+```javascript
+// Open-Meteo Weather Integration with 30-minute Local Storage TTL
+async function fetchLiveWeather(lat, lng) {
+  const CACHE_KEY = `weather_${lat.toFixed(2)}_${lng.toFixed(2)}`;
+  const TTL = 30 * 60 * 1000; // 30 minutes in milliseconds
+  const cached = localStorage.getItem(CACHE_KEY);
+
+  if (cached) {
+    try {
+      const { timestamp, data } = JSON.parse(cached);
+      if (Date.now() - timestamp < TTL) {
+        return data;
+      }
+    } catch (e) {
+      localStorage.removeItem(CACHE_KEY);
+    }
+  }
+
+  try {
+    const url = `https://api.open-meteo.com/v1/forecast?latitude=${lat}&longitude=${lng}&current=temperature_2m,relative_humidity_2m,weather_code,wind_speed_10m&timezone=auto`;
+    const res = await fetch(url);
+    if (!res.ok) throw new Error(`Weather API error: ${res.status}`);
+    const data = await res.json();
+    localStorage.setItem(CACHE_KEY, JSON.stringify({ timestamp: Date.now(), data }));
+    return data;
+  } catch (err) {
+    console.warn("Weather fetch failed, falling back to cached baseline:", err);
+    return null;
+  }
+}
+```
+
+### C. Declarative Client-Side Localization Architecture (i18n)
+Full client-side multi-language support without page reloads using a declarative `data-i18n` contract:
+
+```html
+<!-- Multi-language Toggle Component -->
+<div class="inline-flex rounded-lg border border-border p-1 bg-surface-subtle" role="radiogroup" aria-label="Language selection">
+  <button type="button" class="lang-btn active px-3 py-1 text-xs font-medium rounded-md transition-colors" data-lang="en" role="radio" aria-checked="true">English</button>
+  <button type="button" class="lang-btn px-3 py-1 text-xs font-medium rounded-md transition-colors" data-lang="es" role="radio" aria-checked="false">Español</button>
+</div>
+
+<!-- Declarative i18n DOM Element -->
+<h1 data-i18n="hero.title">Global Telemetry and Systems Verification</h1>
+<p data-i18n="hero.description">Real-time distributed infrastructure monitoring and audit logs.</p>
+```
+```javascript
+// Zero-Dependency i18n Switcher with Persistence
+const translations = {
+  en: {
+    "hero.title": "Global Telemetry and Systems Verification",
+    "hero.description": "Real-time distributed infrastructure monitoring and audit logs."
+  },
+  es: {
+    "hero.title": "Telemetría Global y Verificación de Sistemas",
+    "hero.description": "Monitoreo de infraestructura distribuida en tiempo real y registros de auditoría."
+  }
+};
+
+function setLanguage(lang) {
+  if (!translations[lang]) return;
+  localStorage.setItem('preferred_lang', lang);
+  document.documentElement.lang = lang;
+
+  document.querySelectorAll('[data-i18n]').forEach(el => {
+    const key = el.getAttribute('data-i18n');
+    if (translations[lang][key]) {
+      el.textContent = translations[lang][key];
+    }
+  });
+
+  document.querySelectorAll('.lang-btn').forEach(btn => {
+    const active = btn.getAttribute('data-lang') === lang;
+    btn.setAttribute('aria-checked', active ? "true" : "false");
+    btn.classList.toggle('active', active);
+  });
+}
+```
+
+### D. Media & Photographic Art Direction Pipeline
+Empty color placeholders or abstract vector doodles for photographic subjects are banned. Real products, cultural sites, and architecture require strict photographic asset pipelines:
+
+1. **Responsive `<picture>` Pattern:**
+   Every hero and gallery visual must provide optimized WebP formats, multi-breakpoint resolution sets, and explicit aspect-ratio containment to ensure zero Cumulative Layout Shift (CLS = 0):
+   ```html
+   <div class="relative overflow-hidden rounded-2xl aspect-[16/9] bg-surface-subtle border border-border">
+     <picture>
+       <source type="image/webp" media="(min-width: 1024px)" srcset="img-large.webp 1x, img-large@2x.webp 2x" />
+       <source type="image/webp" media="(min-width: 640px)" srcset="img-medium.webp 1x, img-medium@2x.webp 2x" />
+       <source type="image/webp" srcset="img-small.webp 1x, img-small@2x.webp 2x" />
+       <img
+         src="img-fallback.jpg"
+         alt="Historic sandstone shrine under golden sunrise illumination"
+         width="1920"
+         height="1080"
+         loading="lazy"
+         decoding="async"
+         class="w-full h-full object-cover transition-transform duration-500 ease-out hover:scale-105"
+       />
+     </picture>
+   </div>
+   ```
+
+2. **LCP Hero Preload Contract:**
+   The primary visual above the fold must be preloaded in `<head>` to minimize Largest Contentful Paint:
+   ```html
+   <link rel="preload" as="image" href="hero-1920.webp" type="image/webp" fetchpriority="high" />
+   ```
+
+### E. Native Accessible Lightbox Modal (`<dialog>`)
+Inspection of high-resolution photographic media must use semantic HTML5 `<dialog>` elements with backdrop blur, focus trapping, and keyboard navigation:
+
+```html
+<dialog id="lightbox-dialog" class="fixed inset-0 z-50 p-0 m-auto bg-transparent backdrop:bg-black/80 backdrop:backdrop-blur-md rounded-2xl max-w-5xl max-h-[90vh] overflow-hidden focus:outline-none" aria-modal="true" aria-label="Photo Inspector">
+  <div class="relative flex flex-col items-center justify-center p-4">
+    <button type="button" id="close-lightbox" class="absolute top-4 right-4 z-10 p-2 text-white/80 hover:text-white bg-black/40 hover:bg-black/70 rounded-full transition-colors focus:outline-none focus:ring-2 focus:ring-accent" aria-label="Close photo inspector">
+      <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/></svg>
+    </button>
+    <img id="lightbox-img" src="" alt="" class="max-w-full max-h-[80vh] object-contain rounded-lg shadow-2xl" />
+    <p id="lightbox-caption" class="mt-3 text-sm text-neutral-200 text-center font-medium"></p>
+  </div>
+</dialog>
+```
+```javascript
+const dialog = document.getElementById('lightbox-dialog');
+const lightboxImg = document.getElementById('lightbox-img');
+const lightboxCaption = document.getElementById('lightbox-caption');
+const closeBtn = document.getElementById('close-lightbox');
+
+document.querySelectorAll('[data-lightbox]').forEach(trigger => {
+  trigger.addEventListener('click', () => {
+    lightboxImg.src = trigger.getAttribute('data-fullsrc') || trigger.src;
+    lightboxImg.alt = trigger.alt || '';
+    lightboxCaption.textContent = trigger.getAttribute('data-caption') || trigger.alt || '';
+    dialog.showModal();
+  });
+});
+
+closeBtn.addEventListener('click', () => dialog.close());
+dialog.addEventListener('click', (e) => {
+  if (e.target === dialog) dialog.close();
+});
+```
+
+### F. Multi-Page Platform Architecture (Domain Scope Invariant)
+When a domain contains $>3$ distinct entities with individual historical records, catalogs, routes, or deep specifications (e.g. regional tourism with 8 heritage sites, comprehensive product platforms, multi-model car catalogs, technical documentation portals):
+1. **Never Cram into a Single Flat Scroll:** Single-page flattening of multi-entity domains dilutes information architecture and creates unreadable 10,000px scrolls.
+2. **Hub-and-Spoke Topology:**
+   - Primary Hub (`index.html`): High-level thematic gateway, overview map, atmospheric hero, curated summary cards, live weather/status feeds.
+   - Dedicated Entity Spokes (`/entities/[slug].html` or Next.js App Router dynamic routes): Exhaustive historical context, coordinates, visitor guidelines, dedicated photo galleries, and transit instructions.
+3. **Persistent Global Chrome:** Every spoke must feature a unified header navigation, semantic breadcrumb trail (`Home > Sanctuary > Detail`), language toggle, and deep-linked interactive map.
+
 
 

@@ -62,7 +62,7 @@ tells from the nine levers: accent in band on a flat default bg with no causal l
 contrast failure (<4.5:1 / <3:1), em-dash spray, eyebrow overuse, CTA dead text
 ("Learn more"), serif-for-taste, drop-shadow-everything, centered-3-cards.
 
-## 3.5 Mechanical Anti-Slop Linters (Rules 9.A–9.J & 58-Gate Standard)
+## 3.5 Mechanical Anti-Slop Linters (Rules 9.A–9.M & 58-Gate Standard)
 
 Apply these automated linter rules before emitting the verdict. Any violation is an automatic FAIL:
 
@@ -76,6 +76,9 @@ Apply these automated linter rules before emitting the verdict. Any violation is
 - **9.H Spring Physics Linter:** Enforce Tier 1–4 parameters ($k=400\text{--}500$ inputs, $k=220\text{--}300$ sheets, $k=120\text{--}180$ trackers, $0\text{ms}$ hotkeys). Banned: generic browser `ease`, uncalibrated float springs, or exit animations slower than enter animations.
 - **9.I Surface Contrast & Lightness Ladder:** Enforce OKLCH neutral chroma floor ($C \ge 0.005$ tinted to anchor hue, pure $C=0$ banned), fast lightness delta $|L_{\text{text}} - L_{\text{bg}}| \ge 0.50$, and dark mode surface elevation via $+3\%$ lightness rings rather than blurry colored drop shadows.
 - **9.J Concentric Radius Linter:** Compute every nested radius: $R_{\text{inner}} = \max(0, R_{\text{outer}} - \text{Padding})$. Equal nested radii create optical corner bulging and are flagged as immediate mechanical defects.
+- **9.K Zero-Simulation Linter:** Rejection of fake interactivity, mock static charts, and simulated vector doodles. Geographical surfaces must integrate real Leaflet/MapLibre GIS engines with dual tile layers (OSM + Satellite) and interactive pins; dynamic atmospheric/market data must call real public APIs with client-side TTL caching (e.g. Open-Meteo); multi-language specs must provide real declarative i18n dictionaries.
+- **9.L Media & Photographic Pipeline Linter:** Rejection of visual, cultural, tourism, product, or architectural surfaces lacking photographic art direction. Mandates responsive `<picture>` tags with WebP/AVIF formats, multi-tier `srcset`, explicit aspect-ratio containers (preventing CLS), LCP hero preloading (`fetchpriority="high"`), and native `<dialog>` lightbox photo inspectors.
+- **9.M Domain Scope & Architecture Linter:** Rejection of cramming multi-entity catalogs (>3 discrete entities with independent historical records, routes, or specifications) into single-page flat scrolls. Mandates a hub-and-spoke multi-page platform (or dynamic App Router route hierarchy) with unified navigation, breadcrumbs, and deep linking.
 - **58-Gate Verification:** For comprehensive audits, cross-verify against the full 58-gate invariant checklist documented in `references/UNIVERSAL_ARSENAL.md`.
 
 ## 4. Emit the diff-DESIGN.md (what to change, exactly)
