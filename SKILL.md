@@ -205,7 +205,21 @@ saw, so the receipt is provable.
 3. **Nested fusion** — then pull 1-2 *single* tokens/levers from 1-2 more
    systems (this one's mobile nav, that one's hover motion, one accent color).
    One fusion system does not launch a full look; the richest output layers a
-   third opinion, not a costume. Name every borrow.
+   third opinion, not a costume. Name every borrow. Synthesis law: ONE primary
+   direction, borrow only 1-2 details. Never average two systems into a polite
+   middle. Token role sticks to the token (CTA-only stays CTA-only).
+4. **Read order on existing artifacts (REVISE/REDESIGN):** crawl, then extract,
+   then process, then format, then score. Crawl the styling surface first
+   (selectors by semantic priority, visibility-filtered), normalize by
+   frequency (count sizes/families/colors/spacing/radii, canonicalize to hex,
+   keep highest-usage token per value), then elect coverage: tag each token
+   site-wide, section, or page-local and merge near-identicals. One-offs never
+   ship as system tokens. Prefer W3C DTCG 3-layer form (primitive, semantic,
+   composite) for the token map.
+5. **Motion-runtime capture (REVISE):** re-read interaction states and live
+   motion explicitly (hover/focus/active deltas, real durations, stagger,
+   scroll recipes). Most audits drop motion; a diff with no motion section is
+   incomplete.
 
 ### Stage 3.5 · Read the PRO bar (scene + interaction defaults)
 For WEB task types (portfolio/landing/app/blog), read
@@ -241,9 +255,17 @@ consult `references/UNIVERSAL_ARSENAL.md`.
      cheerleader confirmations.
    - **Anatomy beats abstraction in UI text:** "2 of 12 files uploaded"
      over "Upload in progress" — the number is the progress.
-   - **Em-dash hard ban in spec copy** (taste-skill 9.G): no "—" in the
-     DESIGN.md copy you emit. It is the single loudest AI-prose tell. A
-     comma, colon, or full stop does the job the em-dash was reaching for.
+    - **Em-dash hard ban in spec copy** (taste-skill 9.G): no "—" in the
+      DESIGN.md copy you emit. It is the single loudest AI-prose tell. A
+      comma, colon, or full stop does the job the em-dash was reaching for.
+    - **Slop words and structures (stop-slop, spec-copy scope):** ban delve,
+      foster, leverage, utilize, facilitate, empower, streamline, robust,
+      cutting-edge, tapestry, realm, embark, supercharge, harness; ban
+      throat-clearers ("here is the thing", "when it comes to", "in order
+      to"), not-X-but-Y contrast, colon reveals, `-ing` pseudo-analysis,
+      synonym cycling, and fake-profound kickers (end on the last concrete
+      sentence). Max 2-item lists, never metronomic 3s. Active voice, human
+      subject, no `-ly` adverbs unless load-bearing.
 
 1. **Medium & layout archetype** — design-genius is a universal design language
    engine across any medium (physical, industrial, spatial, graphic, or digital).
@@ -421,6 +443,9 @@ consult `references/UNIVERSAL_ARSENAL.md`.
     - **All-caps display heads need line-height ≥1.02-1.08** — uppercase has no
       descenders; below 1.0 line-N+1 caps collide with line-N baselines.
     - **Minimalist lock (when archetype is minimal):** canvas `#FFFFFF/#F7F6F3/#FBFBFA`, borders strictly `1px solid #EAEAEA`, body `#111111/#2F3437` lh 1.6, CTA `#111111` on `#FFFFFF` radius 4-6px no shadow, bento radius max 8-12px padding 24-40px.
+    - **Type scale law (refero):** ratio 1.2 minor-third off 16px (11/13/16/19/23/28/33/40/48/57), max 6-8 sizes, at most 2 families, weights 400/500/600 only, ALL-CAPS tracking 0.06-0.10em, small text 0.01-0.02em.
+    - **Radius/density law:** dense+corporate 4px, airy+corporate 12px, soft+playful 18px, sharp+corporate 2px. Cards radius 8px or less, buttons 6px, focus-ring offset 2px.
+    - **Single-accent law:** one accent, everything else greyscale. Refined black `#2A2A2A`, never pure `#000`. Shadows 8% opacity or less (4% ideal), one light direction. Numbers:units 2:1 (48px value over 24px unit). Status color marks severity only; normal rows stay grey, never rainbow lists.
 4. **Motion/state (MANDATORY, from interaction-patterns.md)** — meet the
    scene baseline: entrance (fadeInUp + stagger), scroll-reveal, hero layered
    entrance, hover/focus states. At L2+: sticky-nav blur, reveal-on-scroll.
@@ -463,6 +488,9 @@ consult `references/UNIVERSAL_ARSENAL.md`.
    page reveals. Exit = 60-75% of enter, never the reverse. Emil ideal 180ms, nothing expressive over 300ms without cause.
     **Motion slop heuristics (flag as FAIL):** any pulse/glow loop, blur-enter on 3 or more components, same hover-scale on 3 or more, stagger on 2 or more lists, identical fade on 4 or more elements, bounce spring on utility surfaces.
     **Motion stack rule:** motion only in isolated client leaves, continuous values via motion-value/scroll hooks, never state-driven per-frame updates.
+    **Duration token scale (transitions.dev, match by usage):** stagger 40ms, micro 80ms, quick 150ms (close, text swap, tooltip), fast 250ms (dropdown/modal open, tabs, page slide), medium 350ms (panel/toast close), slow 400ms (panel open, skeleton reveal), very-slow 500ms (badge, text reveal). Toasts cap at 400ms. Easings: smooth-out `cubic-bezier(0.22,1,0.36,1)` for open/close/slide, bounce `cubic-bezier(0.34,1.36,0.64,1)` for pops, linear for shimmer. Distances 4/6/8/12/30px. Scales: modal .96, dropdown .97, tooltip .98. Blurs 2/3/8px. Never `transition:all`. Accordions via `grid-rows 0fr to 1fr`.
+    **Scroll motion (when scope needs it):** Lenis smoother defaults (`duration 1.2`, `lerp 0.1`, `respectReducedMotion`, `data-lenis-prevent` for nested scroll). Dashboards stay calm (no scroll-jack, parallax, or 3D); cinematic scroll-linked reveals belong on landing pages only.
+    **Signature FX menu (pick at most one):** border-beam outline sweep, liquid-gooey morph, thinking-orb loader, metallic sheen, shader-gradient hero (`uSpeed 0.1-0.4`, `pixelDensity 1` on mobile), liquid-glass refraction container. One FX per page; the signature stays structural.
    **Tooltip delay is asymmetric by intent:** hover = 800-1000ms (no flash on
    casual movement), focus = 0ms (keyboard user reached it deliberately —
    never delay them). Equal delays on both = the generated tell.
@@ -499,6 +527,7 @@ consult `references/UNIVERSAL_ARSENAL.md`.
    ≥40px hit targets on every interactive. Emit these as rules in the
    component-patterns section, not vibes.
     **Entry/press defaults:** entry `translateY(12px) + opacity 600ms cubic-bezier(0.16,1,0.3,1)` via IntersectionObserver, stagger `calc(var(--index)*80ms)`; press `scale(0.98)/translateY(1px)` under 120ms; skeleton loaders shaped like layout, never spinners; tinted shadows, never pure-black.
+    **Perceptual floors (pencilplaybook):** disabled opacity 40% (never 50%, ghosts compete with active); hover needs 8% lightness delta or more or it reads dead; dark-mode body `#E2E8F0/#F1F5F9`, never pure white (halation); touch targets 44px or more, primary button height 40-44px, compact 32px; modal widths 380/480/600/720; form column 600px (480 simple, 800 wide); empty-state content 400px.
    **Depth + geometry mechanics (corpus-proven):**
    - **4px grid (geometry, not type):** spacing, padding, gaps, coordinates,
      and radiuses on the 4px/8dp ladder — a non-integer coordinate is the
@@ -563,6 +592,10 @@ consult `references/UNIVERSAL_ARSENAL.md`.
 8. **Pre-mortem** — walk it like a harsh reviewer: "What makes this look like
    every other AI portfolio?" If you can't name the answer in one sharp
    sentence, deepen the signature detail until you can.
+   **Litmus tests (refero):** card test (strip border, shadow, bg, radius; if
+   nothing breaks, delete the card), copy test (delete 30%; if better, keep
+   deleting), logo-swap test (if another brand's logo still fits, it is
+   generic slop).
 
 ### Stage 4.5 · Seed Lab (domain → swatch, gate-checked)
 The palette derives from the product's DOMAIN, never the model's body heat.
@@ -626,7 +659,7 @@ four judgment checks: would this be
 called generic at a glance, does copy sound human, is it on-product or a
 costume, does it hold at the payload (the real content, not the hero). Any
 fail → fix in the same pass, don't ship the hopeful version.
-- **Scored verdict:** `score = passed/10 x 10`. 9-10 ship, 7-8 fix listed fails, 5 or less re-emit. List failing dims as named actions.
+- **Scored verdict:** `score = passed/10 x 10`. 9-10 ship, 7-8 fix listed fails, 5 or less re-emit. List failing dims as named actions. Lint floor: under 65 refuse the emit, max 5 polish loops, then re-derive instead of patching.
 - **Performance budget (dim 11, guardrail):** page under 1.5MB, JS under 300KB compressed, CSS under 100KB, above-fold images under 500KB, fonts under 100KB, third-party under 200KB. Targets LCP 2.5s or less, INP 200ms or less, CLS 0.1 or less, TTFB under 800ms. Static-only findings are hypotheses until a trace proves them.
 - **UI Finish Gate Decision (PASS or HOLD):** Conclude the audit with an explicit binary verdict:
   - **PASS**: The First-Read Object and Primary Action are immediately evident within 500ms; empty/loading states are handled; multi-viewport responsiveness is proven.

@@ -66,7 +66,7 @@ def call_jev(state: str, questions: dict, timeout: float = 6.0) -> dict:
 
 
 def mechanical_linter(text: str) -> tuple[bool, list[str]]:
-    """Runs strict mechanical linter rules 9.A - 9.S."""
+    """Runs strict mechanical linter rules 9.A - 9.U plus SS001-SS006 detectors."""
     issues = []
 
     # Strip code blocks and HTML comments for prose checks to prevent false positives
@@ -166,6 +166,30 @@ def mechanical_linter(text: str) -> tuple[bool, list[str]]:
         has_img_receipt = any(k in lower for k in ("unsplash", "pexels", "wikimedia", "image prompt", "srcset", "picture", "alt="))
         if not has_img_receipt:
             issues.append("Rule 9.S violation: Photography claimed without real URL, srcset/picture receipt, or [IMAGE PROMPT] block.")
+
+    # 9.T: Drift-Bot Clause (no token-drift story)
+    if "design spec" in lower or "design.md" in lower:
+        has_drift = any(k in lower for k in ("drift", "visual-diff", "token diff", "fail-on-change", "baseline"))
+        if not has_drift:
+            issues.append("Rule 9.T violation: Missing token-drift story (drift/lint/visual-diff check against the token file).")
+
+    # 9.U: Icon-Sourcing Allowlist (mixed families, terminal glyphs, emoji icons)
+    if "icon" in lower:
+        if any(k in lower for k in ("nerd font", "nerdfont", "font awesome + lucide", "lucide + font awesome", "mixed icon", "emoji as icon", "emoji icon")):
+            issues.append("Rule 9.U violation: Mixed icon families, terminal glyph fonts in web CSS, or emoji-as-icon. Lock ONE UI family; brand marks from Simple Icons only.")
+
+    # SS001-SS006 deterministic detectors (styleseed)
+    if re.search(r"#000000|#000\b|pure #000", lower) and "refined" not in lower and "#2a2a2a" not in lower:
+        issues.append("SS003 violation: Pure #000 ink detected. Use refined black (#2A2A2A) or tinted ink.")
+    if "transition: all" in lower or "transition:all" in lower:
+        if "ban" not in lower and "never" not in lower:
+            issues.append("SS003 violation: `transition: all` detected without a ban note. Transition real properties only.")
+    if "outline: none" in lower or "outline:none" in lower:
+        if "focus-visible" not in lower and "focus visible" not in lower:
+            issues.append("SS005 violation: Focus suppression (`outline: none`) without a `:focus-visible` replacement.")
+    if re.search(r"animation|transition|@keyframes", lower):
+        if "prefers-reduced-motion" not in lower and "reduced motion" not in lower:
+            issues.append("SS004 violation: Motion declared without a `prefers-reduced-motion` fallback.")
 
     return len(issues) == 0, issues
 

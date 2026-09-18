@@ -40,6 +40,14 @@ you need; the skill adapts to whatever is present (it `ls`es before reading).
 | img2threejs | 2D image to interactive Three.js / WebGL shader pipeline |
 | frontend-design-pro-demo | 11-aesthetic commit table (Swiss, Neumorphism, Glass, Brutalist, Clay, Aurora, Cyberpunk, Hyperreal, Maximalist, OLED-luxury, Biomorphic) + perfect-images rule (real Unsplash/Pexels URL or `[IMAGE PROMPT]` block, never fake src) |
 | ui-ux-pro-max catalog | Optional reference counts: 74 type pairings, 1934 Google Fonts, 105 curated + 1512 Phosphor icons, 119 UX rules, 17 motion presets, 25 chart types |
+| design-extract | Live-URL to DTCG tokens pipeline (coverage election, motion-runtime capture, WCAG remediation, drift-bot CI, fidelity loop). Feeds the Stage 3 read order |
+| design-md-chrome | 280-element sampler to normalize to template to validate loop. Token naming plus machine read-gate pattern |
+| pencilplaybook | Number-dense perceptual rules (disabled 40%, hover 8% delta, tracking table, touch/modal/form widths) |
+| refero-skill | Research-first synthesis plus type scale 1.2 law plus card/copy/logo-swap litmus tests |
+| ux-skill | Deterministic lint gate (90 ship, 65 refuse) plus radius/density law plus brand-from-logo rule |
+| styleseed | Single-accent law plus SS001-SS006 detectors plus surface-scoped motion |
+| transitions.dev | 32 copy-paste transitions plus duration/easing/distance/scale token scale |
+| lenis | Native-scroll smoother defaults plus nested-scroll and reduced-motion handling |
 | nothing-design-skill | Dot-matrix, NDot typeface, monochrome + hot red archetype |
 | scroll-craft | WebGL canvas scroll animations and GLSL post-processing |
 | pretext | Pure canvas text layout and precise multi-line typography |
