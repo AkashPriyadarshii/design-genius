@@ -54,12 +54,14 @@ AND every other lever pass.
 Score each 1–10 and list every fail as a named action. Reuse the Stage 5 audit
 dimensions: (1) color, (2) type, (3) spacing/rhythm, (4) component
 consistency, (5) responsive below 768px, (6) dark/light both promised,
-(7) motion baseline, (8) a11y gate, (9) density, (10) polish/craft. Plus the
-four judgment checks: generic-at-a-glance, human copy, on-product or costume,
-holds at the real payload. Hard fails are mechanical tells from the nine
-levers: accent in band on a flat default bg with no causal line (per §2),
-em-dash spray, eyebrow overuse, CTA dead text
+(7) motion baseline, (8) a11y gate (contrast <4.5:1 for body or <3:1 for large/UI,
+missing visible focus rings, or hover-only state reveals are hard fix-before-ship blockers),
+(9) density, (10) polish/craft. Plus the four judgment checks: generic-at-a-glance,
+human copy, on-product or costume, holds at the real payload. Hard fails are mechanical
+tells from the nine levers: accent in band on a flat default bg with no causal line (per §2),
+contrast failure (<4.5:1 / <3:1), em-dash spray, eyebrow overuse, CTA dead text
 ("Learn more"), serif-for-taste, drop-shadow-everything, centered-3-cards.
+
 
 ## 4. Emit the diff-DESIGN.md (what to change, exactly)
 
