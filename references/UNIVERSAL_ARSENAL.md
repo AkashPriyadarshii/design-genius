@@ -117,7 +117,7 @@ $$F = -k(x - x_0) - c v$$
    - Only surface confirmation alerts on irreversible destruction or critical state transitions.
 4. **Anatomy Over Abstraction:**
    - Always display exact numbers and concrete units: "3 of 14 files indexed" rather than "Processing files...".
-5. **Absolute Ban on Em-Dashes (`—`):**
+5. **Absolute Ban on Em-Dashes (` - `):**
    - Em-dashes in UI and spec copy are banned. Replace with hyphens (`-`), colons (`:`), commas, or separate sentences.
 
 ---
@@ -163,4 +163,115 @@ $$F = -k(x - x_0) - c v$$
 
 ### E. Viscosity & Fluid Velocity Fields (`liquid-logo`)
 - Fluid warping effects apply a Navier-Stokes grid approximation to SVG paths, maintaining volume conservation ($div(\mathbf{u}) = 0$) during distortion.
+
+---
+
+## 8. Calibrated Spring Physics Matrix & Interaction Tiers
+
+Replace arbitrary `transition: all 0.3s ease` with standardized 4-tier spring physics:
+
+| Interaction Tier | Stiffness ($k$) | Damping ($c$) | Mass ($m$) | Perceptual Feel | Real-World Application |
+| :--- | :---: | :---: | :---: | :--- | :--- |
+| **Tier 1: Snappy Inputs** | `400–500` | `30–35` | `0.8` | Instant, tactile press (<140ms) | Button press (`scale(0.97)`), switches, toggles |
+| **Tier 2: Spatial Sheets** | `220–300` | `24–28` | `1.0` | Natural settle with 10% micro-bounce | Modals, bottom sheets, command palette drawer |
+| **Tier 3: Fluid Trackers** | `120–180` | `12–16` | `1.0` | Organic glide with fluid inertia | Tab indicator pills, dynamic island, fluid cursor |
+| **Tier 4: Hotkey Actions** |  -  |  -  |  -  | **Strict `0ms` (Instant)** | Actions triggered via Cmd+K, Esc, or arrow keys |
+
+### Kinetic Interaction Rules
+1. **Never Animate from `scale(0)`:** Enter from `scale(0.95)` + `opacity: 0`. Physical elements expand from a rest volume, never an infinitesimal singularity.
+2. **Asymmetric Tooltip Delay:** Hover delay = `800–1000ms` (prevents flicker on casual cursor sweeps); Focus delay = `0ms` (keyboard users arrive with deliberate intent).
+3. **Tabular Numerals Everywhere:** Every counter, timer, currency, and numerical column must enforce `font-variant-numeric: tabular-nums` (or OpenType `tnum` 1) to eliminate jitter.
+4. **Optical Centering Shims:** Add `-1px` to `-2px` vertical compensation on uppercase icon/button labels to neutralize baseline descender pull.
+5. **Text Balance & Pretty:** Enforce `text-wrap: balance` on headings (under 4 lines) and `text-wrap: pretty` on body copy to ban single-word dangling orphans.
+
+---
+
+## 9. Tested Substrates & Material Elevations (`AkashDesigns` & `awesome-design-md`)
+
+### A. Substrate Pigment Library
+- **Void Obsidian (`#08090a` / `#000000`):** Pure absence substrate (`oklch(0.12 0.005 260)`), hairline border `rgba(255, 255, 255, 0.08)`, card surface `#0e1219`.
+- **Munken Parchment (`#fdfbf7`):** Warm tactile ground (`oklch(0.98 0.008 85)`), raw ink `#2c2825`, divider `#e8e4dc`.
+- **Newsprint Rag (`#f4f1ea`):** Dense editorial paper (`oklch(0.95 0.012 88)`), muted charcoal `#59534a`, hairline rule `#d5cfc2`.
+- **Bone Ceramic (`#f9f6f0`):** Polished mineral base (`oklch(0.97 0.008 90)`), elevated `#ffffff`, recessed wells `#ede7db`.
+
+### B. Dark Mode Elevation (Banning Diffuse Black Drop-Shadows)
+Dark mode surfaces cannot cast black shadows on dark backgrounds. Elevation is constructed through stepped lightness + inner specular bevels:
+- **Base Canvas:** `#08090a` (0% lift)
+- **Card Layer 1:** `#0e1219` + `border: 1px solid rgba(255, 255, 255, 0.06)` + `box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.08)`
+- **Elevated Overlay / Modal:** `#161c26` + `border: 1px solid rgba(255, 255, 255, 0.12)` + `box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.15), 0 20px 40px rgba(0, 0, 0, 0.5)`
+
+### C. Fast OKLCH Contrast Delta Pre-Check
+If $|L_{\text{text}} - L_{\text{background}}| < 0.50$ (50% lightness delta in OKLCH), the pair is mathematically guaranteed to fail WCAG 4.5:1. Recalibrate immediately.
+
+---
+
+## 10. W3C DTCG Token Specification Standard
+
+Emit tokens using the W3C Design Tokens Community Group standard (`$` prefix) for universal pipeline compilation (Tokens Studio, Style Dictionary, Figma):
+
+```json
+{
+  "color": {
+    "surface": {
+      "base": { "$value": "#08090a", "$type": "color" },
+      "card": { "$value": "#0e1219", "$type": "color" }
+    },
+    "accent": {
+      "primary": { "$value": "#00f090", "$type": "color" }
+    }
+  },
+  "motion": {
+    "spring": {
+      "snappy": {
+        "$type": "cubicBezier",
+        "$value": [0.16, 1, 0.3, 1]
+      }
+    }
+  }
+}
+```
+
+---
+
+## 11. Apple Liquid Glass Optical Refraction & WebGL Zero-Jank Standards
+
+### A. Liquid Glass SVG Displacement Refraction
+True optical refraction displaces background geometry via SVG turbulence rather than flat blur:
+
+```html
+<svg width="0" height="0" class="absolute pointer-events-none" aria-hidden="true">
+  <filter id="liquid-refract" x="-20%" y="-20%" width="140%" height="140%">
+    <feTurbulence type="fractalNoise" baseFrequency="0.04" numOctaves="2" result="noise" />
+    <feDisplacementMap in="SourceGraphic" in2="noise" scale="22" xChannelSelector="R" yChannelSelector="G" />
+  </filter>
+</svg>
+```
+```css
+.liquid-glass-lens {
+  backdrop-filter: url(#liquid-refract) blur(4px) saturate(1.25);
+  -webkit-backdrop-filter: url(#liquid-refract) blur(4px) saturate(1.25);
+  background: rgba(255, 255, 255, 0.03); /* Max 5% opacity to avoid milky haze */
+  box-shadow: inset 0 1px 1px rgba(255, 255, 255, 0.25), 0 12px 32px rgba(0, 0, 0, 0.2);
+}
+```
+**Chromium Invariants:** Ancestors must NOT have `isolation: isolate` or `opacity < 1`. Lens element must never have an explicit `z-index`.
+
+### B. WebGL Zero-Jank Contract
+1. **DPR Clamping:** Clamped to $\min(\text{window.devicePixelRatio}, 1.5)$ (max $2.0$). Uncapped 3x retina kills mobile battery and triggers frame drops.
+2. **Visibility Culling:** Disconnect `requestAnimationFrame` when scrolled out of viewport via `IntersectionObserver`.
+3. **1D Palette Textures (LUT):** Replace runtime `pow()` and trigonometric noise branches in fragment shaders with 256×1 precomputed 1D LUT textures.
+
+---
+
+## 12. Broadsheet & Retro-Computing Archetypes
+
+### A. Multi-Column Broadsheet Editorial
+- **Grid:** 4-to-6 column asymmetric newspaper grid (`grid-template-columns: repeat(4, minmax(0, 1fr))`) with 1px vertical hairline column dividers.
+- **Hierarchy:** Kicker eyebrow + multi-column wrapped display headline + dateline string (`CITY, Country  -  Date`) + bold drop cap (`font-size: 3.5rem; float: left; line-height: 0.8; margin-right: 0.5rem`).
+
+### B. Retro 1996 Computing Hardware
+- **Surfaces:** Classic 3D beveled surfaces (Border-Top/Left: `2px solid #ffffff`, Border-Bottom/Right: `2px solid #808080`, Background: `#c0c0c0`).
+- **Typography:** Tabular fixed-pitch bitmap or monospaced font with zero anti-aliasing.
+- **Palettes:** Warm pastel ribbon tints (`#ffffe0` lemon chiffon, `#e0f0ff` ice blue) against industrial battleship gray.
+
 

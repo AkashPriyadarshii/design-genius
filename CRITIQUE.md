@@ -62,6 +62,21 @@ tells from the nine levers: accent in band on a flat default bg with no causal l
 contrast failure (<4.5:1 / <3:1), em-dash spray, eyebrow overuse, CTA dead text
 ("Learn more"), serif-for-taste, drop-shadow-everything, centered-3-cards.
 
+## 3.5 Mechanical Anti-Slop Linters (Rules 9.A–9.J & 58-Gate Standard)
+
+Apply these automated linter rules before emitting the verdict. Any violation is an automatic FAIL:
+
+- **9.A Centered-Hero-3-Cards Ban:** Automatic rejection of any layout pairing a centered single-column hero with a 3-column equal-card grid below it.
+- **9.B Default Face Monoculture Ban:** Rejection of un-justified Inter, Roboto, Geist, Space Grotesk, or Plus Jakarta as primary brand faces.
+- **9.C Purple/Blue SaaS Gradient Ban:** Rejection of ungrounded indigo/violet radial blurs or "AI-glow" backdrop meshes.
+- **9.D Flat Cream/Brass Cliché Ban:** Rejection of the `#f5f1ea` + `#b08947` + `#1a1714` triad when presented on a flat digital void without a physical substrate receipt or causal line.
+- **9.E Eyebrow Overuse Cap:** Hard ceiling of $\le 1$ eyebrow label per 3 sections (hero included). No stacked number-eyebrow combos (`01 · OVERVIEW`).
+- **9.F Re-Drawn Browser Chrome Ban:** No fake browser address bars, faux macOS traffic light buttons, or artificial device wrappers around digital UIs.
+- **9.G Em-Dash Ban in UI and Spec Copy:** Zero em-dashes (`—`) in UI copy or emitted `DESIGN.md` text. Use colons, periods, standard hyphens, or restructure.
+- **9.H Spring Physics Linter:** Enforce Tier 1–4 parameters ($k=400\text{--}500$ inputs, $k=220\text{--}300$ sheets, $k=120\text{--}180$ trackers, $0\text{ms}$ hotkeys). Banned: generic browser `ease`, uncalibrated float springs, or exit animations slower than enter animations.
+- **9.I Surface Contrast & Lightness Ladder:** Enforce OKLCH neutral chroma floor ($C \ge 0.005$ tinted to anchor hue, pure $C=0$ banned), fast lightness delta $|L_{\text{text}} - L_{\text{bg}}| \ge 0.50$, and dark mode surface elevation via $+3\%$ lightness rings rather than blurry colored drop shadows.
+- **9.J Concentric Radius Linter:** Compute every nested radius: $R_{\text{inner}} = \max(0, R_{\text{outer}} - \text{Padding})$. Equal nested radii create optical corner bulging and are flagged as immediate mechanical defects.
+- **58-Gate Verification:** For comprehensive audits, cross-verify against the full 58-gate invariant checklist documented in `references/UNIVERSAL_ARSENAL.md`.
 
 ## 4. Emit the diff-DESIGN.md (what to change, exactly)
 

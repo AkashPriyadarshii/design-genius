@@ -123,6 +123,11 @@ direction in ONE line** — "this is a warm editorial archive with one acid
 accent, read as a long-form magazine." If you can't write that line yet, you
 haven't harvested enough; go back. The one-liner is the rudder for the whole
 emit; a spec without it drifts back to generic.
+- **3-Dial Parametric Control Vector (taste-skill):** Explicitly calibrate the emit along three numerical axes (1–10 scale) before generating:
+  1. `DESIGN_VARIANCE` (1–10): 1 = strict corporate/grid symmetry; 5 = editorial balanced asymmetry; 10 = radical brutalist/masonry tension.
+  2. `MOTION_INTENSITY` (1–10): 1 = static print/reduced-motion only; 5 = fluid micro-interactions (hover/focus); 10 = kinetic physics/WebGL canvas shader.
+  3. `VISUAL_DENSITY` (1–10): 1 = airy luxury gallery (high whitespace); 5 = modern balanced product UI; 10 = high-density Bloomberg cockpit / terminal telemetry.
+  Declare these three values alongside the one-line design read (`[VARIANCE: 6 | MOTION: 4 | DENSITY: 8]`).
 
 ### Stage 2 · Name the product's world first (subject grounding)
 Before touching the library: in ONE list, say what this product IS — audience,
@@ -227,35 +232,38 @@ consult `references/UNIVERSAL_ARSENAL.md`.
 1. **Medium & layout archetype** — design-genius is a universal design language
    engine across any medium (physical, industrial, spatial, graphic, or digital).
    Adapt the spatial logic and surface geometry to the medium:
-   - **Industrial / Hardware**: Braun/Rams functionalism, Teenage Engineering tactile
-     density, Leica precision mechanical, analog dial/switch instrumentation.
-     *Rules:* 0.5mm 90° diamond knurling, 2.8N mechanical snap detent, bead-blasted AA15
-     anodized unibody, 0px-radius raw chamfers ($R = 0.1\text{--}0.2\text{mm}$), exposed hex/Torx fasteners.
-   - **Editorial & Print**: Swiss grid (Müller-Brockmann 16-field modular), Dutch conceptual typography,
-     manifesto zine, Japanese asymmetric balance (*Ku* emptiness), broadsheet newspaper density.
-     *Rules:* 1:1.414 ($\sqrt{2}$) or 1:1.618 ($\Phi$) proportional scaling, 130gsm uncoated Munken Lynx substrate
-     texture ($R_a = 1.8\text{--}3.5\,\mu\text{m}$), optical hanging punctuation on margins, tabular lining figures for all metrics.
-   - **Spatial / OS / GUI / TUI**: Ray-traced glass, NeXTSTEP clean windowing,
-     Xerox PARC clarity, high-density HUD / cockpit telemetry, terminal ANSI matrix.
-     *Rules:* 80x24 character cell matrix, fixed 1px hairline grid dividers, 1-bit segment display tokens,
-     $0.5\text{m}\text{--}2.0\text{m}$ comfort depth planes.
-   - **Aeronautic / Telemetry / Black Box**: Left-rail descending timestamps ($T+00:00$), mono transcript frames,
-     zero-card hairline negative space, incident state banners.
-   - **OEM Exploded Assembly & Technical Manual**: Architectural diagrams with isometric leader lines, part tags
-     ($P\text{-}01, P\text{-}02$), torque specification tables, and pure-CSS `:has()` bidirectional component-to-table cross-highlighting.
-   - **Cartographic / Radar Signal**: Concentric sweep organizers, flight-strip queues, beam-sweep sequential attention choreography.
-   - **Seismograph Continuous Trace**: Single unbroken SVG vector threading vertically through the entire page layout to anchor all events/logs.
-   - **Digital Web / Apps**: Asymmetric 38.2% / 61.8% golden mass tension, bento grid, magazine column,
-     brutalist monochrome with hot pigment interrupt, kinetic canvas shader ($DPR \le 2$, linear palette texture).
-     NOT centered-hero-3-cards.
-   **Concentric Radii Mathematics (STRICT):**
-   Arbitrary corner radii are banned. Radii must follow strict concentric geometry:
-   $$R_{\text{inner}} = \max(0, R_{\text{outer}} - \text{Padding})$$
-   (e.g., if outer container is 12px radius with 8px padding, inner element MUST be 4px radius, never 12px/24px pill).
-   **Tokens are not a design.** A warm-cream palette over a standard
-   hero+cards+footer is still slop — the LAYOUT and MEDIUM FORM must be structurally
-   unlike the template, not just recolored. Pick a form a generic agent would NOT
-   reach for.
+    - **Industrial / Hardware**: Braun/Rams functionalism, Teenage Engineering tactile
+      density, Leica precision mechanical, analog dial/switch instrumentation.
+      *Rules:* 0.5mm 90° diamond knurling, 2.8N mechanical snap detent, bead-blasted AA15
+      anodized unibody, 0px-radius raw chamfers ($R = 0.1\text{--}0.2\text{mm}$), exposed hex/Torx fasteners.
+    - **Retro-Computing & Industrial Hardware**: Amber/green monochrome phosphor CRT emulation,
+      1-bit dithered image bitmaps, tactile mechanical rocker toggles with 2.8N snap, recessed bezel housings with 1px inset shadows, physical rotary knobs with stepped detents.
+    - **Editorial & Print**: Swiss grid (Müller-Brockmann 16-field modular), Dutch conceptual typography,
+      manifesto zine, Japanese asymmetric balance (*Ku* emptiness).
+      *Rules:* 1:1.414 ($\sqrt{2}$) or 1:1.618 ($\Phi$) proportional scaling, 130gsm uncoated Munken Lynx substrate
+      texture ($R_a = 1.8\text{--}3.5\,\mu\text{m}$), optical hanging punctuation on margins, tabular lining figures for all metrics.
+    - **Multi-Column Broadsheet & Journal**: 5-to-7 column asymmetric newspaper grid, horizontal rules (`border-t-2 border-foreground`), running section heads with publication dates, inline pull quotes with indented margins, zero card wrappers.
+    - **Spatial / OS / GUI / TUI**: Ray-traced glass, NeXTSTEP clean windowing,
+      Xerox PARC clarity, high-density HUD / cockpit telemetry, terminal ANSI matrix.
+      *Rules:* 80x24 character cell matrix, fixed 1px hairline grid dividers, 1-bit segment display tokens,
+      $0.5\text{m}\text{--}2.0\text{m}$ comfort depth planes.
+    - **Aeronautic / Telemetry / Black Box**: Left-rail descending timestamps ($T+00:00$), mono transcript frames,
+      zero-card hairline negative space, incident state banners.
+    - **OEM Exploded Assembly & Technical Manual**: Architectural diagrams with isometric leader lines, part tags
+      ($P\text{-}01, P\text{-}02$), torque specification tables, and pure-CSS `:has()` bidirectional component-to-table cross-highlighting.
+    - **Cartographic / Radar Signal**: Concentric sweep organizers, flight-strip queues, beam-sweep sequential attention choreography.
+    - **Seismograph Continuous Trace**: Single unbroken SVG vector threading vertically through the entire page layout to anchor all events/logs.
+    - **Digital Web / Apps**: Asymmetric 38.2% / 61.8% golden mass tension, bento grid, magazine column,
+      brutalist monochrome with hot pigment interrupt, kinetic canvas shader ($DPR \le 2$, linear palette texture).
+      NOT centered-hero-3-cards.
+    **Concentric Radii Mathematics (STRICT):**
+    Arbitrary corner radii are banned. Radii must follow strict concentric geometry:
+    $$R_{\text{inner}} = \max(0, R_{\text{outer}} - \text{Padding})$$
+    (e.g., if outer container is 12px radius with 8px padding, inner element MUST be 4px radius, never 12px or 24px pill). Nested borders that share identical radii create optical bulging and represent an immediate AI-slop defect.
+    **Tokens are not a design.** A warm-cream palette over a standard
+    hero+cards+footer is still slop — the LAYOUT and MEDIUM FORM must be structurally
+    unlike the template, not just recolored. Pick a form a generic agent would NOT
+    reach for.
 2. **Color strategy & pigment formulation (paint-atelier doctrine)** —
    NEVER default to industry tropes ("blue for tech", "green for health/finance",
    "red for urgency"). That predictability is just second-order AI slop. Treat
@@ -331,13 +339,14 @@ consult `references/UNIVERSAL_ARSENAL.md`.
    element (one colored CTA, one lit node, one color block) with white/neutral
    between color moments. Scarcity is what makes the color read intentional.
    **OKLCH mechanics (construct, don't guess — Hallmark corpus):**
-   - **Every neutral/grey carries the anchor hue's chroma ≥0.006** — pure
-     grey (`chroma 0`) next to a warm/cool accent is the cohesion killer. Tint
-     warm accent → warm greys; blue accent → cool greys. Verify no neutral
-     token has chroma == 0.
-   - **Substrate Micro-Grain over Flat Void:** Never use flat `#000` or `#fff`.
-     Inject subtle micro-grain texture filter ($R_a = 1.8\text{--}3.5\,\mu\text{m}$) or
-     bead-blasted metal shader to give the substrate tangible tactile friction.
+    - **Every neutral/grey carries the anchor hue's chroma ≥0.006** (Hallmark Gate 22) — pure
+      grey (`chroma 0`) next to a warm/cool accent is the cohesion killer. Tint
+      warm accent → warm greys; blue accent → cool greys. Verify no neutral
+      token has chroma == 0 (strict minimum floor $C \ge 0.005$).
+    - **Fast OKLCH Contrast Delta Pre-Check:** Ensure $|L_{\text{text}} - L_{\text{background}}| \ge 0.50$ across all foreground/background pairings. Any delta below 0.50 fails WCAG 4.5:1.
+    - **Substrate Micro-Grain over Flat Void:** Never use flat `#000` or `#fff`.
+      Inject subtle micro-grain texture filter ($R_a = 1.8\text{--}3.5\,\mu\text{m}$) or
+      bead-blasted metal shader to give the substrate tangible tactile friction.
    - **Anchor on OKLCH lightness bands, not hex intuition:** light-mode paper
      L 96-98%, ink 16-22%; dark-mode paper 12-16%, ink 92-96%. Accent needs
      chroma 0.12-0.22. Banned pure `#000`/`#fff` — always tint toward anchor.
@@ -404,8 +413,21 @@ consult `references/UNIVERSAL_ARSENAL.md`.
      - Mechanical snap / tactile switch: `cubic-bezier(0.18, 0.89, 0.32, 1.28)` (80-120ms sharp snap)
      - Overshoot/pop: `cubic-bezier(0.34, 1.56, 0.64, 1)` (900ms playful loops)
      - Exit = shorter `ease-in` at 60-70% of enter duration, capped ~200ms — **exit must resolve faster than enter** or back/forward feels sluggish.
-   - **Spring Physics Standard:** standard UI `stiffness: 200, damping: 20`, high-response `stiffness: 300, damping: 25`, heavy spatial surface `stiffness: 120, damping: 18`.
-   - **Press state:** 0.08s mechanical tactile drop (2.8N simulation) on transform only, shadow dropped, <120ms; hover lift ≤1.5px with 1px lightened top hairline.
+   - **Tier 1–4 Spring Physics Matrix (stop guessing spring numbers):**
+     - Tier 1 (Snappy Inputs / Buttons / Dropdowns): $k = 400\text{--}500, c = 30\text{--}35, m = 0.8$ (instant response, zero wobble).
+     - Tier 2 (Spatial Sheets / Modals / Drawers): $k = 220\text{--}300, c = 24\text{--}28, m = 1.0$ (fluid settle, smooth deceleration).
+     - Tier 3 (Fluid Drag Trackers / Pointers): $k = 120\text{--}180, c = 12\text{--}16, m = 1.0$ (organic elastic tether).
+     - Tier 4 (Hotkey Actions / Quick Switches): $0\text{ms}$ duration (instant instantaneous jump for pro-keyboard navigation).
+   - **8-State Interactive Contract (every interactive element must define):**
+     1. Default / Rest
+     2. Hover (desktop cursor enter)
+     3. Active / Pressed (mouse down / touch contact, 0.08s scale 0.98 drop, 2.8N simulation)
+     4. Focus-Visible (keyboard tab navigation, 2px offset ring, never outline: none)
+     5. Disabled / Inert (reduced opacity, cursor: not-allowed, aria-disabled)
+     6. Loading / Busy (accessible indicator, aria-busy="true")
+     7. Error / Invalid (tinted container, aria-invalid="true", descriptive text)
+     8. Selected / Checked (contrast-verified active state indicator)
+   - **Press state:** 0.08s mechanical tactile drop on transform only, shadow dropped, <120ms; hover lift ≤1.5px with 1px lightened top hairline.
    - **Canvas & WebGL Zero-Jank Contract:** clamp `renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2))`, disconnect RAF when offscreen via `IntersectionObserver`, 1D palette textures over branch-heavy shaders.
    - **Stagger 30-50ms per item, cap ~8 children** and total cascade ~600ms; on long lists shrink per-item delay, never item duration.
    - **Animate ≤1-2 key elements per view**; ≤2 heavy backgrounds/page, 1 WebGL scene/page, ≤3 timelines/page. A whole page gets 4-10 signature moments; >10 is noise.

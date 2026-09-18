@@ -65,6 +65,40 @@ def call_jev(state: str, questions: dict, timeout: float = 6.0) -> dict:
         return {"error": str(e), "fallback": True}
 
 
+def mechanical_linter(text: str) -> tuple[bool, list[str]]:
+    """Runs strict mechanical linter rules 9.A - 9.J."""
+    issues = []
+    lower = text.lower()
+
+    # 9.G: Em-dash check
+    if "—" in text:
+        issues.append("Rule 9.G violation: Em-dash ('—') detected in spec/copy. Use hyphens, colons, or periods.")
+
+    # 9.D: Flat cream / brass cliché triad
+    has_cream = "#f5f1ea" in lower or "#f7f5f1" in lower or "#fbf8f1" in lower
+    has_brass = "#b08947" in lower or "#b6553a" in lower or "#9a2436" in lower
+    has_espresso = "#1a1714" in lower or "#1a1814" in lower or "#1b1814" in lower
+    if has_cream and has_brass and has_espresso:
+        if "causal" not in lower and "substrate" not in lower:
+            issues.append("Rule 9.D violation: Banned cream/brass/espresso cliché triad detected without substrate or causal derivation.")
+
+    # 9.A: Centered hero + 3 cards
+    if "centered hero" in lower and ("3 cards" in lower or "3 feature" in lower or "three cards" in lower):
+        issues.append("Rule 9.A violation: Centered hero + 3 feature cards layout archetype is banned.")
+
+    # 9.H: Spring physics / motion check
+    has_spring = any(k in lower for k in ("stiffness", "damping", "cubic-bezier", "mass", "spring"))
+    if not has_spring:
+        issues.append("Rule 9.H violation: Missing concrete motion curves or spring physics parameters.")
+
+    # 9.J: Concentric radius check
+    has_radius = any(k in lower for k in ("concentric", "r_inner", "radius", "r-inner", "outer - padding"))
+    if not has_radius and "radius" not in lower:
+        issues.append("Rule 9.J violation: Missing concentric radius calculation or radius tokens.")
+
+    return len(issues) == 0, issues
+
+
 def heuristic_fallback_audit(text: str) -> dict:
     """Offline heuristic fallback if Jev is unreachable."""
     lower = text.lower()
@@ -73,8 +107,12 @@ def heuristic_fallback_audit(text: str) -> dict:
         "centered hero with 3 cards", "3 feature cards", "elevate", "cutting-edge"
     ]
     detected_slop = [tell for tell in slop_tells if tell in lower]
-    has_tokens = bool(re.search(r"#[0-9a-fA-F]{3,8}|hsl\(", text))
+    has_tokens = bool(re.search(r"#[0-9a-fA-F]{3,8}|hsl\(|oklch\(", text))
     has_motion = "cubic-bezier" in lower or "stiffness" in lower or "spring" in lower
+
+    mech_ok, mech_issues = mechanical_linter(text)
+    if not mech_ok:
+        detected_slop.extend(mech_issues)
 
     return {
         "slop_verdict": "slop" if detected_slop else "bespoke",
@@ -95,6 +133,14 @@ def audit_design_file(filepath: str) -> bool:
 
     print(f"\n[Jev] Auditing DESIGN.md: {filepath} ({len(content)} bytes)...")
 
+    # Step 1: Mechanical linter pre-check
+    mech_ok, mech_issues = mechanical_linter(content)
+    if not mech_ok:
+        print("  [WARN] Mechanical linter warnings:")
+        for iss in mech_issues:
+            print(f"    - {iss}")
+
+    # Step 2: Semantic Jev System One evaluation
     questions = {
         "slop_assessment": {
             "type": "choice",
@@ -106,7 +152,7 @@ def audit_design_file(filepath: str) -> bool:
         "token_concreteness": {
             "type": "choice",
             "criteria": {
-                "concrete": "Contains explicit hex/HSL values, exact optical radiuses, and spring physics numbers.",
+                "concrete": "Contains explicit hex/HSL/OKLCH values, exact optical radiuses, and spring physics numbers.",
                 "vague_placeholders": "Contains generic placeholders, '--color: pick one', or unspecified dimensions."
             }
         },
@@ -141,13 +187,14 @@ def audit_design_file(filepath: str) -> bool:
         slop.get("choice") == "bespoke"
         and tokens.get("choice") == "concrete"
         and craft.get("choice") == "rigorous"
+        and mech_ok
     )
 
     if passed:
         print("  [OK] PASSED: Verified bespoke design system.")
         return True
     else:
-        print("  [FAIL] REJECTED: Jev flagged slop or missing token rigor.")
+        print("  [FAIL] REJECTED: Flagged slop, mechanical linter defect, or missing token rigor.")
         return False
 
 
