@@ -232,6 +232,80 @@ def audit_skill_itself() -> bool:
     return rigor.get("choice") == "high_rigor"
 
 
+def audit_git_diff(ref: str = "HEAD~1..HEAD") -> bool:
+    import subprocess
+    print(f"\n[Jev] Auditing git diff ({ref}) with Jev System One...")
+    try:
+        diff = subprocess.check_output(["git", "diff", ref], cwd=SKILL_DIR).decode("utf-8", errors="replace")
+    except Exception as e:
+        print(f"  [FAIL] Failed to read git diff: {e}")
+        return False
+
+    if not diff.strip():
+        try:
+            diff = subprocess.check_output(["git", "diff", "HEAD"], cwd=SKILL_DIR).decode("utf-8", errors="replace")
+        except Exception:
+            pass
+        if not diff.strip():
+            print("  [info] Clean working tree, no diff to inspect.")
+            return True
+
+    # Check for hardcoded paths in diff
+    if re.search(r"[a-zA-Z]:\\Users\\|/home/[a-zA-Z0-9]+/", diff):
+        print("  [FAIL] Hardcoded machine path detected in git diff!")
+        return False
+
+    questions = {
+        "has_hardcoded_paths": {
+            "type": "choice",
+            "criteria": {
+                "no": "Clean portable paths with no machine-specific hardcoded directories.",
+                "yes": "Contains machine-specific absolute file paths."
+            }
+        },
+        "has_slop_or_filler": {
+            "type": "choice",
+            "criteria": {
+                "no": "Concrete, engineering-focused design tokens and technical specifications.",
+                "yes": "Contains corporate marketing buzzwords, vague filler, or hand-waving."
+            }
+        },
+        "anti_slop_rigor": {
+            "type": "choice",
+            "criteria": {
+                "high": "Enforces rigorous mathematical formulas, spring matrices, and anti-slop rules.",
+                "low": "Weak or vague design guidance."
+            }
+        }
+    }
+
+    res = call_jev(diff[:7000], questions)
+    if res.get("fallback"):
+        print(f"  [skip] Jev offline: {res.get('error')}")
+        return True
+
+    answers = res.get("data", {}).get("answers", {})
+    paths = answers.get("has_hardcoded_paths", {})
+    filler = answers.get("has_slop_or_filler", {})
+    rigor = answers.get("anti_slop_rigor", {})
+
+    print(f"  Portable paths:   {paths.get('choice')} (confidence: {paths.get('confidence', 'N/A')})")
+    print(f"  Zero slop/filler: {filler.get('choice')} (confidence: {filler.get('confidence', 'N/A')})")
+    print(f"  Anti-slop rigor:  {rigor.get('choice')} (confidence: {rigor.get('confidence', 'N/A')})")
+
+    passed = (
+        paths.get("choice") == "no"
+        and filler.get("choice") == "no"
+        and rigor.get("choice") == "high"
+    )
+    if passed:
+        print("  [OK] PASSED: Jev verified commit diff.")
+        return True
+    else:
+        print("  [FAIL] REJECTED: Jev flagged issues in commit diff.")
+        return False
+
+
 if __name__ == "__main__":
     if len(sys.argv) < 2:
         print(__doc__)
@@ -240,7 +314,11 @@ if __name__ == "__main__":
     arg = sys.argv[1]
     if arg == "--audit-skill":
         success = audit_skill_itself()
+    elif arg == "--audit-diff":
+        ref = sys.argv[2] if len(sys.argv) > 2 else "HEAD~1..HEAD"
+        success = audit_git_diff(ref)
     else:
         success = audit_design_file(arg)
 
     sys.exit(0 if success else 1)
+
