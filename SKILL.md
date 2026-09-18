@@ -138,6 +138,10 @@ emit; a spec without it drifts back to generic.
   2. `MOTION_INTENSITY` (1–10): 1 = static print/reduced-motion only; 5 = fluid micro-interactions (hover/focus); 10 = kinetic physics/WebGL canvas shader.
   3. `VISUAL_DENSITY` (1–10): 1 = airy luxury gallery (high whitespace); 5 = modern balanced product UI; 10 = high-density Bloomberg cockpit / terminal telemetry.
   Declare these three values alongside the one-line design read (`[VARIANCE: 6 | MOTION: 4 | DENSITY: 8]`).
+- **Persona Attachment & Cognitive Calibration (`design-persona-walkthrough`):** Calibrate the user psychology profile:
+  - *Anxious*: Front-load trust signals, uptime metrics, guarantees, clear pricing, and instant support channels.
+  - *Secure*: Deliver clean default paths, straightforward workflows, and minimal friction.
+  - *Avoidant*: Minimize marketing superlatives; maximize raw data density, technical specs, and keyboard navigability.
 
 ### Stage 2 · Name the product's world first (subject grounding)
 Before touching the library: in ONE list, say what this product IS — audience,
@@ -614,6 +618,9 @@ four judgment checks: would this be
 called generic at a glance, does copy sound human, is it on-product or a
 costume, does it hold at the payload (the real content, not the hero). Any
 fail → fix in the same pass, don't ship the hopeful version.
+- **UI Finish Gate Decision (PASS or HOLD):** Conclude the audit with an explicit binary verdict:
+  - **PASS**: The First-Read Object and Primary Action are immediately evident within 500ms; empty/loading states are handled; multi-viewport responsiveness is proven.
+  - **HOLD**: If the design relies on interchangeable SaaS dashboard cards, fails the 5-second above-the-fold test, or displays generic empty states.
 **TypeSafe AI (Jev System One) fast gate:** for instant, deterministic sub-100ms verification against AI slop and missing tokens, run:
 `python "$SKILL_DIR"/scripts/verify_design.py DESIGN.md`
 (uses `https://api.typesafe.ai/v1/systemone` model `jev-latest` with calibrated confidence; auto-falls back to offline heuristic audit if no key).

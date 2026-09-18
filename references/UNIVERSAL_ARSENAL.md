@@ -477,5 +477,64 @@ When a domain contains $>3$ distinct entities with individual historical records
    - Dedicated Entity Spokes (`/entities/[slug].html` or Next.js App Router dynamic routes): Exhaustive historical context, coordinates, visitor guidelines, dedicated photo galleries, and transit instructions.
 3. **Persistent Global Chrome:** Every spoke must feature a unified header navigation, semantic breadcrumb trail (`Home > Sanctuary > Detail`), language toggle, and deep-linked interactive map.
 
+---
 
+## 14. Agency Design Operations & Deep Craft Standards
 
+Synthesized from enterprise design agency operations, behavioral psychology frameworks, and production art direction suites:
+
+### A. Pre-Ship Binary Finish Gate & The Design Contract (`design-ui-finish-gate-reviewer`)
+Before shipping any digital interface, every view must fulfill a binding Design Contract. Never soften a review into vague 'nice-to-haves':
+1. **The Design Contract Schema:**
+   - **User + Job**: Who is the user, and what exact outcome are they completing?
+   - **First-Read Object**: What specific domain object or primary metric must the eye register within the first 500ms?
+   - **Primary Action**: The single observable action prioritized in the viewport.
+   - **Density Decision**: Explicit density mode (Compact telemetry, Balanced enterprise SaaS, Spacious luxury/editorial).
+   - **Hierarchy Proof**: Clear visual weight ladder (H1 primary, H2 secondary, subdued supporting metadata).
+   - **Forbidden Defaults**: Explicitly declared banned clichés for this specific product domain.
+2. **Strict Binary Decision (PASS or HOLD):**
+   - **PASS**: The First-Read Object and Primary Action are immediately obvious, zero interchangeable cards exist, states are complete, and multi-viewport responsiveness is proven.
+   - **HOLD**: Automatic hold if the dashboard looks interchangeable with any generic SaaS product, if the first fold lacks clear purpose, or if empty/error states are unhandled.
+
+### B. Conversion Psychology & Cognitive Friction Engine (`design-persona-walkthrough` + `design-ux-researcher`)
+Every scroll fold must be evaluated against proven psychological conversion matrices:
+1. **The LIFT Model Integration:**
+   - Conversion is optimized by elevating **Value Proposition**, **Relevance**, and **Clarity**, while actively dampening **Anxiety** and **Distraction**.
+   - Formula: $\text{Conversion} \propto \text{Value Proposition} \times \frac{\text{Relevance} \times \text{Clarity} \times \text{Urgency}}{\text{Anxiety} \times \text{Distraction}}$
+2. **Fogg Behavior Model Calibration ($B = M \times A \times P$):**
+   - High Motivation, Low Ability: Inject a **Facilitator** (simplify form fields, surface direct 1-click entry).
+   - Low Motivation, High Ability: Inject a **Spark** (concrete proof metrics, verified customer results, risk reversals).
+   - High Motivation, High Ability: Inject a **Signal** (subtle keyboard hotkeys, persistent uncluttered CTA).
+3. **Attachment-Driven User Profiling:**
+   - *Anxious Users*: Require reassurance early (guarantees, live system health, security badges, transparent pricing without hidden fees).
+   - *Secure Users*: Appreciate clean workflows and frictionless default paths.
+   - *Avoidant Users*: Reject marketing fluff and demand raw data tables, unadorned specs, and self-serve exploration.
+4. **The 5-Second Above-The-Fold Invariant:**
+   Within 5 seconds of viewport rendering, the visitor must instantly register:
+   - What is this?
+   - Is it for me?
+   - What do I do next?
+5. **The 'Enough Moment' (Fold 3-5 Rule):**
+   Over 80% of purchasing or signup decisions happen between Fold 3 and Fold 5. If social proof or technical validation is missing from the first 3 folds, conversion drops significantly.
+
+### C. 5-Layer Optical Photography & Media Prompt Architecture (`design-image-prompt-engineer` + `design-inclusive-visuals`)
+When generating photographic assets for hero containers, catalog items, or marketing visuals, structure prompts across 5 optical layers:
+$$\text{Prompt} = [\text{Subject \& Micro-Texture}] + [\text{Setting \& Atmosphere}] + [\text{Lighting Setup}] + [\text{Lens \& Aperture}] + [\text{Film Stock / Grade}]$$
+
+1. **The 5 Layers:**
+   - **Layer 1 (Subject):** Exact physical subject, authentic material texture, posture, expression, and natural scale.
+   - **Layer 2 (Setting):** Architectural or natural environment, contextual depth, atmospheric dust, mist, or subtle ambient weather.
+   - **Layer 3 (Lighting):** Directional geometry (Rembrandt 45° key, 4:1 fill ratio, subtle rim/kicker separation), specular highlights, and color temperature ($K$).
+   - **Layer 4 (Technical Optics):** Exact focal length (e.g. 85mm f/1.4 for creamy portrait compression, or 24mm f/8 for deep architectural clarity), camera height, and sensor exposure.
+   - **Layer 5 (Aesthetic / Film Stock):** Authentic color grading (Kodak Portra 400 natural grain, Cinestill 800T halation, or Ilford HP5 rich monochrome).
+2. **Counter-Bias Invariants (Zero AI Exoticism):**
+   - **Clone-Face Elimination:** Forbid duplicate facial features in diverse crowd scenes; mandate distinct silhouettes, ages, and bone structures.
+   - **Melanin Highlight Calibration:** Soft directional diffusion preserving rich skin tone depth without white-clipping specular highlights.
+   - **Zero Synthetic Glyphs:** Strict negative constraints against pseudo-foreign symbols, fake hieroglyphics, or garbled text on signs and clothing.
+
+### D. Calculated Whimsy & Purposeful Personality (`design-whimsy-injector`)
+Whimsy must never interfere with core usability, performance, or accessibility. Purposeful delight is categorized across 4 calibrated tiers:
+1. **Subtle Whimsy:** Micro-interactions that delight without distraction (tactile button press detents with `cubic-bezier(0.18, 0.89, 0.32, 1.28)`, ambient focus glows, smooth progress indicators).
+2. **Interactive Whimsy:** Celebratory state transitions on milestone achievement (canvas confetti burst on successful checkout or build deployment).
+3. **Discovery Whimsy:** Hidden rewards for technical exploration (e.g., Konami sequence `ArrowUp ArrowUp ArrowDown ArrowDown ArrowLeft ArrowRight ArrowLeft ArrowRight b a` triggering a dark telemetry HUD or retro monochrome mode).
+4. **Contextual Whimsy:** Emotionally intelligent empty states and error recovery that replace frustration with clarity and charm (e.g., self-aware 404 diagnostics, witty offline retry actions).

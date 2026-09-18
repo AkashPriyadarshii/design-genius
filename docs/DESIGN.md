@@ -14,6 +14,13 @@
 - **The Mandate**: Strict mechanical enforcement verifying zero AI slop, zero template monoculture, and zero ungrounded gradients.
 - **Tone**: Authoritative, tactile, mathematically grounded, direct. A senior systems design engineer communicating with developers.
 
+### Design Contract & Pre-Ship Finish Gate:
+- **User + Job**: AI coding agents and human engineers designing distinctive, production-grade web systems.
+- **First-Read Object**: The central interactive Terminal Verification Engine and live token inspector.
+- **Primary Action**: Executing `python verify_design.py --audit-skill` and exploring verified design system recipes.
+- **Density Decision**: Balanced engineering density (15px body, 4px/8px rhythmic padding, 1px structural hairlines).
+- **Pre-Ship Verdict**: **PASS** (Zero interchangeable dashboard cards, proven multi-viewport hierarchy, complete states).
+
 ---
 
 ## 2. Pigmentation & OKLCH Color Tokens

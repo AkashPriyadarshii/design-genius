@@ -129,6 +129,24 @@ def mechanical_linter(text: str) -> tuple[bool, list[str]]:
         if not has_multipage and any(k in lower for k in ("single page", "1-page", "one-page", "single-page")):
             issues.append("Rule 9.M violation: Multi-entity scope (>3 entities) flattened into single-page layout. Hub-and-spoke multi-page platform required.")
 
+    # 9.N: Interchangeable Dashboard Ban
+    if any(k in lower for k in ("4 metric cards", "4 summary cards", "4 stat cards", "four metric cards")):
+        has_dominant_object = any(k in lower for k in ("first-read", "dominant metric", "primary chart", "hierarchy proof", "focal object"))
+        if not has_dominant_object:
+            issues.append("Rule 9.N violation: Interchangeable 4-card metric dashboard detected without establishing a dominant First-Read Object or primary focal hierarchy.")
+
+    # 9.O: 5-Second Contract & Pre-Ship Finish Gate
+    if "design spec" in lower or "design.md" in lower:
+        has_first_read = any(k in lower for k in ("first-read", "first read", "first_read", "primary action", "design contract", "pass or hold", "finish gate"))
+        if not has_first_read:
+            issues.append("Rule 9.O violation: Missing explicit 'First-Read Object' or 'Primary Action' declaration in the Design Contract.")
+
+    # 9.P: Meaningless Empty State Ban
+    if re.search(r'["\'](?:no data found|no items|no results found)["\']', lower):
+        has_actionable_empty = any(k in lower for k in ("empty state", "shortcut", "create", "actionable", "guidance", "retry"))
+        if not has_actionable_empty:
+            issues.append("Rule 9.P violation: Meaningless empty state detected ('No data found'). Empty states must provide actionable guidance, creation shortcuts, or contextual charm.")
+
     return len(issues) == 0, issues
 
 
