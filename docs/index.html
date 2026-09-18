@@ -123,13 +123,13 @@
 
 
 
-    <!-- FONTS: SPECIAL ELITE + SOURCE SERIF 4 + IBM PLEX MONO -->
+    <!-- FONTS: SPACE GROTESK + SOURCE SANS 3 + IBM PLEX MONO -->
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
 
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:ital,wght@0,400;0,500;0,600;1,400&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;0,8..60,700;1,8..60,400&family=Special+Elite&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:ital,wght@0,400;0,500;0,600;1,400&family=Source+Sans+3:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
 
 
 
@@ -137,9 +137,9 @@
 
         /* ==========================================================================
 
-           design-genius: Pure Light Mode Archival Gazette & Instrument Spec
+           design-genius: Dual-Theme Engineering Spec & Instrument Interface
 
-           All pigments mapped strictly in OKLCH. Zero audio.
+           Mapped strictly to docs/DESIGN.md. All pigments in OKLCH. Zero audio.
 
            ========================================================================== */
 
@@ -147,37 +147,37 @@
 
         :root {
 
-            /* Archival Munken Newsprint Substrate (Ra ≈ 2.4μm) */
+            /* Substrate & Surfaces : Crisp Optical Canvas (Light Mode) */
 
-            --paper:          oklch(0.968 0.012 88.0);
+            --paper:          oklch(0.985 0.002 90.0);
 
-            --paper-deep:     oklch(0.932 0.015 86.0);
+            --paper-deep:     oklch(0.950 0.005 90.0);
 
-            --paper-elevated: oklch(0.985 0.008 90.0);
+            --paper-elevated: oklch(1.000 0.000 0.0);
 
             --paper-sheen:    oklch(0.995 0.004 92.0);
 
 
 
-            /* Deep Iron Gall Slate Ink (Anchor Chroma >= 0.006) */
+            /* Ink & Typography : Deep Carbon Slate */
 
-            --ink:            oklch(0.160 0.022 260.0);
+            --ink:            oklch(0.140 0.015 260.0);
 
-            --ink-muted:      oklch(0.440 0.020 260.0);
+            --ink-muted:      oklch(0.420 0.015 260.0);
 
-            --ink-faint:      oklch(0.600 0.018 260.0);
+            --ink-faint:      oklch(0.600 0.012 260.0);
 
 
 
-            /* Primary Accent: Sealing-Wax Vermillion (Causal Gazette Stamp) */
+            /* Primary Accent : Precision Signal Crimson (Hue: 27.0 deg) */
 
-            --accent:         oklch(0.600 0.220 26.5);
+            --accent:         oklch(0.580 0.230 27.0);
 
-            --accent-hover:   oklch(0.520 0.200 26.5);
+            --accent-hover:   oklch(0.500 0.210 27.0);
 
-            --accent-ink:     oklch(0.140 0.030 26.5);
+            --accent-ink:     oklch(0.980 0.005 27.0);
 
-            --accent-ghost:   color-mix(in oklch, oklch(0.600 0.220 26.5) 12%, transparent);
+            --accent-ghost:   color-mix(in oklch, oklch(0.580 0.230 27.0) 12%, transparent);
 
 
 
@@ -193,15 +193,17 @@
 
             /* 1px Mechanical Hairlines */
 
-            --hairline:       oklch(0.820 0.015 85.0);
+            --hairline:        oklch(0.880 0.005 90.0);
 
-            --hairline-dark:  oklch(0.350 0.020 260.0);
+            --hairline-strong: oklch(0.700 0.010 260.0);
+
+            --hairline-dark:   oklch(0.700 0.010 260.0);
 
 
 
             /* Semantic States */
 
-            --success:        oklch(0.550 0.160 148.0);
+            --success:        oklch(0.580 0.170 148.0);
 
             --warning:        oklch(0.720 0.180 65.0);
 
@@ -220,6 +222,60 @@
             --rule: repeating-linear-gradient(0deg, transparent, transparent 31px, rgba(90, 60, 20, 0.035) 32px);
 
             --grain: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='2'/%3E%3C/filter%3E%3Crect width='160' height='160' filter='url(%23n)' opacity='0.25'/%3E%3C/svg%3E");
+
+        }
+
+
+
+        [data-theme="dark"] {
+
+            /* Substrate & Surfaces : High-Contrast Slate Void */
+
+            --paper:          oklch(0.120 0.005 260.0);
+
+            --paper-deep:     oklch(0.160 0.008 260.0);
+
+            --paper-elevated: oklch(0.200 0.012 260.0);
+
+            --paper-sheen:    oklch(0.220 0.014 260.0);
+
+
+
+            /* Ink & Typography : Crisp Polar White */
+
+            --ink:            oklch(0.960 0.005 260.0);
+
+            --ink-muted:      oklch(0.720 0.010 260.0);
+
+            --ink-faint:      oklch(0.520 0.010 260.0);
+
+
+
+            /* Primary Accent : High-Chroma Signal Crimson (Hue: 27.0 deg) */
+
+            --accent:         oklch(0.640 0.240 27.0);
+
+            --accent-hover:   oklch(0.700 0.220 27.0);
+
+            --accent-ink:     oklch(0.120 0.005 27.0);
+
+            --accent-ghost:   color-mix(in oklch, oklch(0.640 0.240 27.0) 18%, transparent);
+
+
+
+            /* Hairlines & Boundaries : 1px Translucent Bevels */
+
+            --hairline:        rgba(255, 255, 255, 0.08);
+
+            --hairline-strong: rgba(255, 255, 255, 0.18);
+
+            --hairline-dark:   rgba(255, 255, 255, 0.18);
+
+
+
+            --rule: repeating-linear-gradient(0deg, transparent, transparent 31px, rgba(255, 255, 255, 0.02) 32px);
+
+            --grain: none;
 
         }
 
@@ -245,7 +301,7 @@
 
             color: var(--ink);
 
-            font-family: "Source Serif 4", Georgia, serif;
+            font-family: "Source Sans 3", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
 
             font-size: 16px;
 
@@ -275,6 +331,8 @@
 
             min-height: 100vh;
 
+            transition: background-color 150ms var(--ease-enter), color 150ms var(--ease-enter);
+
         }
 
 
@@ -293,9 +351,9 @@
 
         /* --- Typography Helpers --- */
 
-        .font-typewriter { font-family: "Special Elite", monospace; }
+        .font-typewriter { font-family: "Space Grotesk", sans-serif; }
 
-        .font-serif { font-family: "Source Serif 4", Georgia, serif; }
+        .font-serif { font-family: "Source Sans 3", sans-serif; }
 
         .font-mono { font-family: "IBM Plex Mono", monospace; }
 
@@ -449,7 +507,7 @@
 
         .nav-title {
 
-            font-family: "Special Elite", monospace;
+            font-family: "Space Grotesk", sans-serif;
 
             font-size: 1.15rem;
 
@@ -545,11 +603,63 @@
 
         }
 
-        .nav-cta:hover {
+        .nav-actions {
 
-            background-color: var(--accent-hover);
+            display: flex;
 
-            transform: translateY(-1px);
+            align-items: center;
+
+            gap: 0.75rem;
+
+        }
+
+
+
+        .theme-toggle-btn {
+
+            background: var(--paper-deep);
+
+            border: 1px solid var(--hairline);
+
+            color: var(--ink);
+
+            width: 36px;
+
+            height: 36px;
+
+            border-radius: 2px;
+
+            display: inline-flex;
+
+            align-items: center;
+
+            justify-content: center;
+
+            cursor: pointer;
+
+            transition: all 150ms var(--ease-snap);
+
+        }
+
+
+
+        .theme-toggle-btn:hover {
+
+            border-color: var(--accent);
+
+            color: var(--accent);
+
+            background: var(--accent-ghost);
+
+        }
+
+
+
+        .theme-toggle-btn svg {
+
+            width: 16px;
+
+            height: 16px;
 
         }
 
@@ -599,7 +709,7 @@
 
         .hero-headline {
 
-            font-family: "Special Elite", monospace;
+            font-family: "Space Grotesk", sans-serif;
 
             font-size: clamp(2.6rem, 5.5vw, 4.4rem);
 
@@ -881,7 +991,7 @@
 
         .mandate-title {
 
-            font-family: "Special Elite", monospace;
+            font-family: "Space Grotesk", sans-serif;
 
             font-size: clamp(1.8rem, 3.5vw, 2.8rem);
 
@@ -889,7 +999,7 @@
 
             margin-bottom: 1.5rem;
 
-            font-weight: 400;
+            font-weight: 600;
 
         }
 
@@ -977,7 +1087,7 @@
 
         .wax-seal-inner {
 
-            font-family: "Special Elite", monospace;
+            font-family: "Space Grotesk", sans-serif;
 
             color: var(--accent);
 
@@ -1033,13 +1143,13 @@
 
         .section-heading {
 
-            font-family: "Special Elite", monospace;
+            font-family: "Space Grotesk", sans-serif;
 
             font-size: clamp(2rem, 3.8vw, 3rem);
 
             line-height: 1.15;
 
-            font-weight: 400;
+            font-weight: 600;
 
         }
 
@@ -1089,13 +1199,15 @@
 
         .stage-title {
 
-            font-family: "Special Elite", monospace;
+            font-family: "Space Grotesk", sans-serif;
 
             font-size: 1.25rem;
 
             margin-bottom: 0.8rem;
 
             color: var(--ink);
+
+            font-weight: 600;
 
         }
 
@@ -1353,7 +1465,7 @@
 
         .dimension-name {
 
-            font-family: "Special Elite", monospace;
+            font-family: "Space Grotesk", sans-serif;
 
             font-weight: 700;
 
@@ -1443,9 +1555,11 @@
 
         .dossier-title {
 
-            font-family: "Special Elite", monospace;
+            font-family: "Space Grotesk", sans-serif;
 
             font-size: 1.2rem;
+
+            font-weight: 600;
 
             color: var(--ink);
 
@@ -1645,9 +1759,11 @@
 
         .footer-brand {
 
-            font-family: "Special Elite", monospace;
+            font-family: "Space Grotesk", sans-serif;
 
             font-size: 1.4rem;
+
+            font-weight: 700;
 
             margin-bottom: 0.8rem;
 
@@ -1967,12 +2083,6 @@
 
 <body>
 
-
-
-    </div>
-
-
-
     <!-- STICKY MAIN NAVIGATION -->
 
     <nav class="main-nav">
@@ -2005,13 +2115,25 @@
 
             </ul>
 
-            <a href="#install" class="nav-cta">
+            <div class="nav-actions">
 
-                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="4 17 10 11 4 5"></polyline><line x1="12" y1="19" x2="20" y2="19"></line></svg>
+                <button id="theme-toggle" class="theme-toggle-btn" type="button" aria-label="Toggle theme mode" title="Toggle theme mode">
 
-                Invoke Skill
+                    <svg class="sun-icon" style="display:none;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line></svg>
 
-            </a>
+                    <svg class="moon-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
+
+                </button>
+
+                <a href="#install" class="nav-cta">
+
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="4 17 10 11 4 5"></polyline><line x1="12" y1="19" x2="20" y2="19"></line></svg>
+
+                    Invoke Skill
+
+                </a>
+
+            </div>
 
         </div>
 
@@ -2111,7 +2233,7 @@
 
                         <span class="telemetry-label">Downstream Implementation</span>
 
-                        <span class="telemetry-val" style="font-size:0.75rem">akash-design-engineering</span>
+                        <span class="telemetry-val" style="font-size:0.75rem">Production CSS & Frontend</span>
 
                     </div>
 
@@ -2301,7 +2423,7 @@
 
                             <p class="stage-desc">
 
-                                Generates a complete, buildable specification file. Hands off downstream implementation to <code>akash-design-engineering</code> with zero placeholders.
+                                Generates a complete, buildable specification file. Hands off downstream implementation to production CSS and frontend frameworks with zero placeholders.
 
                             </p>
 
@@ -2371,7 +2493,7 @@
 
                             <select id="system-b-select">
 
-                                <option value="akash">Akash Cinnabar (Historical Sealing-Wax Vermillion, ODE RK4)</option>
+                                <option value="crimson">Signal Crimson (Precision Causal Accent, 27.0° Hue, ODE RK4)</option>
 
                                 <option value="raycast">Raycast Readout (Phosphor Telemetry, Instrument Meters)</option>
 
@@ -2425,7 +2547,7 @@
 
                     <p style="color:var(--ink-muted);font-size:1.05rem;max-width:64ch;margin-top:0.8rem">
 
-                        A specification is only as good as its downstream implementation. <strong>design-genius</strong> produces specs that are strictly verified by <strong>akash-design-engineering</strong> via <code>node bin/audit.mjs</code>.
+                        A specification is only as good as its downstream implementation. <strong>design-genius</strong> produces specs that are strictly verified by mechanical linters (9.A–9.P) via <code>python scripts/verify_design.py</code>.
 
                     </p>
 
@@ -2609,9 +2731,9 @@
 
                         <span class="dossier-id">02</span>
 
-                        <div class="dossier-title">akash-design-engineering</div>
+                        <div class="dossier-title">Swiss Modular Engineering</div>
 
-                        <div class="dossier-summary">16-field modular Swiss Grid, Dutch conceptual typography, Cinnabar sealing-wax pigment, and GSAP spring reveals.</div>
+                        <div class="dossier-summary">16-field modular Swiss Grid, Dutch conceptual typography, Signal Crimson causal pigment, and analytical ODE spring reveals.</div>
 
                         <span class="dossier-stamp-tag">SEALED · VERIFIED</span>
 
@@ -2643,7 +2765,7 @@
 
                         <div class="dossier-title">Gazette Editorial</div>
 
-                        <div class="dossier-summary">Archival Munken Newsprint substrate, Typewriter display typography, 1px continuous typographic hairline spine.</div>
+                        <div class="dossier-summary">Crisp Optical Canvas substrate, Space Grotesk display typography, 1px continuous typographic hairline spine.</div>
 
                         <span class="dossier-stamp-tag">SEALED · VERIFIED</span>
 
@@ -2883,7 +3005,7 @@
 
                 <span>&copy; 2026 Akash Priyadarshi. Open-source under MIT License. Zero cost, ₹0 budget constraint.</span>
 
-                <span>Rendered strictly in Light Mode Archival Newsprint.</span>
+                <span>Rendered in Dual-Theme OLED Slate &amp; Optical Canvas.</span>
 
             </div>
 
@@ -2935,11 +3057,11 @@
 
                 name: "Swiss Gazette",
 
-                substrate: "Archival Munken Newsprint (oklch(0.968 0.012 88.0))",
+                substrate: "Crisp Optical Canvas (oklch(0.985 0.002 90.0))",
 
                 layout: "16-field Müller-Brockmann modular grid with continuous 1px typographic spine",
 
-                fonts: "Special Elite (Display) + Source Serif 4 (Body)"
+                fonts: "Space Grotesk (Display) + Source Sans 3 (Body)"
 
             },
 
@@ -2979,13 +3101,13 @@
 
             },
 
-            akash: {
+            crimson: {
 
-                name: "Akash Cinnabar",
+                name: "Signal Crimson",
 
-                accent: "Sealing-Wax Vermillion (oklch(0.60 0.22 26.5))",
+                accent: "Precision Signal Crimson (oklch(0.58 0.23 27.0))",
 
-                receipt: "Derived from iron-oxide wax stamps of historical Indian gazette printing",
+                receipt: "Derived from physical gazette stamp pigments with verified 40° hue family separation",
 
                 physics: "Analytical ODE RK4 kinetic springs (120ms mechanical detent)"
 
@@ -3114,6 +3236,86 @@
         // Run fuser initially to display default receipt
 
         runFuser();
+
+
+
+        // Theme Toggle Logic (Dark Default + Light Contrast)
+
+        (function() {
+
+            const themeToggleBtn = document.getElementById("theme-toggle");
+
+            if (!themeToggleBtn) return;
+
+            const sunIcon = themeToggleBtn.querySelector(".sun-icon");
+
+            const moonIcon = themeToggleBtn.querySelector(".moon-icon");
+
+
+
+            function applyTheme(theme) {
+
+                document.documentElement.setAttribute("data-theme", theme);
+
+                try {
+
+                    localStorage.setItem("dg_theme", theme);
+
+                } catch (e) {}
+
+                if (theme === "dark") {
+
+                    if (sunIcon) sunIcon.style.display = "block";
+
+                    if (moonIcon) moonIcon.style.display = "none";
+
+                } else {
+
+                    if (sunIcon) sunIcon.style.display = "none";
+
+                    if (moonIcon) moonIcon.style.display = "block";
+
+                }
+
+            }
+
+
+
+            const savedTheme = (function() {
+
+                try {
+
+                    return localStorage.getItem("dg_theme");
+
+                } catch (e) {
+
+                    return null;
+
+                }
+
+            })();
+
+
+
+            // Default to dark mode per docs/DESIGN.md
+
+            const initialTheme = savedTheme || "dark";
+
+            applyTheme(initialTheme);
+
+
+
+            themeToggleBtn.addEventListener("click", function() {
+
+                const currentTheme = document.documentElement.getAttribute("data-theme") || "light";
+
+                const newTheme = currentTheme === "dark" ? "light" : "dark";
+
+                applyTheme(newTheme);
+
+            });
+
+        })();
 
     </script>
 
