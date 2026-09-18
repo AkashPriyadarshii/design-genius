@@ -82,6 +82,9 @@ Apply these automated linter rules before emitting the verdict. Any violation is
 - **9.N Interchangeable Dashboard Ban:** Rejection of 4 equal-weight metric summary cards paired with an uncontextualized line chart and generic table. Interfaces must establish a dominant First-Read Object or primary trend line.
 - **9.O 5-Second Contract & Pre-Ship Finish Gate:** Rejection of specs lacking explicit 'First-Read Object' and 'Primary Action' declarations. The above-the-fold viewport must answer: What is this? Is it for me? What do I do next? Pre-ship verdict must declare a strict binary PASS or HOLD.
 - **9.P Meaningless Empty State Ban:** Rejection of lazy empty states that merely output "No data found" or "No items". Empty states must provide actionable guidance, creation shortcuts, or contextual reassurance.
+- **9.Q Substrate-Mix Ban:** Rejection of mixing Swiss-light and Terminal-dark substrates or two accent substrates in one spec. Lock ONE substrate per project (Swiss `#F4F4F0` or Terminal `#0A0A0A` branch).
+- **9.R Budget Ban:** Rejection of specs with no performance budget line (page/JS/CSS/image/font/third-party caps plus LCP/INP/CLS targets). Static-only claims stay labeled hypotheses.
+- **9.S Fake-Image Ban:** Rejection of fake `picsum/placeholder` URLs or invented photo paths. Real photography only via direct Unsplash/Pexels URLs with SEO alt, else an explicit `[IMAGE PROMPT ...]` block.
 - **58-Gate Verification:** For comprehensive audits, cross-verify against the full 58-gate invariant checklist documented in `references/UNIVERSAL_ARSENAL.md`.
 
 ## 4. Emit the diff-DESIGN.md (what to change, exactly)

@@ -138,6 +138,8 @@ emit; a spec without it drifts back to generic.
   2. `MOTION_INTENSITY` (1–10): 1 = static print/reduced-motion only; 5 = fluid micro-interactions (hover/focus); 10 = kinetic physics/WebGL canvas shader.
   3. `VISUAL_DENSITY` (1–10): 1 = airy luxury gallery (high whitespace); 5 = modern balanced product UI; 10 = high-density Bloomberg cockpit / terminal telemetry.
   Declare these three values alongside the one-line design read (`[VARIANCE: 6 | MOTION: 4 | DENSITY: 8]`).
+  **Dial presets (start here, then adjust one step max):** SaaS landing `7/6/4`, agency/marketing `9/8/3`, public-sector/enterprise `3/2/5`, default baseline `8/6/4`. Preserve-mode (REVISE): match existing +1 motion. Overhaul (REDESIGN): +2 variance and motion.
+  **One-question cap:** if intent is ambiguous, ask exactly ONE sharp question and proceed. Never stall past one round.
 - **Persona Attachment & Cognitive Calibration (`design-persona-walkthrough`):** Calibrate the user psychology profile:
   - *Anxious*: Front-load trust signals, uptime metrics, guarantees, clear pricing, and instant support channels.
   - *Secure*: Deliver clean default paths, straightforward workflows, and minimal friction.
@@ -270,6 +272,8 @@ consult `references/UNIVERSAL_ARSENAL.md`.
     - **Digital Web / Apps**: Asymmetric 38.2% / 61.8% golden mass tension, bento grid, magazine column,
       brutalist monochrome with hot pigment interrupt, kinetic canvas shader ($DPR \le 2$, linear palette texture).
       NOT centered-hero-3-cards.
+    **Substrate lock (ONE per project, never mix):** Swiss light (`#F4F4F0` canvas / `#EAE8E3` borders + ink `#050505-#111111`) or Terminal dark (`#0A0A0A` / `#121212`, phosphor `#EAEAEA`). Brutalist branch: `border-radius: 0` everywhere, thin dividers via `display:grid; gap:1px` with contrasting parent/child bg.
+    **Layout invariants (web):** `min-h-[100dvh]` never `h-screen`, Grid never flex-percent math, content `max-w-[1400px]`, fonts via `next/font` never Google `<link>`, one icon family with fixed strokeWidth, never hand-rolled SVG or emoji icons.
     **Concentric Radii Mathematics (STRICT):**
     Arbitrary corner radii are banned. Radii must follow strict concentric geometry:
     $$R_{\text{inner}} = \max(0, R_{\text{outer}} - \text{Padding})$$
@@ -414,8 +418,9 @@ consult `references/UNIVERSAL_ARSENAL.md`.
      → default; 51-90ch → step DOWN one rung; >90ch → rewrite. Write headlines
      ≤7 words / ≤50 chars. A huge headline too big for its words is the #1
      AI tell.
-   - **All-caps display heads need line-height ≥1.02-1.08** — uppercase has no
-     descenders; below 1.0 line-N+1 caps collide with line-N baselines.
+    - **All-caps display heads need line-height ≥1.02-1.08** — uppercase has no
+      descenders; below 1.0 line-N+1 caps collide with line-N baselines.
+    - **Minimalist lock (when archetype is minimal):** canvas `#FFFFFF/#F7F6F3/#FBFBFA`, borders strictly `1px solid #EAEAEA`, body `#111111/#2F3437` lh 1.6, CTA `#111111` on `#FFFFFF` radius 4-6px no shadow, bento radius max 8-12px padding 24-40px.
 4. **Motion/state (MANDATORY, from interaction-patterns.md)** — meet the
    scene baseline: entrance (fadeInUp + stagger), scroll-reveal, hero layered
    entrance, hover/focus states. At L2+: sticky-nav blur, reveal-on-scroll.
@@ -455,7 +460,9 @@ consult `references/UNIVERSAL_ARSENAL.md`.
    **Timing canon (Hallmark corpus, exact ms — stop inventing durations):**
    80-120ms instant feedback (button press, keystroke) / 150-200ms hover +
    focus rings / 250-300ms modal-sheet-dropdown opens / 400-500ms toasts +
-   page reveals. Exit = 60-75% of enter, never the reverse.
+   page reveals. Exit = 60-75% of enter, never the reverse. Emil ideal 180ms, nothing expressive over 300ms without cause.
+    **Motion slop heuristics (flag as FAIL):** any pulse/glow loop, blur-enter on 3 or more components, same hover-scale on 3 or more, stagger on 2 or more lists, identical fade on 4 or more elements, bounce spring on utility surfaces.
+    **Motion stack rule:** motion only in isolated client leaves, continuous values via motion-value/scroll hooks, never state-driven per-frame updates.
    **Tooltip delay is asymmetric by intent:** hover = 800-1000ms (no flash on
    casual movement), focus = 0ms (keyboard user reached it deliberately —
    never delay them). Equal delays on both = the generated tell.
@@ -491,6 +498,7 @@ consult `references/UNIVERSAL_ARSENAL.md`.
    dark), a `transition: all` ban (transition real properties only), and
    ≥40px hit targets on every interactive. Emit these as rules in the
    component-patterns section, not vibes.
+    **Entry/press defaults:** entry `translateY(12px) + opacity 600ms cubic-bezier(0.16,1,0.3,1)` via IntersectionObserver, stagger `calc(var(--index)*80ms)`; press `scale(0.98)/translateY(1px)` under 120ms; skeleton loaders shaped like layout, never spinners; tinted shadows, never pure-black.
    **Depth + geometry mechanics (corpus-proven):**
    - **4px grid (geometry, not type):** spacing, padding, gaps, coordinates,
      and radiuses on the 4px/8dp ladder — a non-integer coordinate is the
@@ -618,6 +626,8 @@ four judgment checks: would this be
 called generic at a glance, does copy sound human, is it on-product or a
 costume, does it hold at the payload (the real content, not the hero). Any
 fail → fix in the same pass, don't ship the hopeful version.
+- **Scored verdict:** `score = passed/10 x 10`. 9-10 ship, 7-8 fix listed fails, 5 or less re-emit. List failing dims as named actions.
+- **Performance budget (dim 11, guardrail):** page under 1.5MB, JS under 300KB compressed, CSS under 100KB, above-fold images under 500KB, fonts under 100KB, third-party under 200KB. Targets LCP 2.5s or less, INP 200ms or less, CLS 0.1 or less, TTFB under 800ms. Static-only findings are hypotheses until a trace proves them.
 - **UI Finish Gate Decision (PASS or HOLD):** Conclude the audit with an explicit binary verdict:
   - **PASS**: The First-Read Object and Primary Action are immediately evident within 500ms; empty/loading states are handled; multi-viewport responsiveness is proven.
   - **HOLD**: If the design relies on interchangeable SaaS dashboard cards, fails the 5-second above-the-fold test, or displays generic empty states.

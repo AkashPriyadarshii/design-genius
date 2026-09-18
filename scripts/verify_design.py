@@ -66,7 +66,7 @@ def call_jev(state: str, questions: dict, timeout: float = 6.0) -> dict:
 
 
 def mechanical_linter(text: str) -> tuple[bool, list[str]]:
-    """Runs strict mechanical linter rules 9.A - 9.M."""
+    """Runs strict mechanical linter rules 9.A - 9.S."""
     issues = []
 
     # Strip code blocks and HTML comments for prose checks to prevent false positives
@@ -146,6 +146,26 @@ def mechanical_linter(text: str) -> tuple[bool, list[str]]:
         has_actionable_empty = any(k in lower for k in ("empty state", "shortcut", "create", "actionable", "guidance", "retry"))
         if not has_actionable_empty:
             issues.append("Rule 9.P violation: Meaningless empty state detected ('No data found'). Empty states must provide actionable guidance, creation shortcuts, or contextual charm.")
+
+    # 9.Q: Substrate-Mix Ban (Swiss light + Terminal dark in one spec)
+    has_swiss = "#f4f4f0" in lower or "#eae8e3" in lower
+    has_terminal = "#0a0a0a" in lower and "phosphor" in lower
+    if has_swiss and has_terminal:
+        issues.append("Rule 9.Q violation: Mixed Swiss-light and Terminal-dark substrates. Lock ONE substrate per project.")
+
+    # 9.R: Budget Ban (no perf budget line)
+    if "design spec" in lower or "design.md" in lower:
+        has_budget = any(k in lower for k in ("performance budget", "lcp", "cls", "inp", "page weight", "300kb", "1.5mb"))
+        if not has_budget:
+            issues.append("Rule 9.R violation: Missing performance budget line (page/JS/CSS caps plus LCP/INP/CLS targets).")
+
+    # 9.S: Fake-Image Ban
+    if any(k in lower for k in ("picsum", "placeholder.it", "fake image", "loremflickr.com")):
+        issues.append("Rule 9.S violation: Fake/placeholder image URL detected. Use real Unsplash/Pexels URLs or an [IMAGE PROMPT] block.")
+    if any(k in lower for k in ("hero image", "photography", "showcase image", "unsplash", "pexels")):
+        has_img_receipt = any(k in lower for k in ("unsplash", "pexels", "wikimedia", "image prompt", "srcset", "picture", "alt="))
+        if not has_img_receipt:
+            issues.append("Rule 9.S violation: Photography claimed without real URL, srcset/picture receipt, or [IMAGE PROMPT] block.")
 
     return len(issues) == 0, issues
 

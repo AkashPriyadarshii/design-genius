@@ -38,6 +38,8 @@ you need; the skill adapts to whatever is present (it `ls`es before reading).
 | threeui | 3D UI — only clone if 3D is in scope (146MB, 1/3 of the whole lib) |
 | react-bits | Animated React components, background shaders, kinetic text |
 | img2threejs | 2D image to interactive Three.js / WebGL shader pipeline |
+| frontend-design-pro-demo | 11-aesthetic commit table (Swiss, Neumorphism, Glass, Brutalist, Clay, Aurora, Cyberpunk, Hyperreal, Maximalist, OLED-luxury, Biomorphic) + perfect-images rule (real Unsplash/Pexels URL or `[IMAGE PROMPT]` block, never fake src) |
+| ui-ux-pro-max catalog | Optional reference counts: 74 type pairings, 1934 Google Fonts, 105 curated + 1512 Phosphor icons, 119 UX rules, 17 motion presets, 25 chart types |
 | nothing-design-skill | Dot-matrix, NDot typeface, monochrome + hot red archetype |
 | scroll-craft | WebGL canvas scroll animations and GLSL post-processing |
 | pretext | Pure canvas text layout and precise multi-line typography |
