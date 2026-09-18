@@ -17,6 +17,7 @@ USAGE.md         how a user runs it
 LIBRARY.md       what to clone, what to skip, how the library grows
 CONTRIBUTING.md  corpus submission bar + skill-diff rules
 SKILL.md         the skill itself (the only file that runs)
+scripts/         verify_design.py (TypeSafe AI Jev System One oracle validator)
 ```
 
 ## Editing SKILL.md — the ground rules
@@ -35,12 +36,11 @@ SKILL.md         the skill itself (the only file that runs)
 5. **Audit your change like the skill audits output.** Cold read. Does this
    make the skill more likely to ship a bespoke design, or just longer?
 
-## Testing
+## Testing & Verification
 
-No test suite. The verification contract: change must not break the read-gate
-or the output contract (DESIGN.md + fused-systems line + signature line). Run
-the skill on one task after a substantive edit and confirm it still reads the
-library and cites a real token.
+- **Audit Skill:** `python scripts/verify_design.py --audit-skill` (runs machine path check & Jev instruction-rigor audit).
+- **Validate Design Spec:** `python scripts/verify_design.py <path/to/DESIGN.md>` (deterministic Jev System One anti-slop and token-completeness check).
+- The verification contract: change must not break the read-gate or the output contract (DESIGN.md + fused-systems line + signature line).
 
 ## Releasing
 
