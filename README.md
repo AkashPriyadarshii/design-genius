@@ -1,5 +1,7 @@
 # design-genius
 
+**Support:** fuel the next build — [![Buy Me a Coffee](https://img.shields.io/badge/Buy%20Me%20a%20Coffee-ffdd00?style=for-the-badge&logo=buy-me-a-coffee&logoColor=black)](https://buymeacoffee.com/AkashPriyadarshi)
+
 A universal design language engine and bespoke design-system generator for ANY
 medium in existence: physical architecture, industrial hardware, operating system
 GUI/TUI, wearables, editorial print, luxury packaging, spatial/AR, posters, canvas
@@ -108,7 +110,6 @@ inventory, skip list, and catalog live in **[LIBRARY.md](LIBRARY.md)** and
 **[../README.md](../README.md)**. The path resolves from the skill's own directory
 by default, or from `$DESIGN_LIB` when you set it.
 
-
 The payoff is compounding. Drop any real design system into
 `awesome-design-md/design-md/<name>/DESIGN.md` and the skill designs in that
 direction too. Your taste becomes the library, and the library is what the
@@ -174,8 +175,3 @@ design-engineer  claude  agent-skill  design-tools  frontend
 
 MIT. FOSS, on purpose. The value lives in the library-routing mechanism, so
 the more design systems you or the community add, the more it compounds.
-
-
----
-
-**Support:** fuel the next build — [![Buy Me a Coffee](https://img.shields.io/badge/Buy%20Me%20a%20Coffee-ffdd00?style=for-the-badge&logo=buy-me-a-coffee&logoColor=black)](https://buymeacoffee.com/AkashPriyadarshi)
